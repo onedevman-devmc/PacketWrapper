@@ -1,21 +1,3 @@
-/**
- * This file is part of PacketWrapper.
- * Copyright (C) 2012-2015 Kristian S. Strangeland
- * Copyright (C) 2015 dmulloy2
- *
- * PacketWrapper is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Lesser General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * PacketWrapper is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public License
- * along with PacketWrapper.  If not, see <http://www.gnu.org/licenses/>.
- */
 package com.comphenix.packetwrapper;
 
 import com.comphenix.protocol.PacketType;
@@ -24,33 +6,64 @@ import com.comphenix.protocol.events.PacketContainer;
 public class WrapperPlayServerOpenWindowMerchant extends AbstractPacket {
 
     public static final PacketType TYPE = PacketType.Play.Server.OPEN_WINDOW_MERCHANT;
-    
+
     public WrapperPlayServerOpenWindowMerchant() {
         super(new PacketContainer(TYPE), TYPE);
         handle.getModifier().writeDefaults();
     }
-    
+
     public WrapperPlayServerOpenWindowMerchant(PacketContainer packet) {
         super(packet, TYPE);
     }
-    
-    // Cannot generate getter a
-    // Cannot generate setter a
-    // Cannot find type for b
-    // Cannot find type for b
-    // Cannot find type for b
-    // Cannot find type for b
-    // Cannot find type for b
-    // Cannot find type for b
-    // Cannot find type for b
-    // Cannot find type for b
-    // Cannot find type for b
-    // Cannot find type for b
-    // Cannot find type for b
-    // Cannot find type for b
-    // Cannot find type for b
-    // Cannot find type for b
-    // Cannot find type for b
-    // Cannot find type for b
-    // Cannot find type for b
+
+    public int getContainerId() {
+        return this.handle.getIntegers().read(0);
+    }
+
+    public void setContainerId(int value) {
+        this.handle.getIntegers().write(0, value);
+    }
+
+    public Object getOffers() {
+        // Generic field type: class net.minecraft.world.item.trading.MerchantOffers
+        throw new UnsupportedOperationException();
+    }
+
+    public void setOffers(Object value) {
+        throw new UnsupportedOperationException();
+    }
+
+    public int getVillagerLevel() {
+        return this.handle.getIntegers().read(1);
+    }
+
+    public void setVillagerLevel(int value) {
+        this.handle.getIntegers().write(1, value);
+    }
+
+    public int getVillagerXp() {
+        return this.handle.getIntegers().read(2);
+    }
+
+    public void setVillagerXp(int value) {
+        this.handle.getIntegers().write(2, value);
+    }
+
+    public boolean getShowProgress() {
+        return this.handle.getBooleans().read(0);
+    }
+
+    public void setShowProgress(boolean value) {
+        this.handle.getBooleans().write(0, value);
+    }
+
+    public boolean getCanRestock() {
+        return this.handle.getBooleans().read(1);
+    }
+
+    public void setCanRestock(boolean value) {
+        this.handle.getBooleans().write(1, value);
+    }
+
+
 }

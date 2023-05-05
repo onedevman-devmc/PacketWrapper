@@ -1,96 +1,37 @@
-/**
- * PacketWrapper - ProtocolLib wrappers for Minecraft packets
- * Copyright (C) dmulloy2 <http://dmulloy2.net>
- * Copyright (C) Kristian S. Strangeland
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
 package com.comphenix.packetwrapper;
-
-import org.bukkit.Material;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
-import com.comphenix.protocol.reflect.EquivalentConverter;
-import com.comphenix.protocol.reflect.accessors.Accessors;
-import com.comphenix.protocol.reflect.accessors.MethodAccessor;
-import com.comphenix.protocol.utility.MinecraftReflection;
+import org.bukkit.Material;
 
 public class WrapperPlayServerSetCooldown extends AbstractPacket {
-	private static final Class<?> ITEM_CLASS = MinecraftReflection
-			.getMinecraftClass("Item");
-	public static final PacketType TYPE = PacketType.Play.Server.SET_COOLDOWN;
 
-	public WrapperPlayServerSetCooldown() {
-		super(new PacketContainer(TYPE), TYPE);
-		handle.getModifier().writeDefaults();
-	}
+    public static final PacketType TYPE = PacketType.Play.Server.SET_COOLDOWN;
 
-	public WrapperPlayServerSetCooldown(PacketContainer packet) {
-		super(packet, TYPE);
-	}
+    public WrapperPlayServerSetCooldown() {
+        super(new PacketContainer(TYPE), TYPE);
+        handle.getModifier().writeDefaults();
+    }
 
-	public Material getItem() {
-		return handle.getModifier()
-				.<Material> withType(ITEM_CLASS, new ItemConverter()).read(0);
-	}
+    public WrapperPlayServerSetCooldown(PacketContainer packet) {
+        super(packet, TYPE);
+    }
 
-	public void setItem(Material value) {
-		handle.getModifier()
-				.<Material> withType(ITEM_CLASS, new ItemConverter())
-				.write(0, value);
-	}
+    public Material getItem() {
+        throw new UnsupportedOperationException(); // TODO: No modifier has been found for type class net.minecraft.world.item.Item
+    }
 
-	public int getTicks() {
-		return handle.getIntegers().read(0);
-	}
+    public void setItem(Object value) {
+        throw new UnsupportedOperationException();
+    }
 
-	public void setTicks(int value) {
-		handle.getIntegers().write(0, value);
-	}
+    public int getDuration() {
+        return this.handle.getIntegers().read(0);
+    }
 
-	private static class ItemConverter implements EquivalentConverter<Material> {
-		private static MethodAccessor getMaterial = null;
-		private static MethodAccessor getItem = null;
+    public void setDuration(int value) {
+        this.handle.getIntegers().write(0, value);
+    }
 
-		@Override
-		public Material getSpecific(Object generic) {
-			if (getMaterial == null) {
-				getMaterial =
-						Accessors.getMethodAccessor(MinecraftReflection
-								.getCraftBukkitClass("util.CraftMagicNumbers"),
-								"getMaterial", ITEM_CLASS);
-			}
 
-			return (Material) getMaterial.invoke(null, generic);
-		}
-
-		@Override
-		public Object getGeneric(Material specific) {
-			if (getItem == null) {
-				getItem =
-						Accessors.getMethodAccessor(MinecraftReflection
-								.getCraftBukkitClass("util.CraftMagicNumbers"),
-								"getItem", Material.class);
-			}
-
-			return getItem.invoke(null, specific);
-		}
-
-		@Override
-		public Class<Material> getSpecificType() {
-			return Material.class;
-		}
-	}
 }

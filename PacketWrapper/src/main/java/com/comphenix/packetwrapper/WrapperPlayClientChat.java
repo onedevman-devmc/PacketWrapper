@@ -1,54 +1,63 @@
-/**
- * PacketWrapper - ProtocolLib wrappers for Minecraft packets
- * Copyright (C) dmulloy2 <http://dmulloy2.net>
- * Copyright (C) Kristian S. Strangeland
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
 package com.comphenix.packetwrapper;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
+import com.comphenix.protocol.wrappers.WrappedMessageSignature;
+
+import java.time.Instant;
 
 public class WrapperPlayClientChat extends AbstractPacket {
-	public static final PacketType TYPE = PacketType.Play.Client.CHAT;
 
-	public WrapperPlayClientChat() {
-		super(new PacketContainer(TYPE), TYPE);
-		handle.getModifier().writeDefaults();
-	}
+    public static final PacketType TYPE = PacketType.Play.Client.CHAT;
 
-	public WrapperPlayClientChat(PacketContainer packet) {
-		super(packet, TYPE);
-	}
+    public WrapperPlayClientChat() {
+        super(new PacketContainer(TYPE), TYPE);
+        handle.getModifier().writeDefaults();
+    }
 
-	/**
-	 * Retrieve Message.
-	 * 
-	 * @return The current Message
-	 */
-	public String getMessage() {
-		return handle.getStrings().read(0);
-	}
+    public WrapperPlayClientChat(PacketContainer packet) {
+        super(packet, TYPE);
+    }
 
-	/**
-	 * Set Message.
-	 * 
-	 * @param value - new value.
-	 */
-	public void setMessage(String value) {
-		handle.getStrings().write(0, value);
-	}
+    public String getMessage() {
+        return this.handle.getStrings().read(0);
+    }
+
+    public void setMessage(String value) {
+        this.handle.getStrings().write(0, value);
+    }
+
+    public Instant getTimeStamp() {
+        return this.handle.getInstants().read(0);
+    }
+
+    public void setTimeStamp(Instant value) {
+        this.handle.getInstants().write(0, value);
+    }
+
+    public long getSalt() {
+        return this.handle.getLongs().read(0);
+    }
+
+    public void setSalt(long value) {
+        this.handle.getLongs().write(0, value);
+    }
+
+    public WrappedMessageSignature getSignature() {
+        return this.handle.getMessageSignatures().read(0);
+    }
+
+    public void setSignature(WrappedMessageSignature value) {
+        this.handle.getMessageSignatures().write(0, value);
+    }
+
+    public Object getLastSeenMessages() {
+        throw new UnsupportedOperationException(); // TODO: No modifier has been found for type class net.minecraft.network.chat.LastSeenMessages$Update
+    }
+
+    public void setLastSeenMessages(Object value) {
+        throw new UnsupportedOperationException();
+    }
+
 
 }

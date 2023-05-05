@@ -1,124 +1,98 @@
-/**
- * PacketWrapper - ProtocolLib wrappers for Minecraft packets
- * Copyright (C) dmulloy2 <http://dmulloy2.net>
- * Copyright (C) Kristian S. Strangeland
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
 package com.comphenix.packetwrapper;
 
-import org.bukkit.WorldType;
-
-import com.comphenix.packetwrapper.util.Removed;
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
-import com.comphenix.protocol.wrappers.EnumWrappers.Difficulty;
+import com.comphenix.protocol.wrappers.BlockPosition;
 import com.comphenix.protocol.wrappers.EnumWrappers.NativeGameMode;
+import org.bukkit.World;
+
+import javax.annotation.Nullable;
+import java.util.Optional;
 
 public class WrapperPlayServerRespawn extends AbstractPacket {
-	public static final PacketType TYPE = PacketType.Play.Server.RESPAWN;
 
-	public WrapperPlayServerRespawn() {
-		super(new PacketContainer(TYPE), TYPE);
-		handle.getModifier().writeDefaults();
-	}
+    public static final PacketType TYPE = PacketType.Play.Server.RESPAWN;
 
-	public WrapperPlayServerRespawn(PacketContainer packet) {
-		super(packet, TYPE);
-	}
+    public WrapperPlayServerRespawn() {
+        super(new PacketContainer(TYPE), TYPE);
+        handle.getModifier().writeDefaults();
+    }
 
-	/**
-	 * Retrieve Dimension.
-	 * <p>
-	 * Notes: -1: The Nether, 0: The Overworld, 1: The End
-	 * 
-	 * @return The current Dimension
-	 */
-	public int getDimension() {
-		return handle.getDimensions().optionRead(0).orElse(0);
-	}
+    public WrapperPlayServerRespawn(PacketContainer packet) {
+        super(packet, TYPE);
+    }
 
-	/**
-	 * Set Dimension.
-	 * 
-	 * @param value - new value.
-	 */
-	public void setDimension(int value) {
-		handle.getDimensions().write(0, value);
-	}
+    public World getDimensionType() {
+        return this.handle.getWorldKeys().read(0);
+    }
 
-	/**
-	 * Retrieve Difficulty.
-	 * <p>
-	 * Notes: 0 thru 3 for Peaceful, Easy, Normal, Hard.
-	 * 
-	 * @return The current Difficulty
-	 */
-	@Removed
-	public Difficulty getDifficulty() {
-		return handle.getDifficulties().read(0);
-	}
+    public void setDimensionType(World value) {
+        this.handle.getWorldKeys().write(0, value);
+    }
 
-	/**
-	 * Set Difficulty.
-	 * 
-	 * @param value - new value.
-	 */
-	@Removed
-	public void setDifficulty(Difficulty value) {
-		handle.getDifficulties().write(0, value);
-	}
+    public World getDimension() {
+        return this.handle.getWorldKeys().read(1);
+    }
 
-	/**
-	 * Retrieve Gamemode.
-	 * <p>
-	 * Notes: 0: survival, 1: creative, 2: adventure. The hardcore flag is not
-	 * included
-	 * 
-	 * @return The current Gamemode
-	 */
-	public NativeGameMode getGamemode() {
-		return handle.getGameModes().read(0);
-	}
+    public void setDimension(World value) {
+        this.handle.getWorldKeys().write(1, value);
+    }
 
-	/**
-	 * Set Gamemode.
-	 * 
-	 * @param value - new value.
-	 */
-	public void setGamemode(NativeGameMode value) {
-		handle.getGameModes().write(0, value);
-	}
+    public long getSeed() {
+        return this.handle.getLongs().read(0);
+    }
 
-	/**
-	 * Retrieve Level Type.
-	 * <p>
-	 * Notes: same as Join Game
-	 * 
-	 * @return The current Level Type
-	 */
-	public WorldType getLevelType() {
-		return handle.getWorldTypeModifier().read(0);
-	}
+    public void setSeed(long value) {
+        this.handle.getLongs().write(0, value);
+    }
 
-	/**
-	 * Set Level Type.
-	 * 
-	 * @param value - new value.
-	 */
-	public void setLevelType(WorldType value) {
-		handle.getWorldTypeModifier().write(0, value);
-	}
+    public NativeGameMode getPlayerGameType() {
+        return this.handle.getGameModes().read(0);
+    }
+
+    public void setPlayerGameType(NativeGameMode value) {
+        this.handle.getGameModes().write(0, value);
+    }
+
+    public NativeGameMode getPreviousPlayerGameType() {
+        return this.handle.getGameModes().read(1);
+    }
+
+    public void setPreviousPlayerGameType(NativeGameMode value) {
+        this.handle.getGameModes().write(1, value);
+    }
+
+    public boolean getIsDebug() {
+        return this.handle.getBooleans().read(0);
+    }
+
+    public void setIsDebug(boolean value) {
+        this.handle.getBooleans().write(0, value);
+    }
+
+    public boolean getIsFlat() {
+        return this.handle.getBooleans().read(1);
+    }
+
+    public void setIsFlat(boolean value) {
+        this.handle.getBooleans().write(1, value);
+    }
+
+    public byte getDataToKeep() {
+        return this.handle.getBytes().read(0);
+    }
+
+    public void setDataToKeep(byte value) {
+        this.handle.getBytes().write(0, value);
+    }
+
+    public Optional<BlockPosition> getLastDeathLocation() {
+        return this.handle.getOptionals(BlockPosition.getConverter()).read(0);
+    }
+
+    public void setLastDeathLocation(@Nullable BlockPosition value) {
+        this.handle.getOptionals(BlockPosition.getConverter()).write(0, Optional.ofNullable(value));
+    }
+
 
 }

@@ -1,96 +1,76 @@
-/**
- * PacketWrapper - ProtocolLib wrappers for Minecraft packets
- * Copyright (C) dmulloy2 <http://dmulloy2.net>
- * Copyright (C) Kristian S. Strangeland
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
 package com.comphenix.packetwrapper;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
 
 public class WrapperPlayClientLook extends AbstractPacket {
-	public static final PacketType TYPE = PacketType.Play.Client.LOOK;
 
-	public WrapperPlayClientLook() {
-		super(new PacketContainer(TYPE), TYPE);
-		handle.getModifier().writeDefaults();
-	}
+    public static final PacketType TYPE = PacketType.Play.Client.LOOK;
 
-	public WrapperPlayClientLook(PacketContainer packet) {
-		super(packet, TYPE);
-	}
+    public WrapperPlayClientLook() {
+        super(new PacketContainer(TYPE), TYPE);
+        handle.getModifier().writeDefaults();
+    }
 
-	/**
-	 * Retrieve Yaw.
-	 * <p>
-	 * Notes: absolute rotation on the X Axis, in degrees
-	 * 
-	 * @return The current Yaw
-	 */
-	public float getYaw() {
-		return handle.getFloat().read(0);
-	}
+    public WrapperPlayClientLook(PacketContainer packet) {
+        super(packet, TYPE);
+    }
 
-	/**
-	 * Set Yaw.
-	 * 
-	 * @param value - new value.
-	 */
-	public void setYaw(float value) {
-		handle.getFloat().write(0, value);
-	}
+    public double getX() {
+        return this.handle.getDoubles().read(0);
+    }
 
-	/**
-	 * Retrieve Pitch.
-	 * <p>
-	 * Notes: absolute rotation on the Y Axis, in degrees
-	 * 
-	 * @return The current Pitch
-	 */
-	public float getPitch() {
-		return handle.getFloat().read(1);
-	}
+    public void setX(double value) {
+        this.handle.getDoubles().write(0, value);
+    }
 
-	/**
-	 * Set Pitch.
-	 * 
-	 * @param value - new value.
-	 */
-	public void setPitch(float value) {
-		handle.getFloat().write(1, value);
-	}
+    public double getY() {
+        return this.handle.getDoubles().read(1);
+    }
 
-	/**
-	 * Retrieve On Ground.
-	 * <p>
-	 * Notes: true if the client is on the ground, False otherwise
-	 * 
-	 * @return The current On Ground
-	 */
-	public boolean getOnGround() {
-		return handle.getBooleans().read(0);
-	}
+    public void setY(double value) {
+        this.handle.getDoubles().write(1, value);
+    }
 
-	/**
-	 * Set On Ground.
-	 * 
-	 * @param value - new value.
-	 */
-	public void setOnGround(boolean value) {
-		handle.getBooleans().write(0, value);
-	}
+    public double getZ() {
+        return this.handle.getDoubles().read(2);
+    }
+
+    public void setZ(double value) {
+        this.handle.getDoubles().write(2, value);
+    }
+
+    public float getYRot() {
+        return this.handle.getFloat().read(0);
+    }
+
+    public void setYRot(float value) {
+        this.handle.getFloat().write(0, value);
+    }
+
+    public float getXRot() {
+        return this.handle.getFloat().read(1);
+    }
+
+    public void setXRot(float value) {
+        this.handle.getFloat().write(1, value);
+    }
+
+    public boolean getHasPos() {
+        return this.handle.getBooleans().read(0);
+    }
+
+    public void setHasPos(boolean value) {
+        this.handle.getBooleans().write(0, value);
+    }
+
+    public boolean getHasRot() {
+        return this.handle.getBooleans().read(1);
+    }
+
+    public void setHasRot(boolean value) {
+        this.handle.getBooleans().write(1, value);
+    }
+
 
 }

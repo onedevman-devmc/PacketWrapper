@@ -1,204 +1,165 @@
-/**
- * PacketWrapper - ProtocolLib wrappers for Minecraft packets
- * Copyright (C) dmulloy2 <http://dmulloy2.net>
- * Copyright (C) Kristian S. Strangeland
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
 package com.comphenix.packetwrapper;
 
-import org.bukkit.World;
-import org.bukkit.WorldType;
-import org.bukkit.entity.Entity;
-
-import com.comphenix.packetwrapper.util.Removed;
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
-import com.comphenix.protocol.events.PacketEvent;
-import com.comphenix.protocol.wrappers.EnumWrappers.Difficulty;
+import com.comphenix.protocol.wrappers.BlockPosition;
+import com.comphenix.protocol.wrappers.BukkitConverters;
 import com.comphenix.protocol.wrappers.EnumWrappers.NativeGameMode;
+import org.bukkit.World;
+
+import javax.annotation.Nullable;
+import java.util.List;
+import java.util.Optional;
 
 public class WrapperPlayServerLogin extends AbstractPacket {
-	public static final PacketType TYPE = PacketType.Play.Server.LOGIN;
 
-	public WrapperPlayServerLogin() {
-		super(new PacketContainer(TYPE), TYPE);
-		handle.getModifier().writeDefaults();
-	}
+    public static final PacketType TYPE = PacketType.Play.Server.LOGIN;
 
-	public WrapperPlayServerLogin(PacketContainer packet) {
-		super(packet, TYPE);
-	}
+    public WrapperPlayServerLogin() {
+        super(new PacketContainer(TYPE), TYPE);
+        handle.getModifier().writeDefaults();
+    }
 
-	/**
-	 * Retrieve Entity ID.
-	 * <p>
-	 * Notes: entity's ID
-	 * 
-	 * @return The current Entity ID
-	 */
-	public int getEntityID() {
-		return handle.getIntegers().read(0);
-	}
+    public WrapperPlayServerLogin(PacketContainer packet) {
+        super(packet, TYPE);
+    }
 
-	/**
-	 * Set Entity ID.
-	 * 
-	 * @param value - new value.
-	 */
-	public void setEntityID(int value) {
-		handle.getIntegers().write(0, value);
-	}
+    public int getPlayerId() {
+        return this.handle.getIntegers().read(0);
+    }
 
-	/**
-	 * Retrieve the entity of the painting that will be spawned.
-	 * 
-	 * @param world - the current world of the entity.
-	 * @return The spawned entity.
-	 */
-	public Entity getEntity(World world) {
-		return handle.getEntityModifier(world).read(0);
-	}
+    public void setPlayerId(int value) {
+        this.handle.getIntegers().write(0, value);
+    }
 
-	/**
-	 * Retrieve the entity of the painting that will be spawned.
-	 * 
-	 * @param event - the packet event.
-	 * @return The spawned entity.
-	 */
-	public Entity getEntity(PacketEvent event) {
-		return getEntity(event.getPlayer().getWorld());
-	}
+    public boolean getHardcore() {
+        return this.handle.getBooleans().read(0);
+    }
 
-	/**
-	 * Retrieve Gamemode.
-	 * <p>
-	 * Notes: 0: survival, 1: creative, 2: adventure. Bit 3 (0x8) is the
-	 * hardcore flag
-	 * 
-	 * @return The current Gamemode
-	 */
-	public NativeGameMode getGamemode() {
-		return handle.getGameModes().read(0);
-	}
+    public void setHardcore(boolean value) {
+        this.handle.getBooleans().write(0, value);
+    }
 
-	/**
-	 * Set Gamemode.
-	 * 
-	 * @param value - new value.
-	 */
-	public void setGamemode(NativeGameMode value) {
-		handle.getGameModes().write(0, value);
-	}
+    public NativeGameMode getGameType() {
+        return this.handle.getGameModes().read(0);
+    }
 
-	/**
-	 * Retrieve Dimension.
-	 * <p>
-	 * Notes: -1: nether, 0: overworld, 1: end
-	 * 
-	 * @return The current Dimension
-	 */
-	public int getDimension() {
-		return handle.getIntegers().read(0);
-	}
+    public void setGameType(NativeGameMode value) {
+        this.handle.getGameModes().write(0, value);
+    }
 
-	/**
-	 * Set Dimension.
-	 * 
-	 * @param value - new value.
-	 */
-	public void setDimension(int value) {
-		handle.getIntegers().write(0, value);
-	}
+    public NativeGameMode getPreviousGameType() {
+        return this.handle.getGameModes().read(1);
+    }
 
-	/**
-	 * Retrieve Difficulty.
-	 * <p>
-	 * Notes: 0 thru 3 for Peaceful, Easy, Normal, Hard
-	 * 
-	 * @return The current Difficulty
-	 */
-	@Removed
-	public Difficulty getDifficulty() {
-		return handle.getDifficulties().read(0);
-	}
+    public void setPreviousGameType(NativeGameMode value) {
+        this.handle.getGameModes().write(1, value);
+    }
 
-	/**
-	 * Set Difficulty.
-	 * 
-	 * @param value - new value.
-	 */
-	@Removed
-	public void setDifficulty(Difficulty value) {
-		handle.getDifficulties().write(0, value);
-	}
+    public List<World> getLevels() {
+        return this.handle.getLists(BukkitConverters.getWorldKeyConverter()).read(0);
+    }
 
-	/**
-	 * Retrieve Max Players.
-	 * <p>
-	 * Notes: used by the client to draw the player list
-	 * 
-	 * @return The current Max Players
-	 */
-	public int getMaxPlayers() {
-		return handle.getIntegers().read(1);
-	}
+    public void setLevels(List<World> value) {
+        this.handle.getLists(BukkitConverters.getWorldKeyConverter()).write(0, value);
 
-	/**
-	 * Set Max Players.
-	 * 
-	 * @param value - new value.
-	 */
-	public void setMaxPlayers(int value) {
-		handle.getIntegers().write(0, value);
-	}
+    }
 
-	/**
-	 * Retrieve Level Type.
-	 * <p>
-	 * Notes: default, flat, largeBiomes, amplified, default_1_1
-	 * 
-	 * @return The current Level Type
-	 */
-	public WorldType getLevelType() {
-		return handle.getWorldTypeModifier().read(0);
-	}
+    public Object getRegistryHolder() {
+        throw new UnsupportedOperationException(); // TODO: No modifier has been found for type interface net.minecraft.core.RegistryAccess$Frozen
+    }
 
-	/**
-	 * Set Level Type.
-	 * 
-	 * @param value - new value.
-	 */
-	public void setLevelType(WorldType value) {
-		handle.getWorldTypeModifier().write(0, value);
-	}
+    public void setRegistryHolder(Object value) {
+        throw new UnsupportedOperationException();
+    }
 
-	/**
-	 * Retrieve Reduced Debug Info.
-	 * 
-	 * @return The current Reduced Debug Info
-	 */
-	public boolean getReducedDebugInfo() {
-		return handle.getBooleans().read(0);
-	}
+    public World getDimensionType() {
+        return this.handle.getWorldKeys().read(0);
+    }
 
-	/**
-	 * Set Reduced Debug Info.
-	 * 
-	 * @param value - new value.
-	 */
-	public void setReducedDebugInfo(boolean value) {
-		handle.getBooleans().write(0, value);
-	}
+    public void setDimensionType(World value) {
+        this.handle.getWorldKeys().write(0, value);
+    }
+
+    public World getDimension() {
+        return this.handle.getWorldKeys().read(1);
+    }
+
+    public void setDimension(World value) {
+        this.handle.getWorldKeys().write(1, value);
+    }
+
+    public long getSeed() {
+        return this.handle.getLongs().read(0);
+    }
+
+    public void setSeed(long value) {
+        this.handle.getLongs().write(0, value);
+    }
+
+    public int getMaxPlayers() {
+        return this.handle.getIntegers().read(1);
+    }
+
+    public void setMaxPlayers(int value) {
+        this.handle.getIntegers().write(1, value);
+    }
+
+    public int getChunkRadius() {
+        return this.handle.getIntegers().read(2);
+    }
+
+    public void setChunkRadius(int value) {
+        this.handle.getIntegers().write(2, value);
+    }
+
+    public int getSimulationDistance() {
+        return this.handle.getIntegers().read(3);
+    }
+
+    public void setSimulationDistance(int value) {
+        this.handle.getIntegers().write(3, value);
+    }
+
+    public boolean getReducedDebugInfo() {
+        return this.handle.getBooleans().read(1);
+    }
+
+    public void setReducedDebugInfo(boolean value) {
+        this.handle.getBooleans().write(1, value);
+    }
+
+    public boolean getShowDeathScreen() {
+        return this.handle.getBooleans().read(2);
+    }
+
+    public void setShowDeathScreen(boolean value) {
+        this.handle.getBooleans().write(2, value);
+    }
+
+    public boolean getIsDebug() {
+        return this.handle.getBooleans().read(3);
+    }
+
+    public void setIsDebug(boolean value) {
+        this.handle.getBooleans().write(3, value);
+    }
+
+    public boolean getIsFlat() {
+        return this.handle.getBooleans().read(4);
+    }
+
+    public void setIsFlat(boolean value) {
+        this.handle.getBooleans().write(4, value);
+    }
+
+    public Optional<BlockPosition> getLastDeathLocation() {
+        return this.handle.getOptionals(BlockPosition.getConverter()).read(0);
+    }
+
+    public void setLastDeathLocation(@Nullable BlockPosition value) {
+        this.handle.getOptionals(BlockPosition.getConverter()).write(0, Optional.ofNullable(value));
+    }
+
+
 }
