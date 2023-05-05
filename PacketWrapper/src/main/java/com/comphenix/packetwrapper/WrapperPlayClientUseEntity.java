@@ -8,8 +8,7 @@ public class WrapperPlayClientUseEntity extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Client.USE_ENTITY;
 
     public WrapperPlayClientUseEntity() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayClientUseEntity(PacketContainer packet) {

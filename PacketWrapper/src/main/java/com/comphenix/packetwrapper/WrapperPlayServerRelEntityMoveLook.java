@@ -8,8 +8,7 @@ public class WrapperPlayServerRelEntityMoveLook extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.REL_ENTITY_MOVE_LOOK;
 
     public WrapperPlayServerRelEntityMoveLook() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerRelEntityMoveLook(PacketContainer packet) {

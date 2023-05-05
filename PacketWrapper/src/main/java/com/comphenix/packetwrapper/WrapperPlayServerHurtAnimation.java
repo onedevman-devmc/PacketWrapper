@@ -8,8 +8,7 @@ public class WrapperPlayServerHurtAnimation extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.HURT_ANIMATION;
 
     public WrapperPlayServerHurtAnimation() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerHurtAnimation(PacketContainer packet) {

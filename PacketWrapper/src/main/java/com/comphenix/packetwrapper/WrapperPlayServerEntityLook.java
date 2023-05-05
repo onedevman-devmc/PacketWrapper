@@ -8,8 +8,7 @@ public class WrapperPlayServerEntityLook extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.ENTITY_LOOK;
 
     public WrapperPlayServerEntityLook() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerEntityLook(PacketContainer packet) {

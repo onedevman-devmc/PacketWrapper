@@ -8,8 +8,7 @@ public class WrapperPlayClientKeepAlive extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Client.KEEP_ALIVE;
 
     public WrapperPlayClientKeepAlive() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayClientKeepAlive(PacketContainer packet) {

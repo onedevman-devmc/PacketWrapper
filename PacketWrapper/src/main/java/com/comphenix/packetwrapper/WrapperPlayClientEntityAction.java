@@ -9,8 +9,7 @@ public class WrapperPlayClientEntityAction extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Client.ENTITY_ACTION;
 
     public WrapperPlayClientEntityAction() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayClientEntityAction(PacketContainer packet) {

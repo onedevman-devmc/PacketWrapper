@@ -9,8 +9,7 @@ public class WrapperPlayServerSetTitleText extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.SET_TITLE_TEXT;
 
     public WrapperPlayServerSetTitleText() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerSetTitleText(PacketContainer packet) {

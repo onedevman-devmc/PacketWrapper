@@ -8,8 +8,7 @@ public class WrapperPlayClientChatAck extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Client.CHAT_ACK;
 
     public WrapperPlayClientChatAck() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayClientChatAck(PacketContainer packet) {

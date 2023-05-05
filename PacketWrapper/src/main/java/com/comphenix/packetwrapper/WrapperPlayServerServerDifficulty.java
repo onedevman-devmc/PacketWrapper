@@ -9,8 +9,7 @@ public class WrapperPlayServerServerDifficulty extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.SERVER_DIFFICULTY;
 
     public WrapperPlayServerServerDifficulty() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerServerDifficulty(PacketContainer packet) {

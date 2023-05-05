@@ -9,8 +9,7 @@ public class WrapperLoginServerSuccess extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Login.Server.SUCCESS;
 
     public WrapperLoginServerSuccess() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperLoginServerSuccess(PacketContainer packet) {

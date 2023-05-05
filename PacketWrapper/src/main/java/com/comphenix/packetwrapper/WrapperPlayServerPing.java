@@ -8,8 +8,7 @@ public class WrapperPlayServerPing extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.PING;
 
     public WrapperPlayServerPing() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerPing(PacketContainer packet) {

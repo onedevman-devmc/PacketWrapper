@@ -8,8 +8,7 @@ public class WrapperPlayServerDeleteChatMessage extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.DELETE_CHAT_MESSAGE;
 
     public WrapperPlayServerDeleteChatMessage() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerDeleteChatMessage(PacketContainer packet) {

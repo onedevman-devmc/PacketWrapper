@@ -8,8 +8,7 @@ public class WrapperPlayServerSetTitlesAnimation extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.SET_TITLES_ANIMATION;
 
     public WrapperPlayServerSetTitlesAnimation() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerSetTitlesAnimation(PacketContainer packet) {

@@ -8,8 +8,7 @@ public class WrapperPlayServerAttachEntity extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.ATTACH_ENTITY;
 
     public WrapperPlayServerAttachEntity() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerAttachEntity(PacketContainer packet) {

@@ -12,8 +12,7 @@ public class WrapperPlayServerPlayerInfoRemove extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.PLAYER_INFO_REMOVE;
 
     public WrapperPlayServerPlayerInfoRemove() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerPlayerInfoRemove(PacketContainer packet) {

@@ -8,8 +8,7 @@ public class WrapperPlayServerSetBorderWarningDistance extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.SET_BORDER_WARNING_DISTANCE;
 
     public WrapperPlayServerSetBorderWarningDistance() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerSetBorderWarningDistance(PacketContainer packet) {

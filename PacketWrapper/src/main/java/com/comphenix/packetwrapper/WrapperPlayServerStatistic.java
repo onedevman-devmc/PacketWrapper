@@ -11,8 +11,7 @@ public class WrapperPlayServerStatistic extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.STATISTIC;
 
     public WrapperPlayServerStatistic() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerStatistic(PacketContainer packet) {

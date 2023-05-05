@@ -8,8 +8,7 @@ public class WrapperPlayClientEnchantItem extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Client.ENCHANT_ITEM;
 
     public WrapperPlayClientEnchantItem() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayClientEnchantItem(PacketContainer packet) {

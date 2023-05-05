@@ -8,8 +8,7 @@ public class WrapperLoginClientCustomPayload extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Login.Client.CUSTOM_PAYLOAD;
 
     public WrapperLoginClientCustomPayload() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperLoginClientCustomPayload(PacketContainer packet) {

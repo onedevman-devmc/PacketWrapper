@@ -11,8 +11,7 @@ public class WrapperPlayServerUpdateEnabledFeatures extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.UPDATE_ENABLED_FEATURES;
 
     public WrapperPlayServerUpdateEnabledFeatures() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerUpdateEnabledFeatures(PacketContainer packet) {

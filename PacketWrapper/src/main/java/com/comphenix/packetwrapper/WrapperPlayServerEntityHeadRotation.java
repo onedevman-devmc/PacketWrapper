@@ -8,8 +8,7 @@ public class WrapperPlayServerEntityHeadRotation extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.ENTITY_HEAD_ROTATION;
 
     public WrapperPlayServerEntityHeadRotation() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerEntityHeadRotation(PacketContainer packet) {

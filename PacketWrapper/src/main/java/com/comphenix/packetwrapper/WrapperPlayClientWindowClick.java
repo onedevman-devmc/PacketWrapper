@@ -12,8 +12,7 @@ public class WrapperPlayClientWindowClick extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Client.WINDOW_CLICK;
 
     public WrapperPlayClientWindowClick() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayClientWindowClick(PacketContainer packet) {

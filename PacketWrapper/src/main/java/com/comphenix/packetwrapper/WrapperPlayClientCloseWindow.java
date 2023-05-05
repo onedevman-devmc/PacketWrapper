@@ -8,8 +8,7 @@ public class WrapperPlayClientCloseWindow extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Client.CLOSE_WINDOW;
 
     public WrapperPlayClientCloseWindow() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayClientCloseWindow(PacketContainer packet) {

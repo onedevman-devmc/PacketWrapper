@@ -9,8 +9,7 @@ public class WrapperPlayServerEntityEffect extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.ENTITY_EFFECT;
 
     public WrapperPlayServerEntityEffect() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerEntityEffect(PacketContainer packet) {

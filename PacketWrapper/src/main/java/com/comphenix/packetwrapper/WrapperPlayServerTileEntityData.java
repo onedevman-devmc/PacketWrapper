@@ -10,8 +10,7 @@ public class WrapperPlayServerTileEntityData extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.TILE_ENTITY_DATA;
 
     public WrapperPlayServerTileEntityData() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerTileEntityData(PacketContainer packet) {

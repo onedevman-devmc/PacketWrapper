@@ -8,8 +8,7 @@ public class WrapperPlayServerRelEntityMove extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.REL_ENTITY_MOVE;
 
     public WrapperPlayServerRelEntityMove() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerRelEntityMove(PacketContainer packet) {

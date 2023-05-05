@@ -8,8 +8,7 @@ public class WrapperPlayServerUpdateTime extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.UPDATE_TIME;
 
     public WrapperPlayServerUpdateTime() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerUpdateTime(PacketContainer packet) {

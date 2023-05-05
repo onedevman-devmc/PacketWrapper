@@ -9,8 +9,7 @@ public class WrapperHandshakingClientSetProtocol extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Handshake.Client.SET_PROTOCOL;
 
     public WrapperHandshakingClientSetProtocol() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperHandshakingClientSetProtocol(PacketContainer packet) {

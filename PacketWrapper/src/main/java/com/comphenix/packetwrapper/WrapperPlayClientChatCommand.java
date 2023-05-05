@@ -10,8 +10,7 @@ public class WrapperPlayClientChatCommand extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Client.CHAT_COMMAND;
 
     public WrapperPlayClientChatCommand() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayClientChatCommand(PacketContainer packet) {

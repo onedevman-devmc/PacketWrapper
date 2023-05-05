@@ -11,8 +11,7 @@ public class WrapperPlayServerTags extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.TAGS;
 
     public WrapperPlayServerTags() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerTags(PacketContainer packet) {

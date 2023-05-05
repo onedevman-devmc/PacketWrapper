@@ -8,8 +8,7 @@ public class WrapperPlayClientGround extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Client.GROUND;
 
     public WrapperPlayClientGround() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayClientGround(PacketContainer packet) {

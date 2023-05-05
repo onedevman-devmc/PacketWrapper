@@ -10,8 +10,7 @@ public class WrapperPlayServerStopSound extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.STOP_SOUND;
 
     public WrapperPlayServerStopSound() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerStopSound(PacketContainer packet) {

@@ -8,8 +8,7 @@ public class WrapperPlayClientBeacon extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Client.BEACON;
 
     public WrapperPlayClientBeacon() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayClientBeacon(PacketContainer packet) {

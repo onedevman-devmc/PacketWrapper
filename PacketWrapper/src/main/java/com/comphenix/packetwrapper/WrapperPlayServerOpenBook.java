@@ -9,8 +9,7 @@ public class WrapperPlayServerOpenBook extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.OPEN_BOOK;
 
     public WrapperPlayServerOpenBook() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerOpenBook(PacketContainer packet) {

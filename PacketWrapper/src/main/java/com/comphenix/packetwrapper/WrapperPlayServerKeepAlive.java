@@ -8,8 +8,7 @@ public class WrapperPlayServerKeepAlive extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.KEEP_ALIVE;
 
     public WrapperPlayServerKeepAlive() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerKeepAlive(PacketContainer packet) {

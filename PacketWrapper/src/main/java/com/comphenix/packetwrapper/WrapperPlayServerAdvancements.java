@@ -13,8 +13,7 @@ public class WrapperPlayServerAdvancements extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.ADVANCEMENTS;
 
     public WrapperPlayServerAdvancements() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerAdvancements(PacketContainer packet) {

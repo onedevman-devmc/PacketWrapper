@@ -9,8 +9,7 @@ public class WrapperPlayClientTileNbtQuery extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Client.TILE_NBT_QUERY;
 
     public WrapperPlayClientTileNbtQuery() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayClientTileNbtQuery(PacketContainer packet) {

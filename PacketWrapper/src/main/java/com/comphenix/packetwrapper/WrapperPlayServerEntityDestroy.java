@@ -9,8 +9,7 @@ public class WrapperPlayServerEntityDestroy extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.ENTITY_DESTROY;
 
     public WrapperPlayServerEntityDestroy() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerEntityDestroy(PacketContainer packet) {

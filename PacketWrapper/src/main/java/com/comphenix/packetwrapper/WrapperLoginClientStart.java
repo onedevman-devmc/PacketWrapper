@@ -12,8 +12,7 @@ public class WrapperLoginClientStart extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Login.Client.START;
 
     public WrapperLoginClientStart() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperLoginClientStart(PacketContainer packet) {

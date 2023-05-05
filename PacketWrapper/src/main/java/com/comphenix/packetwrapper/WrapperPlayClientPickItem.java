@@ -8,8 +8,7 @@ public class WrapperPlayClientPickItem extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Client.PICK_ITEM;
 
     public WrapperPlayClientPickItem() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayClientPickItem(PacketContainer packet) {

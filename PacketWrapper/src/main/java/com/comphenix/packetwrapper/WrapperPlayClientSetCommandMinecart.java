@@ -8,8 +8,7 @@ public class WrapperPlayClientSetCommandMinecart extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Client.SET_COMMAND_MINECART;
 
     public WrapperPlayClientSetCommandMinecart() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayClientSetCommandMinecart(PacketContainer packet) {

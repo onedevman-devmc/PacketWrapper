@@ -13,8 +13,7 @@ public class WrapperPlayServerServerData extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.SERVER_DATA;
 
     public WrapperPlayServerServerData() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerServerData(PacketContainer packet) {

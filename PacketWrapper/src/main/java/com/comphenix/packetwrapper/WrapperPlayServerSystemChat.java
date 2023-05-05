@@ -8,8 +8,7 @@ public class WrapperPlayServerSystemChat extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.SYSTEM_CHAT;
 
     public WrapperPlayServerSystemChat() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerSystemChat(PacketContainer packet) {

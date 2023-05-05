@@ -8,8 +8,7 @@ public class WrapperPlayServerWindowData extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.WINDOW_DATA;
 
     public WrapperPlayServerWindowData() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerWindowData(PacketContainer packet) {

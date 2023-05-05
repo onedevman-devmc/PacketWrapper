@@ -9,8 +9,7 @@ public class WrapperPlayServerPlayerListHeaderFooter extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.PLAYER_LIST_HEADER_FOOTER;
 
     public WrapperPlayServerPlayerListHeaderFooter() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerPlayerListHeaderFooter(PacketContainer packet) {

@@ -8,8 +8,7 @@ public class WrapperPlayClientLook extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Client.LOOK;
 
     public WrapperPlayClientLook() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayClientLook(PacketContainer packet) {

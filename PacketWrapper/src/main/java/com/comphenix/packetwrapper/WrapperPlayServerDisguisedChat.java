@@ -9,8 +9,7 @@ public class WrapperPlayServerDisguisedChat extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.DISGUISED_CHAT;
 
     public WrapperPlayServerDisguisedChat() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerDisguisedChat(PacketContainer packet) {

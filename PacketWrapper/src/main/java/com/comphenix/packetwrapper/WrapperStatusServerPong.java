@@ -8,8 +8,7 @@ public class WrapperStatusServerPong extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Status.Server.PONG;
 
     public WrapperStatusServerPong() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperStatusServerPong(PacketContainer packet) {

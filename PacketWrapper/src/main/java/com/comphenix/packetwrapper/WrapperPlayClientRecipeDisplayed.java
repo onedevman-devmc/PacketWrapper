@@ -9,8 +9,7 @@ public class WrapperPlayClientRecipeDisplayed extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Client.RECIPE_DISPLAYED;
 
     public WrapperPlayClientRecipeDisplayed() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayClientRecipeDisplayed(PacketContainer packet) {

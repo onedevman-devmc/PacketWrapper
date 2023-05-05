@@ -10,8 +10,7 @@ public class WrapperPlayClientSetJigsaw extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Client.SET_JIGSAW;
 
     public WrapperPlayClientSetJigsaw() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayClientSetJigsaw(PacketContainer packet) {

@@ -9,8 +9,7 @@ public class WrapperPlayServerKickDisconnect extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.KICK_DISCONNECT;
 
     public WrapperPlayServerKickDisconnect() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerKickDisconnect(PacketContainer packet) {

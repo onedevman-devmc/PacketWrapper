@@ -8,8 +8,7 @@ public class WrapperPlayClientDifficultyLock extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Client.DIFFICULTY_LOCK;
 
     public WrapperPlayClientDifficultyLock() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayClientDifficultyLock(PacketContainer packet) {

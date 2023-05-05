@@ -9,8 +9,7 @@ public class WrapperPlayServerScoreboardObjective extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.SCOREBOARD_OBJECTIVE;
 
     public WrapperPlayServerScoreboardObjective() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerScoreboardObjective(PacketContainer packet) {

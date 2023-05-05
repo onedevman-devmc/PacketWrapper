@@ -8,8 +8,7 @@ public class WrapperPlayServerMount extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.MOUNT;
 
     public WrapperPlayServerMount() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerMount(PacketContainer packet) {

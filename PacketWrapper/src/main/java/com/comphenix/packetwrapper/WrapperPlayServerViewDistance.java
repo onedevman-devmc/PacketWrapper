@@ -8,8 +8,7 @@ public class WrapperPlayServerViewDistance extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.VIEW_DISTANCE;
 
     public WrapperPlayServerViewDistance() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerViewDistance(PacketContainer packet) {

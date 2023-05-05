@@ -12,8 +12,7 @@ public class WrapperPlayServerWindowItems extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.WINDOW_ITEMS;
 
     public WrapperPlayServerWindowItems() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerWindowItems(PacketContainer packet) {

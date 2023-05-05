@@ -9,8 +9,7 @@ public class WrapperPlayServerResourcePackSend extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.RESOURCE_PACK_SEND;
 
     public WrapperPlayServerResourcePackSend() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerResourcePackSend(PacketContainer packet) {

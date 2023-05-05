@@ -9,8 +9,7 @@ public class WrapperPlayServerAutoRecipe extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.AUTO_RECIPE;
 
     public WrapperPlayServerAutoRecipe() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerAutoRecipe(PacketContainer packet) {

@@ -11,8 +11,7 @@ public class WrapperPlayServerScoreboardTeam extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.SCOREBOARD_TEAM;
 
     public WrapperPlayServerScoreboardTeam() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerScoreboardTeam(PacketContainer packet) {

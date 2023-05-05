@@ -11,8 +11,7 @@ public class WrapperPlayServerNamedSoundEffect extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.NAMED_SOUND_EFFECT;
 
     public WrapperPlayServerNamedSoundEffect() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerNamedSoundEffect(PacketContainer packet) {

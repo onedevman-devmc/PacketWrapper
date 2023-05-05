@@ -8,8 +8,7 @@ public class WrapperPlayServerUnloadChunk extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.UNLOAD_CHUNK;
 
     public WrapperPlayServerUnloadChunk() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerUnloadChunk(PacketContainer packet) {

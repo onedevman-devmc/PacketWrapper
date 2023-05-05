@@ -8,8 +8,7 @@ public class WrapperPlayClientTeleportAccept extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Client.TELEPORT_ACCEPT;
 
     public WrapperPlayClientTeleportAccept() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayClientTeleportAccept(PacketContainer packet) {

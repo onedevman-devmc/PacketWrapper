@@ -10,8 +10,7 @@ public class WrapperPlayServerBoss extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.BOSS;
 
     public WrapperPlayServerBoss() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerBoss(PacketContainer packet) {

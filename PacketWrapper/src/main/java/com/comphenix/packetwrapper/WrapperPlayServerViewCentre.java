@@ -8,8 +8,7 @@ public class WrapperPlayServerViewCentre extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.VIEW_CENTRE;
 
     public WrapperPlayServerViewCentre() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerViewCentre(PacketContainer packet) {

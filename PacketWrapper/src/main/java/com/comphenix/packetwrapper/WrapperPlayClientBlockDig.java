@@ -11,8 +11,7 @@ public class WrapperPlayClientBlockDig extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Client.BLOCK_DIG;
 
     public WrapperPlayClientBlockDig() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayClientBlockDig(PacketContainer packet) {

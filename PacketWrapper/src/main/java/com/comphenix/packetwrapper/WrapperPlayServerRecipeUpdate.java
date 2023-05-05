@@ -8,8 +8,7 @@ public class WrapperPlayServerRecipeUpdate extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.RECIPE_UPDATE;
 
     public WrapperPlayServerRecipeUpdate() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerRecipeUpdate(PacketContainer packet) {

@@ -9,8 +9,7 @@ public class WrapperPlayClientSetCreativeSlot extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Client.SET_CREATIVE_SLOT;
 
     public WrapperPlayClientSetCreativeSlot() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayClientSetCreativeSlot(PacketContainer packet) {

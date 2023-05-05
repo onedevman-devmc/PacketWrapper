@@ -9,8 +9,7 @@ public class WrapperPlayServerLightUpdate extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.LIGHT_UPDATE;
 
     public WrapperPlayServerLightUpdate() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerLightUpdate(PacketContainer packet) {

@@ -14,8 +14,7 @@ public class WrapperPlayServerPlayerInfo extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.PLAYER_INFO;
 
     public WrapperPlayServerPlayerInfo() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerPlayerInfo(PacketContainer packet) {

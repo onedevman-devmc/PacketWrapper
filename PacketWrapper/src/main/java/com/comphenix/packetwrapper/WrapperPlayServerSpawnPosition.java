@@ -10,8 +10,7 @@ public class WrapperPlayServerSpawnPosition extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.SPAWN_POSITION;
 
     public WrapperPlayServerSpawnPosition() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerSpawnPosition(PacketContainer packet) {

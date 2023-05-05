@@ -8,8 +8,7 @@ public class WrapperPlayServerGameStateChange extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.GAME_STATE_CHANGE;
 
     public WrapperPlayServerGameStateChange() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerGameStateChange(PacketContainer packet) {

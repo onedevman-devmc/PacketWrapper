@@ -9,8 +9,7 @@ public class WrapperPlayClientSettings extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Client.SETTINGS;
 
     public WrapperPlayClientSettings() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayClientSettings(PacketContainer packet) {

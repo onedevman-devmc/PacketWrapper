@@ -9,8 +9,7 @@ public class WrapperStatusServerServerInfo extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Status.Server.SERVER_INFO;
 
     public WrapperStatusServerServerInfo() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperStatusServerServerInfo(PacketContainer packet) {

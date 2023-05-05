@@ -8,8 +8,7 @@ public class WrapperPlayServerInitializeBorder extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.INITIALIZE_BORDER;
 
     public WrapperPlayServerInitializeBorder() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerInitializeBorder(PacketContainer packet) {

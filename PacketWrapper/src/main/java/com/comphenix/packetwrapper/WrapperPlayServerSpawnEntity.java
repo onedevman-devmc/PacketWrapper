@@ -11,8 +11,7 @@ public class WrapperPlayServerSpawnEntity extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.SPAWN_ENTITY;
 
     public WrapperPlayServerSpawnEntity() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerSpawnEntity(PacketContainer packet) {

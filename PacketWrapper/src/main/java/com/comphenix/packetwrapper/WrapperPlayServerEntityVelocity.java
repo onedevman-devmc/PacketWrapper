@@ -8,8 +8,7 @@ public class WrapperPlayServerEntityVelocity extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.ENTITY_VELOCITY;
 
     public WrapperPlayServerEntityVelocity() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerEntityVelocity(PacketContainer packet) {

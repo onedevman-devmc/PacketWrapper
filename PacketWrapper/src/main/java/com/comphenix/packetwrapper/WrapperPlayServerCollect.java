@@ -8,8 +8,7 @@ public class WrapperPlayServerCollect extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.COLLECT;
 
     public WrapperPlayServerCollect() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerCollect(PacketContainer packet) {

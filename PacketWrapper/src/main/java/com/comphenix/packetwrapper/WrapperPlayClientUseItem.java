@@ -9,8 +9,7 @@ public class WrapperPlayClientUseItem extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Client.USE_ITEM;
 
     public WrapperPlayClientUseItem() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayClientUseItem(PacketContainer packet) {

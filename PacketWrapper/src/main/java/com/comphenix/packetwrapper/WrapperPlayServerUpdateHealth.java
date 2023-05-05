@@ -8,8 +8,7 @@ public class WrapperPlayServerUpdateHealth extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.UPDATE_HEALTH;
 
     public WrapperPlayServerUpdateHealth() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerUpdateHealth(PacketContainer packet) {

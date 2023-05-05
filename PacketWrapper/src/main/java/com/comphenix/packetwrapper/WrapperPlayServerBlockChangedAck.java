@@ -8,8 +8,7 @@ public class WrapperPlayServerBlockChangedAck extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.BLOCK_CHANGED_ACK;
 
     public WrapperPlayServerBlockChangedAck() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerBlockChangedAck(PacketContainer packet) {

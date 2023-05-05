@@ -8,8 +8,7 @@ public class WrapperLoginClientEncryptionBegin extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Login.Client.ENCRYPTION_BEGIN;
 
     public WrapperLoginClientEncryptionBegin() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperLoginClientEncryptionBegin(PacketContainer packet) {

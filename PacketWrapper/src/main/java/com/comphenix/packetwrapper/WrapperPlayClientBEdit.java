@@ -13,8 +13,7 @@ public class WrapperPlayClientBEdit extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Client.B_EDIT;
 
     public WrapperPlayClientBEdit() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayClientBEdit(PacketContainer packet) {

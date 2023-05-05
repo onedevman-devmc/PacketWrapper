@@ -9,8 +9,7 @@ public class WrapperPlayServerPlayerCombatKill extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.PLAYER_COMBAT_KILL;
 
     public WrapperPlayServerPlayerCombatKill() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerPlayerCombatKill(PacketContainer packet) {

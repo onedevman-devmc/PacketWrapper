@@ -8,8 +8,7 @@ public class WrapperPlayClientTrSel extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Client.TR_SEL;
 
     public WrapperPlayClientTrSel() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayClientTrSel(PacketContainer packet) {

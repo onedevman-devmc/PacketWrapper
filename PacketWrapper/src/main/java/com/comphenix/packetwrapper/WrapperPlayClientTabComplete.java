@@ -8,8 +8,7 @@ public class WrapperPlayClientTabComplete extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Client.TAB_COMPLETE;
 
     public WrapperPlayClientTabComplete() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayClientTabComplete(PacketContainer packet) {

@@ -8,8 +8,7 @@ public class WrapperPlayServerAbilities extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.ABILITIES;
 
     public WrapperPlayServerAbilities() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerAbilities(PacketContainer packet) {

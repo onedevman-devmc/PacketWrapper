@@ -8,8 +8,7 @@ public class WrapperPlayServerAnimation extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.ANIMATION;
 
     public WrapperPlayServerAnimation() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerAnimation(PacketContainer packet) {

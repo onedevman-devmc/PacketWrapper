@@ -9,8 +9,7 @@ public class WrapperPlayServerSetActionBarText extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.SET_ACTION_BAR_TEXT;
 
     public WrapperPlayServerSetActionBarText() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerSetActionBarText(PacketContainer packet) {

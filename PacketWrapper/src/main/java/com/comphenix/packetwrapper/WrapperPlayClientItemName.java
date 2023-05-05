@@ -8,8 +8,7 @@ public class WrapperPlayClientItemName extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Client.ITEM_NAME;
 
     public WrapperPlayClientItemName() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayClientItemName(PacketContainer packet) {

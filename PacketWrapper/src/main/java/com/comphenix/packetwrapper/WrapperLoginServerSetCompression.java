@@ -8,8 +8,7 @@ public class WrapperLoginServerSetCompression extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Login.Server.SET_COMPRESSION;
 
     public WrapperLoginServerSetCompression() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperLoginServerSetCompression(PacketContainer packet) {

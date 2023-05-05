@@ -10,8 +10,7 @@ public class WrapperPlayServerBlockChange extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.BLOCK_CHANGE;
 
     public WrapperPlayServerBlockChange() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerBlockChange(PacketContainer packet) {

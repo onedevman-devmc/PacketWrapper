@@ -8,8 +8,7 @@ public class WrapperPlayServerExperience extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.EXPERIENCE;
 
     public WrapperPlayServerExperience() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerExperience(PacketContainer packet) {

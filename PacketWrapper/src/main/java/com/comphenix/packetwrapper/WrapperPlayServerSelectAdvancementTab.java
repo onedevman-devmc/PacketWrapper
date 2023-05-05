@@ -9,8 +9,7 @@ public class WrapperPlayServerSelectAdvancementTab extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.SELECT_ADVANCEMENT_TAB;
 
     public WrapperPlayServerSelectAdvancementTab() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerSelectAdvancementTab(PacketContainer packet) {

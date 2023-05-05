@@ -10,8 +10,7 @@ public class WrapperPlayClientSpectate extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Client.SPECTATE;
 
     public WrapperPlayClientSpectate() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayClientSpectate(PacketContainer packet) {

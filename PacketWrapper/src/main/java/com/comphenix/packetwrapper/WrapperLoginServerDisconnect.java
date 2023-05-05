@@ -9,8 +9,7 @@ public class WrapperLoginServerDisconnect extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Login.Server.DISCONNECT;
 
     public WrapperLoginServerDisconnect() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperLoginServerDisconnect(PacketContainer packet) {

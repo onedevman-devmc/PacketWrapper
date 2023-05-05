@@ -14,8 +14,7 @@ public class WrapperPlayServerRespawn extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.RESPAWN;
 
     public WrapperPlayServerRespawn() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerRespawn(PacketContainer packet) {

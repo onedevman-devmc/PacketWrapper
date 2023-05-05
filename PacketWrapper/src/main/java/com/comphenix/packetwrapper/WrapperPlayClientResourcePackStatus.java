@@ -9,8 +9,7 @@ public class WrapperPlayClientResourcePackStatus extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Client.RESOURCE_PACK_STATUS;
 
     public WrapperPlayClientResourcePackStatus() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayClientResourcePackStatus(PacketContainer packet) {

@@ -8,8 +8,7 @@ public class WrapperPlayServerMap extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.MAP;
 
     public WrapperPlayServerMap() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerMap(PacketContainer packet) {

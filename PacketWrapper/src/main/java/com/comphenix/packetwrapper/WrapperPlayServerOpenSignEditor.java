@@ -9,8 +9,7 @@ public class WrapperPlayServerOpenSignEditor extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.OPEN_SIGN_EDITOR;
 
     public WrapperPlayServerOpenSignEditor() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerOpenSignEditor(PacketContainer packet) {

@@ -8,8 +8,7 @@ public class WrapperPlayClientPong extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Client.PONG;
 
     public WrapperPlayClientPong() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayClientPong(PacketContainer packet) {

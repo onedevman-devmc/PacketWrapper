@@ -9,8 +9,7 @@ public class WrapperPlayServerWorldEvent extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.WORLD_EVENT;
 
     public WrapperPlayServerWorldEvent() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerWorldEvent(PacketContainer packet) {

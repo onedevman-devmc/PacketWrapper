@@ -8,8 +8,7 @@ public class WrapperPlayServerEntityEquipment extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.ENTITY_EQUIPMENT;
 
     public WrapperPlayServerEntityEquipment() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerEntityEquipment(PacketContainer packet) {

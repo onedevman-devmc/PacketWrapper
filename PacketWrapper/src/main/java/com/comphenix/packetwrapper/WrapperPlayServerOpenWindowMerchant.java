@@ -8,8 +8,7 @@ public class WrapperPlayServerOpenWindowMerchant extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.OPEN_WINDOW_MERCHANT;
 
     public WrapperPlayServerOpenWindowMerchant() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerOpenWindowMerchant(PacketContainer packet) {

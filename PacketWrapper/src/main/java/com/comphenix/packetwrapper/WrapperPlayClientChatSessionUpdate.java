@@ -9,8 +9,7 @@ public class WrapperPlayClientChatSessionUpdate extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Client.CHAT_SESSION_UPDATE;
 
     public WrapperPlayClientChatSessionUpdate() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayClientChatSessionUpdate(PacketContainer packet) {

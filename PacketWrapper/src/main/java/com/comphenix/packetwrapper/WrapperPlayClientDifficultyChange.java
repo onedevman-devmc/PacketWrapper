@@ -9,8 +9,7 @@ public class WrapperPlayClientDifficultyChange extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Client.DIFFICULTY_CHANGE;
 
     public WrapperPlayClientDifficultyChange() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayClientDifficultyChange(PacketContainer packet) {

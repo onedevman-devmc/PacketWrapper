@@ -9,8 +9,7 @@ public class WrapperPlayClientClientCommand extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Client.CLIENT_COMMAND;
 
     public WrapperPlayClientClientCommand() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayClientClientCommand(PacketContainer packet) {

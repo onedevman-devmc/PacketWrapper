@@ -9,8 +9,7 @@ public class WrapperPlayServerSetSlot extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.SET_SLOT;
 
     public WrapperPlayServerSetSlot() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerSetSlot(PacketContainer packet) {

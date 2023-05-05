@@ -8,8 +8,7 @@ public class WrapperPlayServerPosition extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.POSITION;
 
     public WrapperPlayServerPosition() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerPosition(PacketContainer packet) {

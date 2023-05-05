@@ -11,8 +11,7 @@ public class WrapperPlayServerEntitySound extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.ENTITY_SOUND;
 
     public WrapperPlayServerEntitySound() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerEntitySound(PacketContainer packet) {

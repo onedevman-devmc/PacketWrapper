@@ -8,8 +8,7 @@ public class WrapperPlayClientBoatMove extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Client.BOAT_MOVE;
 
     public WrapperPlayClientBoatMove() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayClientBoatMove(PacketContainer packet) {

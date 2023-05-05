@@ -8,8 +8,7 @@ public class WrapperPlayServerHeldItemSlot extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.HELD_ITEM_SLOT;
 
     public WrapperPlayServerHeldItemSlot() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerHeldItemSlot(PacketContainer packet) {

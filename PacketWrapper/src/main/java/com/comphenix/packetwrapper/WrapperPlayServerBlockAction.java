@@ -10,8 +10,7 @@ public class WrapperPlayServerBlockAction extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.BLOCK_ACTION;
 
     public WrapperPlayServerBlockAction() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerBlockAction(PacketContainer packet) {

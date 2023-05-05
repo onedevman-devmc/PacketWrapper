@@ -11,8 +11,7 @@ public class WrapperPlayServerCustomChatCompletions extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.CUSTOM_CHAT_COMPLETIONS;
 
     public WrapperPlayServerCustomChatCompletions() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerCustomChatCompletions(PacketContainer packet) {

@@ -9,8 +9,7 @@ public class WrapperPlayClientJigsawGenerate extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Client.JIGSAW_GENERATE;
 
     public WrapperPlayClientJigsawGenerate() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayClientJigsawGenerate(PacketContainer packet) {

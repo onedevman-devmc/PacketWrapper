@@ -8,8 +8,7 @@ public class WrapperPlayServerPlayerCombatEnd extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.PLAYER_COMBAT_END;
 
     public WrapperPlayServerPlayerCombatEnd() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerPlayerCombatEnd(PacketContainer packet) {

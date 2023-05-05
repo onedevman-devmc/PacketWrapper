@@ -9,8 +9,7 @@ public class WrapperPlayServerScoreboardScore extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.SCOREBOARD_SCORE;
 
     public WrapperPlayServerScoreboardScore() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerScoreboardScore(PacketContainer packet) {

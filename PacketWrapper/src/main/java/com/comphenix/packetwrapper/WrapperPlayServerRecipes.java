@@ -11,8 +11,7 @@ public class WrapperPlayServerRecipes extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.RECIPES;
 
     public WrapperPlayServerRecipes() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerRecipes(PacketContainer packet) {

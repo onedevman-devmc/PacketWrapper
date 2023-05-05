@@ -8,8 +8,7 @@ public class WrapperPlayClientEntityNbtQuery extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Client.ENTITY_NBT_QUERY;
 
     public WrapperPlayClientEntityNbtQuery() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayClientEntityNbtQuery(PacketContainer packet) {

@@ -8,8 +8,7 @@ public class WrapperPlayServerOpenWindowHorse extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.OPEN_WINDOW_HORSE;
 
     public WrapperPlayServerOpenWindowHorse() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerOpenWindowHorse(PacketContainer packet) {

@@ -8,8 +8,7 @@ public class WrapperPlayServerSetBorderSize extends AbstractPacket {
     public static final PacketType TYPE = PacketType.Play.Server.SET_BORDER_SIZE;
 
     public WrapperPlayServerSetBorderSize() {
-        super(new PacketContainer(TYPE), TYPE);
-        handle.getModifier().writeDefaults();
+        super(TYPE);
     }
 
     public WrapperPlayServerSetBorderSize(PacketContainer packet) {
