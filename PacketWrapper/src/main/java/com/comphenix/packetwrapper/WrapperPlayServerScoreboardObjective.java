@@ -2,6 +2,7 @@ package com.comphenix.packetwrapper;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
+import com.comphenix.protocol.wrappers.EnumWrappers;
 import com.comphenix.protocol.wrappers.WrappedChatComponent;
 
 public class WrapperPlayServerScoreboardObjective extends AbstractPacket {
@@ -32,11 +33,11 @@ public class WrapperPlayServerScoreboardObjective extends AbstractPacket {
         this.handle.getChatComponents().write(0, value);
     }
 
-    public Object getRenderType() {
+    public EnumWrappers.ObjectiveRenderType getRenderType() {
         throw new UnsupportedOperationException(); // TODO: No modifier has been found for type class net.minecraft.world.scores.criteria.ObjectiveCriteria$RenderType
     }
 
-    public void setRenderType(Object value) {
+    public void setRenderType(EnumWrappers.ObjectiveRenderType value) {
         throw new UnsupportedOperationException();
     }
 

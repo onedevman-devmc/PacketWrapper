@@ -2,6 +2,7 @@ package com.comphenix.packetwrapper;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
+import com.comphenix.protocol.wrappers.WrappedPacketDataSerializer;
 
 public class WrapperLoginClientCustomPayload extends AbstractPacket {
 
@@ -23,12 +24,12 @@ public class WrapperLoginClientCustomPayload extends AbstractPacket {
         this.handle.getIntegers().write(0, value);
     }
 
-    public Object getData() {
-        throw new UnsupportedOperationException(); // TODO: No modifier has been found for type class net.minecraft.network.FriendlyByteBuf
+    public WrappedPacketDataSerializer getData() {
+        return this.handle.getPacketDataSerializers().read(0);
     }
 
-    public void setData(Object value) {
-        throw new UnsupportedOperationException(); // TODO: No modifier has been found for type class net.minecraft.network.FriendlyByteBuf
+    public void setData(WrappedPacketDataSerializer value) {
+        this.handle.getPacketDataSerializers().write(0, value);
     }
 
 

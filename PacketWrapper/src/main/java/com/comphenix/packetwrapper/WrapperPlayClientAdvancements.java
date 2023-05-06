@@ -2,6 +2,7 @@ package com.comphenix.packetwrapper;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
+import com.comphenix.protocol.wrappers.EnumWrappers;
 import com.comphenix.protocol.wrappers.MinecraftKey;
 
 public class WrapperPlayClientAdvancements extends AbstractPacket {
@@ -16,13 +17,14 @@ public class WrapperPlayClientAdvancements extends AbstractPacket {
         super(packet, TYPE);
     }
 
-    public Object getAction() {
-        throw new UnsupportedOperationException(); // TODO: No modifier has been found for type class net.minecraft.network.protocol.game.ServerboundSeenAdvancementsPacket$Action
+    public EnumWrappers.AdvancementAction getAction() {
+        return this.handle.getAdvancementActions().read(0);
     }
 
-    public void setAction(Object value) {
-        throw new UnsupportedOperationException();
+    public void setAction(EnumWrappers.AdvancementAction value) {
+        this.handle.getAdvancementActions().write(0, value);
     }
+
 
     public MinecraftKey getTab() {
         return this.handle.getMinecraftKeys().read(0);

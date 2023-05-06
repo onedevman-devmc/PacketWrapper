@@ -2,6 +2,11 @@ package com.comphenix.packetwrapper;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
+import com.comphenix.protocol.wrappers.BukkitConverters;
+import org.bukkit.potion.PotionEffect;
+
+import javax.annotation.Nullable;
+import java.util.Optional;
 
 public class WrapperPlayClientBeacon extends AbstractPacket {
 
@@ -15,20 +20,20 @@ public class WrapperPlayClientBeacon extends AbstractPacket {
         super(packet, TYPE);
     }
 
-    public Object getPrimary() {
-        throw new UnsupportedOperationException(); // TODO: No modifier has been found for type class java.util.Optional
+    public Optional<PotionEffect> getPrimary() {
+        return this.handle.getOptionals(BukkitConverters.getPotionEffectConverter()).read(0);
     }
 
-    public void setPrimary(Object value) {
-        this.handle.getModifier().write(0, value);
+    public void setPrimary(@Nullable PotionEffect value) {
+        this.handle.getOptionals(BukkitConverters.getPotionEffectConverter()).write(0, Optional.ofNullable(value));
     }
 
-    public Object getSecondary() {
-        throw new UnsupportedOperationException(); // TODO: No modifier has been found for type class java.util.Optional
+    public Optional<PotionEffect> getSecondary() {
+        return this.handle.getOptionals(BukkitConverters.getPotionEffectConverter()).read(1);
     }
 
-    public void setSecondary(Object value) {
-        this.handle.getModifier().write(1, value);
+    public void setSecondary(@Nullable PotionEffect value) {
+        this.handle.getOptionals(BukkitConverters.getPotionEffectConverter()).write(1, Optional.ofNullable(value));
     }
 
 

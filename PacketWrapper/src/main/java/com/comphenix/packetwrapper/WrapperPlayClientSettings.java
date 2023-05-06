@@ -2,6 +2,7 @@ package com.comphenix.packetwrapper;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
+import com.comphenix.protocol.wrappers.EnumWrappers;
 import com.comphenix.protocol.wrappers.EnumWrappers.ChatVisibility;
 
 public class WrapperPlayClientSettings extends AbstractPacket {
@@ -56,11 +57,11 @@ public class WrapperPlayClientSettings extends AbstractPacket {
         this.handle.getIntegers().write(1, value);
     }
 
-    public Object getMainHand() {
+    public EnumWrappers.HumanoidArm getMainHand() {
         throw new UnsupportedOperationException(); // TODO: No modifier has been found for type class net.minecraft.world.entity.HumanoidArm
     }
 
-    public void setMainHand(Object value) {
+    public void setMainHand(EnumWrappers.HumanoidArm value) {
         throw new UnsupportedOperationException();
     }
 

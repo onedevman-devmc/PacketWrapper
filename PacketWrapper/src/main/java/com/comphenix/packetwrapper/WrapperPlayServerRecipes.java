@@ -2,6 +2,7 @@ package com.comphenix.packetwrapper;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
+import com.comphenix.protocol.wrappers.EnumWrappers;
 import com.comphenix.protocol.wrappers.MinecraftKey;
 
 import java.util.List;
@@ -18,11 +19,11 @@ public class WrapperPlayServerRecipes extends AbstractPacket {
         super(packet, TYPE);
     }
 
-    public Object getState() {
+    public EnumWrappers.RecipeUpdateState getState() {
         throw new UnsupportedOperationException(); // TODO: No modifier has been found for type class net.minecraft.network.protocol.game.ClientboundRecipePacket$State
     }
 
-    public void setState(Object value) {
+    public void setState(EnumWrappers.RecipeUpdateState value) {
         throw new UnsupportedOperationException();
     }
 
@@ -34,7 +35,7 @@ public class WrapperPlayServerRecipes extends AbstractPacket {
         handle.getLists(com.comphenix.protocol.wrappers.MinecraftKey.getConverter()).write(0, value);
     }
 
-    public Object getToHighlight() {
+    public List<MinecraftKey> getToHighlight() {
         return handle.getLists(com.comphenix.protocol.wrappers.MinecraftKey.getConverter()).read(1);
     }
 

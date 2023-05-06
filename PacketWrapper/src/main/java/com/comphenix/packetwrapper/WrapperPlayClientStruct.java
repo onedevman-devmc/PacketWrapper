@@ -3,6 +3,7 @@ package com.comphenix.packetwrapper;
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.wrappers.BlockPosition;
+import com.comphenix.protocol.wrappers.EnumWrappers;
 
 public class WrapperPlayClientStruct extends AbstractPacket {
 
@@ -24,19 +25,19 @@ public class WrapperPlayClientStruct extends AbstractPacket {
         this.handle.getBlockPositionModifier().write(0, value);
     }
 
-    public Object getUpdateType() {
+    public EnumWrappers.StructureBlockUpdateType getUpdateType() {
         throw new UnsupportedOperationException(); // TODO: No modifier has been found for type class net.minecraft.world.level.block.entity.StructureBlockEntity$UpdateType
     }
 
-    public void setUpdateType(Object value) {
+    public void setUpdateType(EnumWrappers.StructureBlockUpdateType value) {
         throw new UnsupportedOperationException();
     }
 
-    public Object getMode() {
+    public EnumWrappers.StructureMode getMode() {
         throw new UnsupportedOperationException(); // TODO: No modifier has been found for type class net.minecraft.world.level.block.state.properties.StructureMode
     }
 
-    public void setMode(Object value) {
+    public void setMode(EnumWrappers.StructureMode value) {
         throw new UnsupportedOperationException();
     }
 

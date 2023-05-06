@@ -3,6 +3,7 @@ package com.comphenix.packetwrapper;
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.wrappers.Converters;
+import com.comphenix.protocol.wrappers.EnumWrappers;
 
 import java.util.List;
 
@@ -18,12 +19,12 @@ public class WrapperPlayServerCustomChatCompletions extends AbstractPacket {
         super(packet, TYPE);
     }
 
-    public Object getAction() {
-        return this.handle.getModifier().read(0); // TODO: No modifier has been found for type class net.minecraft.network.protocol.game.ClientboundCustomChatCompletionsPacket$Action
+    public EnumWrappers.CustomChatTabCompletionsAction getAction() {
+        throw new UnsupportedOperationException(); // TODO: No modifier has been found for type class net.minecraft.network.protocol.game.ClientboundCustomChatCompletionsPacket$Action
     }
 
-    public void setAction(Object value) {
-        this.handle.getModifier().write(0, value);
+    public void setAction(EnumWrappers.CustomChatTabCompletionsAction value) {
+        throw new UnsupportedOperationException(); // TODO
     }
 
     public List<String> getEntries() {

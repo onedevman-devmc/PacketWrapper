@@ -3,6 +3,7 @@ package com.comphenix.packetwrapper;
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.wrappers.BlockPosition;
+import com.comphenix.protocol.wrappers.EnumWrappers;
 import com.comphenix.protocol.wrappers.MinecraftKey;
 
 public class WrapperPlayClientSetJigsaw extends AbstractPacket {
@@ -57,11 +58,11 @@ public class WrapperPlayClientSetJigsaw extends AbstractPacket {
         this.handle.getStrings().write(0, value);
     }
 
-    public Object getJoint() {
+    public EnumWrappers.JointType getJoint() {
         throw new UnsupportedOperationException(); // TODO: No modifier has been found for type class net.minecraft.world.level.block.entity.JigsawBlockEntity$JointType
     }
 
-    public void setJoint(Object value) {
+    public void setJoint(EnumWrappers.JointType value) {
         throw new UnsupportedOperationException();
     }
 

@@ -3,6 +3,7 @@ package com.comphenix.packetwrapper;
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.wrappers.BlockPosition;
+import com.comphenix.protocol.wrappers.EnumWrappers;
 
 public class WrapperPlayClientSetCommandBlock extends AbstractPacket {
 
@@ -56,11 +57,11 @@ public class WrapperPlayClientSetCommandBlock extends AbstractPacket {
         this.handle.getBooleans().write(2, value);
     }
 
-    public Object getMode() {
+    public EnumWrappers.CommandBlockMode getMode() {
         throw new UnsupportedOperationException(); // TODO: No modifier has been found for type class net.minecraft.world.level.block.entity.CommandBlockEntity$Mode
     }
 
-    public void setMode(Object value) {
+    public void setMode(EnumWrappers.CommandBlockMode value) {
         throw new UnsupportedOperationException();
     }
 
