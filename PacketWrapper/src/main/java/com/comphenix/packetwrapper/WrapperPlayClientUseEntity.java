@@ -41,7 +41,7 @@ public class WrapperPlayClientUseEntity extends AbstractPacket {
      * @return 'action'
      */
     public InternalStructure getAction() {
-        return this.handle.getStructures().read(1); // TODO: No specific modifier has been found for type interface net.minecraft.network.protocol.game.ServerboundInteractPacket$Action Generic type: interface net.minecraft.network.protocol.game.ServerboundInteractPacket$Action
+        return this.handle.getStructures().read(0); // TODO: No specific modifier has been found for type interface net.minecraft.network.protocol.game.ServerboundInteractPacket$Action Generic type: interface net.minecraft.network.protocol.game.ServerboundInteractPacket$Action
     }
 
     /**
@@ -51,7 +51,7 @@ public class WrapperPlayClientUseEntity extends AbstractPacket {
      * @param value New value for field 'action'
      */
     public void setAction(InternalStructure value) {
-        this.handle.getStructures().write(1, value); // TODO: No specific modifier has been found for type interface net.minecraft.network.protocol.game.ServerboundInteractPacket$Action Generic type: interface net.minecraft.network.protocol.game.ServerboundInteractPacket$Action
+        this.handle.getStructures().write(0, value); // TODO: No specific modifier has been found for type interface net.minecraft.network.protocol.game.ServerboundInteractPacket$Action Generic type: interface net.minecraft.network.protocol.game.ServerboundInteractPacket$Action
     }
 
     /**

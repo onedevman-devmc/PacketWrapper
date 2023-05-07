@@ -1,5 +1,6 @@
 package com.comphenix.packetwrapper;
 
+import com.comphenix.packetwrapper.util.TestExclusion;
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.wrappers.WrappedServerPing;
@@ -30,6 +31,7 @@ public class WrapperStatusServerServerInfo extends AbstractPacket {
      *
      * @param value New value for field 'status'
      */
+    @TestExclusion
     public void setStatus(WrappedServerPing value) {
         this.handle.getServerPings().write(0, value);
     }

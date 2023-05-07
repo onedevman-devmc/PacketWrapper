@@ -7,6 +7,7 @@ import com.comphenix.protocol.wrappers.BukkitConverters;
 import com.comphenix.protocol.wrappers.Converters;
 
 import javax.annotation.Nullable;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
@@ -64,7 +65,7 @@ public class WrapperPlayServerScoreboardTeam extends AbstractPacket {
      *
      * @return 'players'
      */
-    public Collection<String> getPlayers() {
+    public List<String> getPlayers() {
         return this.handle.getModifier().withType(Collection.class, BukkitConverters.getListConverter(Converters.passthrough(String.class))).read(0);
     }
 

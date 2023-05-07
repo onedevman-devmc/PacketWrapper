@@ -56,7 +56,7 @@ public class WrapperPlayServerPlayerInfo extends AbstractPacket {
      * @param value New value for field 'entries'
      */
     public void setEntries(List<PlayerInfoData> value) {
-        this.handle.getPlayerInfoDataLists().write(0, value);
+        this.handle.getPlayerInfoDataLists().write(1, value);
     }
 
 }

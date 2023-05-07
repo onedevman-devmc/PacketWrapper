@@ -3,8 +3,16 @@ package com.comphenix.packetwrapper;
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.InternalStructure;
 import com.comphenix.protocol.events.PacketContainer;
+import com.comphenix.protocol.reflect.EquivalentConverter;
+import com.comphenix.protocol.reflect.StructureModifier;
+import com.comphenix.protocol.wrappers.BukkitConverters;
+import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import org.bukkit.inventory.ItemStack;
+import org.checkerframework.checker.units.qual.K;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class WrapperPlayClientWindowClick extends AbstractPacket {
@@ -134,8 +142,8 @@ public class WrapperPlayClientWindowClick extends AbstractPacket {
      *
      * @return 'changedSlots'
      */
-    public Map getChangedSlots() {
-        return this.handle.getStatisticMaps().read(0);
+    public Int2ObjectMap<ItemStack> getChangedSlots() {
+        return this.handle.getModifier().withType(Int2ObjectMap.class, getInt2ObjectMapConverter(BukkitConverters.getItemStackConverter())).read(0);
     }
 
     /**
@@ -143,8 +151,52 @@ public class WrapperPlayClientWindowClick extends AbstractPacket {
      *
      * @param value New value for field 'changedSlots'
      */
-    public void setChangedSlots(Map value) {
-        this.handle.getStatisticMaps().write(0, value);
+    public void setChangedSlots(Int2ObjectMap<ItemStack> value) {
+        this.handle.getModifier().withType(Int2ObjectMap.class, getInt2ObjectMapConverter(BukkitConverters.getItemStackConverter())).write(0, value);
+    }
+
+    public static <V> EquivalentConverter<Int2ObjectMap<V>> getInt2ObjectMapConverter(EquivalentConverter<V> valConverter) {
+        return new EquivalentConverter<Int2ObjectMap<V>>() {
+            @Override
+            public Int2ObjectMap<V> getSpecific(Object generic) {
+                Map<Object, Object> genericMap = (Map<Object, Object>) generic;
+                Int2ObjectMap<V> newMap;
+
+                try {
+                    newMap = (Int2ObjectMap<V>) genericMap.getClass().newInstance();
+                } catch (ReflectiveOperationException ex) {
+                    newMap = new Int2ObjectOpenHashMap<>();
+                }
+
+                for (Map.Entry<Object, Object> entry : genericMap.entrySet()) {
+                    newMap.put(((Integer) entry.getKey()).intValue(), valConverter.getSpecific(entry.getValue()));
+                }
+
+                return newMap;
+            }
+
+            @Override
+            public Object getGeneric(Int2ObjectMap<V> specific) {
+                Map<Object, Object> newMap;
+
+                try {
+                    newMap = specific.getClass().newInstance();
+                } catch (ReflectiveOperationException ex) {
+                    newMap = new HashMap<>();
+                }
+
+                for (Int2ObjectMap.Entry<V> entry : specific.int2ObjectEntrySet()) {
+                    newMap.put(entry.getIntKey(), valConverter.getGeneric(entry.getValue()));
+                }
+
+                return newMap;
+            }
+
+            @Override
+            public Class<Int2ObjectMap<V>> getSpecificType() {
+                return null;
+            }
+        };
     }
 
 }

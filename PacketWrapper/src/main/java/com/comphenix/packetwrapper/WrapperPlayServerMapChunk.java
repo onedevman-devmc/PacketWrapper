@@ -89,22 +89,4 @@ public class WrapperPlayServerMapChunk extends AbstractPacket {
         this.handle.getLightUpdateData().write(0, value);
     }
 
-    /**
-     * Retrieves the value of field 'ready'
-     *
-     * @return 'ready'
-     */
-    public boolean getReady() {
-        return this.handle.getBooleans().read(0);
-    }
-
-    /**
-     * Sets the value of field 'ready'
-     *
-     * @param value New value for field 'ready'
-     */
-    public void setReady(boolean value) {
-        this.handle.getBooleans().write(0, value);
-    }
-
 }

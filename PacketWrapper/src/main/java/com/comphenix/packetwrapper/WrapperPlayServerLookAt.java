@@ -95,7 +95,7 @@ public class WrapperPlayServerLookAt extends AbstractPacket {
      * @return 'fromAnchor'
      */
     public InternalStructure getFromAnchor() {
-        return this.handle.getStructures().read(4); // TODO: No specific modifier has been found for type class net.minecraft.commands.arguments.EntityAnchorArgument$Anchor Generic type: class net.minecraft.commands.arguments.EntityAnchorArgument$Anchor
+        return this.handle.getStructures().read(0); // TODO: No specific modifier has been found for type class net.minecraft.commands.arguments.EntityAnchorArgument$Anchor Generic type: class net.minecraft.commands.arguments.EntityAnchorArgument$Anchor
     }
 
     /**
@@ -105,7 +105,7 @@ public class WrapperPlayServerLookAt extends AbstractPacket {
      * @param value New value for field 'fromAnchor'
      */
     public void setFromAnchor(InternalStructure value) {
-        this.handle.getStructures().write(4, value); // TODO: No specific modifier has been found for type class net.minecraft.commands.arguments.EntityAnchorArgument$Anchor Generic type: class net.minecraft.commands.arguments.EntityAnchorArgument$Anchor
+        this.handle.getStructures().write(0, value); // TODO: No specific modifier has been found for type class net.minecraft.commands.arguments.EntityAnchorArgument$Anchor Generic type: class net.minecraft.commands.arguments.EntityAnchorArgument$Anchor
     }
 
     /**
@@ -115,7 +115,7 @@ public class WrapperPlayServerLookAt extends AbstractPacket {
      * @return 'toAnchor'
      */
     public InternalStructure getToAnchor() {
-        return this.handle.getStructures().read(5); // TODO: No specific modifier has been found for type class net.minecraft.commands.arguments.EntityAnchorArgument$Anchor Generic type: class net.minecraft.commands.arguments.EntityAnchorArgument$Anchor
+        return this.handle.getStructures().read(1); // TODO: No specific modifier has been found for type class net.minecraft.commands.arguments.EntityAnchorArgument$Anchor Generic type: class net.minecraft.commands.arguments.EntityAnchorArgument$Anchor
     }
 
     /**
@@ -125,7 +125,7 @@ public class WrapperPlayServerLookAt extends AbstractPacket {
      * @param value New value for field 'toAnchor'
      */
     public void setToAnchor(InternalStructure value) {
-        this.handle.getStructures().write(5, value); // TODO: No specific modifier has been found for type class net.minecraft.commands.arguments.EntityAnchorArgument$Anchor Generic type: class net.minecraft.commands.arguments.EntityAnchorArgument$Anchor
+        this.handle.getStructures().write(1, value); // TODO: No specific modifier has been found for type class net.minecraft.commands.arguments.EntityAnchorArgument$Anchor Generic type: class net.minecraft.commands.arguments.EntityAnchorArgument$Anchor
     }
 
     /**

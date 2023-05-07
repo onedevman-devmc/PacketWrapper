@@ -1,5 +1,6 @@
 package com.comphenix.packetwrapper;
 
+import com.comphenix.packetwrapper.util.TestExclusion;
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.wrappers.WrappedRemoteChatSessionData;
@@ -30,6 +31,7 @@ public class WrapperPlayClientChatSessionUpdate extends AbstractPacket {
      *
      * @param value New value for field 'chatSession'
      */
+    @TestExclusion
     public void setChatSession(WrappedRemoteChatSessionData value) {
         this.handle.getRemoteChatSessionData().write(0, value);
     }

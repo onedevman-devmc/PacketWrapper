@@ -1,5 +1,6 @@
 package com.comphenix.packetwrapper;
 
+import com.comphenix.packetwrapper.util.TestExclusion;
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.wrappers.MinecraftKey;
@@ -21,6 +22,7 @@ public class WrapperPlayServerSelectAdvancementTab extends AbstractPacket {
      *
      * @return 'tab'
      */
+    @TestExclusion
     public MinecraftKey getTab() {
         return this.handle.getMinecraftKeys().read(0);
     }
@@ -30,6 +32,7 @@ public class WrapperPlayServerSelectAdvancementTab extends AbstractPacket {
      *
      * @param value New value for field 'tab'
      */
+    @TestExclusion
     public void setTab(MinecraftKey value) {
         this.handle.getMinecraftKeys().write(0, value);
     }

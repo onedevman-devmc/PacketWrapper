@@ -23,9 +23,9 @@ public class WrapperPlayClientAdvancements extends AbstractPacket {
      *
      * @return 'action'
      */
-    public EnumWrappers.AdvancementAction getAction() {
+    /*public EnumWrappers.AdvancementAction getAction() {
         return this.handle.getAdvancementActions().read(0);
-    }
+    }*/
 
     /**
      * Sets the value of field 'action'
@@ -33,9 +33,9 @@ public class WrapperPlayClientAdvancements extends AbstractPacket {
      *
      * @param value New value for field 'action'
      */
-    public void setAction(EnumWrappers.AdvancementAction value) {
+    /*public void setAction(EnumWrappers.AdvancementAction value) {
         this.handle.getAdvancementActions().write(0, value);
-    }
+    }*/
 
     /**
      * Retrieves the value of field 'tab'

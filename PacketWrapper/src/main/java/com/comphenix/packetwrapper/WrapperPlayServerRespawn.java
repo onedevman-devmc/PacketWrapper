@@ -1,7 +1,9 @@
 package com.comphenix.packetwrapper;
 
 import com.comphenix.protocol.PacketType;
+import com.comphenix.protocol.events.InternalStructure;
 import com.comphenix.protocol.events.PacketContainer;
+import com.comphenix.protocol.wrappers.AutoWrapper;
 import com.comphenix.protocol.wrappers.EnumWrappers.NativeGameMode;
 import com.comphenix.protocol.wrappers.Vector3I;
 import org.bukkit.World;
@@ -26,8 +28,8 @@ public class WrapperPlayServerRespawn extends AbstractPacket {
      *
      * @return 'dimensionType'
      */
-    public World getDimensionType() {
-        return this.handle.getWorldKeys().read(0);
+    public InternalStructure getDimensionType() {
+        return this.handle.getStructures().read(0);
     }
 
     /**
@@ -35,8 +37,8 @@ public class WrapperPlayServerRespawn extends AbstractPacket {
      *
      * @param value New value for field 'dimensionType'
      */
-    public void setDimensionType(World value) {
-        this.handle.getWorldKeys().write(0, value);
+    public void setDimensionType(InternalStructure value) {
+        this.handle.getStructures().write(0, value);
     }
 
     /**
@@ -44,8 +46,8 @@ public class WrapperPlayServerRespawn extends AbstractPacket {
      *
      * @return 'dimension'
      */
-    public World getDimension() {
-        return this.handle.getWorldKeys().read(1);
+    public InternalStructure getDimension() {
+        return this.handle.getStructures().read(1);
     }
 
     /**
@@ -53,8 +55,8 @@ public class WrapperPlayServerRespawn extends AbstractPacket {
      *
      * @param value New value for field 'dimension'
      */
-    public void setDimension(World value) {
-        this.handle.getWorldKeys().write(1, value);
+    public void setDimension(InternalStructure value) {
+        this.handle.getStructures().write(1, value);
     }
 
     /**
