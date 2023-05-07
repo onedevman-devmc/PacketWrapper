@@ -16,13 +16,22 @@ public class WrapperLoginServerSuccess extends AbstractPacket {
         super(packet, TYPE);
     }
 
+    /**
+     * Retrieves the value of field 'gameProfile'
+     *
+     * @return 'gameProfile'
+     */
     public WrappedGameProfile getGameProfile() {
         return this.handle.getGameProfiles().read(0);
     }
 
+    /**
+     * Sets the value of field 'gameProfile'
+     *
+     * @param value New value for field 'gameProfile'
+     */
     public void setGameProfile(WrappedGameProfile value) {
         this.handle.getGameProfiles().write(0, value);
     }
-
 
 }

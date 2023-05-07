@@ -16,14 +16,22 @@ public class WrapperLoginServerDisconnect extends AbstractPacket {
         super(packet, TYPE);
     }
 
+    /**
+     * Retrieves the value of field 'reason'
+     *
+     * @return 'reason'
+     */
     public WrappedChatComponent getReason() {
         return this.handle.getChatComponents().read(0);
     }
 
+    /**
+     * Sets the value of field 'reason'
+     *
+     * @param value New value for field 'reason'
+     */
     public void setReason(WrappedChatComponent value) {
         this.handle.getChatComponents().write(0, value);
-
     }
-
 
 }

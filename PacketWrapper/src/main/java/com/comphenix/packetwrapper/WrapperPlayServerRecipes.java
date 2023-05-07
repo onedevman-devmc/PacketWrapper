@@ -1,6 +1,7 @@
 package com.comphenix.packetwrapper;
 
 import com.comphenix.protocol.PacketType;
+import com.comphenix.protocol.events.InternalStructure;
 import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.wrappers.EnumWrappers;
 import com.comphenix.protocol.wrappers.MinecraftKey;
@@ -19,37 +20,80 @@ public class WrapperPlayServerRecipes extends AbstractPacket {
         super(packet, TYPE);
     }
 
+    /**
+     * Retrieves the value of field 'state'
+     * ProtocolLib currently does not provide a wrapper for this type. Access to this type is only provided by an InternalStructure
+     *
+     * @return 'state'
+     */
     public EnumWrappers.RecipeUpdateState getState() {
-        throw new UnsupportedOperationException(); // TODO: No modifier has been found for type class net.minecraft.network.protocol.game.ClientboundRecipePacket$State
+        return this.handle.getRecipeUpdateStates().read(0);
     }
 
+    /**
+     * Sets the value of field 'state'
+     * ProtocolLib currently does not provide a wrapper for this type. Access to this type is only provided by an InternalStructure
+     *
+     * @param value New value for field 'state'
+     */
     public void setState(EnumWrappers.RecipeUpdateState value) {
-        throw new UnsupportedOperationException();
+        this.handle.getRecipeUpdateStates().write(0, value);
     }
 
+    /**
+     * Retrieves the value of field 'recipes'
+     *
+     * @return 'recipes'
+     */
     public List<MinecraftKey> getRecipes() {
-        return handle.getLists(com.comphenix.protocol.wrappers.MinecraftKey.getConverter()).read(0);
+        return this.handle.getLists(MinecraftKey.getConverter()).read(0);
     }
 
+    /**
+     * Sets the value of field 'recipes'
+     *
+     * @param value New value for field 'recipes'
+     */
     public void setRecipes(List<MinecraftKey> value) {
-        handle.getLists(com.comphenix.protocol.wrappers.MinecraftKey.getConverter()).write(0, value);
+        this.handle.getLists(MinecraftKey.getConverter()).write(0, value);
     }
 
+    /**
+     * Retrieves the value of field 'toHighlight'
+     *
+     * @return 'toHighlight'
+     */
     public List<MinecraftKey> getToHighlight() {
-        return handle.getLists(com.comphenix.protocol.wrappers.MinecraftKey.getConverter()).read(1);
+        return this.handle.getLists(MinecraftKey.getConverter()).read(1);
     }
 
+    /**
+     * Sets the value of field 'toHighlight'
+     *
+     * @param value New value for field 'toHighlight'
+     */
     public void setToHighlight(List<MinecraftKey> value) {
-        handle.getLists(com.comphenix.protocol.wrappers.MinecraftKey.getConverter()).write(1, value);
+        this.handle.getLists(MinecraftKey.getConverter()).write(1, value);
     }
 
-    public Object getBookSettings() {
-        throw new UnsupportedOperationException(); // TODO: No modifier has been found for type class net.minecraft.stats.RecipeBookSettings
+    /**
+     * Retrieves the value of field 'bookSettings'
+     * ProtocolLib currently does not provide a wrapper for this type. Access to this type is only provided by an InternalStructure
+     *
+     * @return 'bookSettings'
+     */
+    public InternalStructure getBookSettings() {
+        return this.handle.getStructures().read(3); // TODO: No specific modifier has been found for type class net.minecraft.stats.RecipeBookSettings Generic type: class net.minecraft.stats.RecipeBookSettings
     }
 
-    public void setBookSettings(Object value) {
-        throw new UnsupportedOperationException();
+    /**
+     * Sets the value of field 'bookSettings'
+     * ProtocolLib currently does not provide a wrapper for this type. Access to this type is only provided by an InternalStructure
+     *
+     * @param value New value for field 'bookSettings'
+     */
+    public void setBookSettings(InternalStructure value) {
+        this.handle.getStructures().write(3, value); // TODO: No specific modifier has been found for type class net.minecraft.stats.RecipeBookSettings Generic type: class net.minecraft.stats.RecipeBookSettings
     }
-
 
 }

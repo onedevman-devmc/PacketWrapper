@@ -1,7 +1,10 @@
 package com.comphenix.packetwrapper;
 
 import com.comphenix.protocol.PacketType;
+import com.comphenix.protocol.events.InternalStructure;
 import com.comphenix.protocol.events.PacketContainer;
+
+import java.util.List;
 
 public class WrapperPlayServerChunksBiomes extends AbstractPacket {
 
@@ -15,14 +18,22 @@ public class WrapperPlayServerChunksBiomes extends AbstractPacket {
         super(packet, TYPE);
     }
 
-    public Object getChunkBiomeData() {
-        throw new UnsupportedOperationException(); // TODO
+    /**
+     * Retrieves the value of field 'chunkBiomeData'
+     *
+     * @return 'chunkBiomeData'
+     */
+    public List<InternalStructure> getChunkBiomeData() {
+        return this.handle.getLists(InternalStructure.getConverter()).read(0); // TODO: Multiple modifier have been found for type interface java.util.List Generic type: [class net.minecraft.network.protocol.game.ClientboundChunksBiomesPacket$ChunkBiomeData]
     }
 
-    public void setChunkBiomeData(Object value) {
-        throw new UnsupportedOperationException(); // TODO
-
+    /**
+     * Sets the value of field 'chunkBiomeData'
+     *
+     * @param value New value for field 'chunkBiomeData'
+     */
+    public void setChunkBiomeData(List<InternalStructure> value) {
+        this.handle.getLists(InternalStructure.getConverter()).write(0, value);
     }
-
 
 }

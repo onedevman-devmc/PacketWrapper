@@ -20,29 +20,58 @@ public class WrapperPlayClientBEdit extends AbstractPacket {
         super(packet, TYPE);
     }
 
+    /**
+     * Retrieves the value of field 'slot'
+     *
+     * @return 'slot'
+     */
     public int getSlot() {
         return this.handle.getIntegers().read(0);
     }
 
+    /**
+     * Sets the value of field 'slot'
+     *
+     * @param value New value for field 'slot'
+     */
     public void setSlot(int value) {
         this.handle.getIntegers().write(0, value);
     }
 
+    /**
+     * Retrieves the value of field 'pages'
+     *
+     * @return 'pages'
+     */
     public List<String> getPages() {
         return this.handle.getLists(Converters.passthrough(String.class)).read(0);
     }
 
+    /**
+     * Sets the value of field 'pages'
+     *
+     * @param value New value for field 'pages'
+     */
     public void setPages(List<String> value) {
         this.handle.getLists(Converters.passthrough(String.class)).write(0, value);
     }
 
+    /**
+     * Retrieves the value of field 'title'
+     *
+     * @return 'title'
+     */
     public Optional<String> getTitle() {
         return this.handle.getOptionals(Converters.passthrough(String.class)).read(0);
     }
 
+    /**
+     * Sets the value of field 'title'
+     *
+     * @param value New value for field 'title'
+     */
     public void setTitle(@Nullable String value) {
         this.handle.getOptionals(Converters.passthrough(String.class)).write(0, Optional.ofNullable(value));
     }
-
 
 }

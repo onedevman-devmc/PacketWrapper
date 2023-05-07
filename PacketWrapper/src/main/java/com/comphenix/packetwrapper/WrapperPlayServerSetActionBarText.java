@@ -1,6 +1,7 @@
 package com.comphenix.packetwrapper;
 
 import com.comphenix.protocol.PacketType;
+import com.comphenix.protocol.events.InternalStructure;
 import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.wrappers.WrappedChatComponent;
 
@@ -16,30 +17,62 @@ public class WrapperPlayServerSetActionBarText extends AbstractPacket {
         super(packet, TYPE);
     }
 
+    /**
+     * Retrieves the value of field 'text'
+     *
+     * @return 'text'
+     */
     public WrappedChatComponent getText() {
         return this.handle.getChatComponents().read(0);
     }
 
+    /**
+     * Sets the value of field 'text'
+     *
+     * @param value New value for field 'text'
+     */
     public void setText(WrappedChatComponent value) {
         this.handle.getChatComponents().write(0, value);
     }
 
-    /*
-    public Object getAdventure$text() {
-        return this.handle.getModifier().read(0); // TODO: No modifier has been found for type interface net.kyori.adventure.text.Component
+    /**
+     * Retrieves the value of field 'adventure$text'
+     * ProtocolLib currently does not provide a wrapper for this type. Access to this type is only provided by an InternalStructure
+     *
+     * @return 'adventure$text'
+     */
+    public InternalStructure getAdventure$text() {
+        return this.handle.getStructures().read(1); // TODO: No specific modifier has been found for type interface net.kyori.adventure.text.Component Generic type: interface net.kyori.adventure.text.Component
     }
 
-    public void setAdventure$text(Object value) {
-        this.handle.getModifier().write(0, value);
+    /**
+     * Sets the value of field 'adventure$text'
+     * ProtocolLib currently does not provide a wrapper for this type. Access to this type is only provided by an InternalStructure
+     *
+     * @param value New value for field 'adventure$text'
+     */
+    public void setAdventure$text(InternalStructure value) {
+        this.handle.getStructures().write(1, value); // TODO: No specific modifier has been found for type interface net.kyori.adventure.text.Component Generic type: interface net.kyori.adventure.text.Component
     }
 
-    public Object getComponents() {
-        return this.handle.getModifier().read(1); // TODO: No modifier has been found for type class [Lnet.md_5.bungee.api.chat.BaseComponent;
+    /**
+     * Retrieves the value of field 'components'
+     * ProtocolLib currently does not provide a wrapper for this type. Access to this type is only provided by an InternalStructure
+     *
+     * @return 'components'
+     */
+    public InternalStructure getComponents() {
+        return this.handle.getStructures().read(2); // TODO: No specific modifier has been found for type class [Lnet.md_5.bungee.api.chat.BaseComponent; Generic type: class [Lnet.md_5.bungee.api.chat.BaseComponent;
     }
 
-    public void setComponents(Object value) {
-        this.handle.getModifier().write(1, value);
+    /**
+     * Sets the value of field 'components'
+     * ProtocolLib currently does not provide a wrapper for this type. Access to this type is only provided by an InternalStructure
+     *
+     * @param value New value for field 'components'
+     */
+    public void setComponents(InternalStructure value) {
+        this.handle.getStructures().write(2, value); // TODO: No specific modifier has been found for type class [Lnet.md_5.bungee.api.chat.BaseComponent; Generic type: class [Lnet.md_5.bungee.api.chat.BaseComponent;
     }
 
-*/
 }

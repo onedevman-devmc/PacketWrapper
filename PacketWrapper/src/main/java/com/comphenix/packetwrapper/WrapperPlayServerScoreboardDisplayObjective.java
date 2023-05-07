@@ -15,21 +15,40 @@ public class WrapperPlayServerScoreboardDisplayObjective extends AbstractPacket 
         super(packet, TYPE);
     }
 
+    /**
+     * Retrieves the value of field 'slot'
+     *
+     * @return 'slot'
+     */
     public int getSlot() {
         return this.handle.getIntegers().read(0);
     }
 
+    /**
+     * Sets the value of field 'slot'
+     *
+     * @param value New value for field 'slot'
+     */
     public void setSlot(int value) {
         this.handle.getIntegers().write(0, value);
     }
 
+    /**
+     * Retrieves the value of field 'objectiveName'
+     *
+     * @return 'objectiveName'
+     */
     public String getObjectiveName() {
         return this.handle.getStrings().read(0);
     }
 
+    /**
+     * Sets the value of field 'objectiveName'
+     *
+     * @param value New value for field 'objectiveName'
+     */
     public void setObjectiveName(String value) {
         this.handle.getStrings().write(0, value);
     }
-
 
 }

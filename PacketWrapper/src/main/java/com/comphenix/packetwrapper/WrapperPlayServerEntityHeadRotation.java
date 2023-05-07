@@ -15,21 +15,40 @@ public class WrapperPlayServerEntityHeadRotation extends AbstractPacket {
         super(packet, TYPE);
     }
 
+    /**
+     * Retrieves the value of field 'entityId'
+     *
+     * @return 'entityId'
+     */
     public int getEntityId() {
         return this.handle.getIntegers().read(0);
     }
 
+    /**
+     * Sets the value of field 'entityId'
+     *
+     * @param value New value for field 'entityId'
+     */
     public void setEntityId(int value) {
         this.handle.getIntegers().write(0, value);
     }
 
+    /**
+     * Retrieves the value of field 'yHeadRot'
+     *
+     * @return 'yHeadRot'
+     */
     public byte getYHeadRot() {
         return this.handle.getBytes().read(0);
     }
 
+    /**
+     * Sets the value of field 'yHeadRot'
+     *
+     * @param value New value for field 'yHeadRot'
+     */
     public void setYHeadRot(byte value) {
         this.handle.getBytes().write(0, value);
     }
-
 
 }

@@ -15,21 +15,40 @@ public class WrapperPlayServerAttachEntity extends AbstractPacket {
         super(packet, TYPE);
     }
 
+    /**
+     * Retrieves the value of field 'sourceId'
+     *
+     * @return 'sourceId'
+     */
     public int getSourceId() {
         return this.handle.getIntegers().read(0);
     }
 
+    /**
+     * Sets the value of field 'sourceId'
+     *
+     * @param value New value for field 'sourceId'
+     */
     public void setSourceId(int value) {
         this.handle.getIntegers().write(0, value);
     }
 
+    /**
+     * Retrieves the value of field 'destId'
+     *
+     * @return 'destId'
+     */
     public int getDestId() {
         return this.handle.getIntegers().read(1);
     }
 
+    /**
+     * Sets the value of field 'destId'
+     *
+     * @param value New value for field 'destId'
+     */
     public void setDestId(int value) {
         this.handle.getIntegers().write(1, value);
     }
-
 
 }

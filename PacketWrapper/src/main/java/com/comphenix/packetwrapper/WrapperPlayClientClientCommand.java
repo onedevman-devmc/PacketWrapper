@@ -16,13 +16,22 @@ public class WrapperPlayClientClientCommand extends AbstractPacket {
         super(packet, TYPE);
     }
 
+    /**
+     * Retrieves the value of field 'action'
+     *
+     * @return 'action'
+     */
     public ClientCommand getAction() {
         return this.handle.getClientCommands().read(0);
     }
 
+    /**
+     * Sets the value of field 'action'
+     *
+     * @param value New value for field 'action'
+     */
     public void setAction(ClientCommand value) {
         this.handle.getClientCommands().write(0, value);
     }
-
 
 }

@@ -16,13 +16,22 @@ public class WrapperPlayClientChatSessionUpdate extends AbstractPacket {
         super(packet, TYPE);
     }
 
+    /**
+     * Retrieves the value of field 'chatSession'
+     *
+     * @return 'chatSession'
+     */
     public WrappedRemoteChatSessionData getChatSession() {
         return this.handle.getRemoteChatSessionData().read(0);
     }
 
+    /**
+     * Sets the value of field 'chatSession'
+     *
+     * @param value New value for field 'chatSession'
+     */
     public void setChatSession(WrappedRemoteChatSessionData value) {
         this.handle.getRemoteChatSessionData().write(0, value);
     }
-
 
 }

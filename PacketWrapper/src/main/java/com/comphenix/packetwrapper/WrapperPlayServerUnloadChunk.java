@@ -15,21 +15,40 @@ public class WrapperPlayServerUnloadChunk extends AbstractPacket {
         super(packet, TYPE);
     }
 
+    /**
+     * Retrieves the value of field 'x'
+     *
+     * @return 'x'
+     */
     public int getX() {
         return this.handle.getIntegers().read(0);
     }
 
+    /**
+     * Sets the value of field 'x'
+     *
+     * @param value New value for field 'x'
+     */
     public void setX(int value) {
         this.handle.getIntegers().write(0, value);
     }
 
+    /**
+     * Retrieves the value of field 'z'
+     *
+     * @return 'z'
+     */
     public int getZ() {
         return this.handle.getIntegers().read(1);
     }
 
+    /**
+     * Sets the value of field 'z'
+     *
+     * @param value New value for field 'z'
+     */
     public void setZ(int value) {
         this.handle.getIntegers().write(1, value);
     }
-
 
 }

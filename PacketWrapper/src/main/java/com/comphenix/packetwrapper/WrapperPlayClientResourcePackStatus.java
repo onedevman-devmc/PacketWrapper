@@ -16,13 +16,22 @@ public class WrapperPlayClientResourcePackStatus extends AbstractPacket {
         super(packet, TYPE);
     }
 
+    /**
+     * Retrieves the value of field 'action'
+     *
+     * @return 'action'
+     */
     public ResourcePackStatus getAction() {
         return this.handle.getResourcePackStatus().read(0);
     }
 
+    /**
+     * Sets the value of field 'action'
+     *
+     * @param value New value for field 'action'
+     */
     public void setAction(ResourcePackStatus value) {
         this.handle.getResourcePackStatus().write(0, value);
     }
-
 
 }

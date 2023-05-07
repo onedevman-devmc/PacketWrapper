@@ -16,13 +16,22 @@ public class WrapperPlayClientDifficultyChange extends AbstractPacket {
         super(packet, TYPE);
     }
 
+    /**
+     * Retrieves the value of field 'difficulty'
+     *
+     * @return 'difficulty'
+     */
     public Difficulty getDifficulty() {
         return this.handle.getDifficulties().read(0);
     }
 
+    /**
+     * Sets the value of field 'difficulty'
+     *
+     * @param value New value for field 'difficulty'
+     */
     public void setDifficulty(Difficulty value) {
         this.handle.getDifficulties().write(0, value);
     }
-
 
 }

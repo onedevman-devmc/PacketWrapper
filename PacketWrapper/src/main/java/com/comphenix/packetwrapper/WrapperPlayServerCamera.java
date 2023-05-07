@@ -15,13 +15,22 @@ public class WrapperPlayServerCamera extends AbstractPacket {
         super(packet, TYPE);
     }
 
+    /**
+     * Retrieves the value of field 'cameraId'
+     *
+     * @return 'cameraId'
+     */
     public int getCameraId() {
         return this.handle.getIntegers().read(0);
     }
 
+    /**
+     * Sets the value of field 'cameraId'
+     *
+     * @param value New value for field 'cameraId'
+     */
     public void setCameraId(int value) {
         this.handle.getIntegers().write(0, value);
     }
-
 
 }

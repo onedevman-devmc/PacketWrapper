@@ -15,13 +15,22 @@ public class WrapperPlayClientDifficultyLock extends AbstractPacket {
         super(packet, TYPE);
     }
 
+    /**
+     * Retrieves the value of field 'locked'
+     *
+     * @return 'locked'
+     */
     public boolean getLocked() {
         return this.handle.getBooleans().read(0);
     }
 
+    /**
+     * Sets the value of field 'locked'
+     *
+     * @param value New value for field 'locked'
+     */
     public void setLocked(boolean value) {
         this.handle.getBooleans().write(0, value);
     }
-
 
 }

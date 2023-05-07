@@ -15,13 +15,22 @@ public class WrapperPlayServerSetBorderSize extends AbstractPacket {
         super(packet, TYPE);
     }
 
+    /**
+     * Retrieves the value of field 'size'
+     *
+     * @return 'size'
+     */
     public double getSize() {
         return this.handle.getDoubles().read(0);
     }
 
+    /**
+     * Sets the value of field 'size'
+     *
+     * @param value New value for field 'size'
+     */
     public void setSize(double value) {
         this.handle.getDoubles().write(0, value);
     }
-
 
 }

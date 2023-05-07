@@ -15,29 +15,58 @@ public class WrapperPlayServerOpenWindowHorse extends AbstractPacket {
         super(packet, TYPE);
     }
 
+    /**
+     * Retrieves the value of field 'containerId'
+     *
+     * @return 'containerId'
+     */
     public int getContainerId() {
         return this.handle.getIntegers().read(0);
     }
 
+    /**
+     * Sets the value of field 'containerId'
+     *
+     * @param value New value for field 'containerId'
+     */
     public void setContainerId(int value) {
         this.handle.getIntegers().write(0, value);
     }
 
+    /**
+     * Retrieves the value of field 'size'
+     *
+     * @return 'size'
+     */
     public int getSize() {
         return this.handle.getIntegers().read(1);
     }
 
+    /**
+     * Sets the value of field 'size'
+     *
+     * @param value New value for field 'size'
+     */
     public void setSize(int value) {
         this.handle.getIntegers().write(1, value);
     }
 
+    /**
+     * Retrieves the value of field 'entityId'
+     *
+     * @return 'entityId'
+     */
     public int getEntityId() {
         return this.handle.getIntegers().read(2);
     }
 
+    /**
+     * Sets the value of field 'entityId'
+     *
+     * @param value New value for field 'entityId'
+     */
     public void setEntityId(int value) {
         this.handle.getIntegers().write(2, value);
     }
-
 
 }

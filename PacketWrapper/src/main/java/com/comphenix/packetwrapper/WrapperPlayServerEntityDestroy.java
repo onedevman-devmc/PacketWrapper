@@ -2,6 +2,7 @@ package com.comphenix.packetwrapper;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
+import com.comphenix.protocol.wrappers.Converters;
 import it.unimi.dsi.fastutil.ints.IntList;
 
 public class WrapperPlayServerEntityDestroy extends AbstractPacket {
@@ -16,12 +17,22 @@ public class WrapperPlayServerEntityDestroy extends AbstractPacket {
         super(packet, TYPE);
     }
 
+    /**
+     * Retrieves the value of field 'entityIds'
+     *
+     * @return 'entityIds'
+     */
     public IntList getEntityIds() {
-        return this.handle.getSpecificModifier(IntList.class).read(0);
+        return this.handle.getModifier().withType(IntList.class, Converters.passthrough(IntList.class)).read(0);
     }
 
+    /**
+     * Sets the value of field 'entityIds'
+     *
+     * @param value New value for field 'entityIds'
+     */
     public void setEntityIds(IntList value) {
-        this.handle.getSpecificModifier(IntList.class).write(0, value);
+        this.handle.getModifier().withType(IntList.class, Converters.passthrough(IntList.class)).write(0, value);
     }
 
 }

@@ -16,13 +16,22 @@ public class WrapperPlayServerSelectAdvancementTab extends AbstractPacket {
         super(packet, TYPE);
     }
 
+    /**
+     * Retrieves the value of field 'tab'
+     *
+     * @return 'tab'
+     */
     public MinecraftKey getTab() {
         return this.handle.getMinecraftKeys().read(0);
     }
 
+    /**
+     * Sets the value of field 'tab'
+     *
+     * @param value New value for field 'tab'
+     */
     public void setTab(MinecraftKey value) {
         this.handle.getMinecraftKeys().write(0, value);
     }
-
 
 }

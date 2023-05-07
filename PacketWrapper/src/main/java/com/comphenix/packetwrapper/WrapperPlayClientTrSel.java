@@ -15,13 +15,22 @@ public class WrapperPlayClientTrSel extends AbstractPacket {
         super(packet, TYPE);
     }
 
+    /**
+     * Retrieves the value of field 'item'
+     *
+     * @return 'item'
+     */
     public int getItem() {
         return this.handle.getIntegers().read(0);
     }
 
+    /**
+     * Sets the value of field 'item'
+     *
+     * @param value New value for field 'item'
+     */
     public void setItem(int value) {
         this.handle.getIntegers().write(0, value);
     }
-
 
 }

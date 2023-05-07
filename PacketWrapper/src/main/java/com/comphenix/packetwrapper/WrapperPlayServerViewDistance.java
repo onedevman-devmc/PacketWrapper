@@ -15,13 +15,22 @@ public class WrapperPlayServerViewDistance extends AbstractPacket {
         super(packet, TYPE);
     }
 
+    /**
+     * Retrieves the value of field 'radius'
+     *
+     * @return 'radius'
+     */
     public int getRadius() {
         return this.handle.getIntegers().read(0);
     }
 
+    /**
+     * Sets the value of field 'radius'
+     *
+     * @param value New value for field 'radius'
+     */
     public void setRadius(int value) {
         this.handle.getIntegers().write(0, value);
     }
-
 
 }

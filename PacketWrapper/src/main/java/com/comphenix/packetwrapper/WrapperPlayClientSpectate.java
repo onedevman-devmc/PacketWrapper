@@ -17,13 +17,22 @@ public class WrapperPlayClientSpectate extends AbstractPacket {
         super(packet, TYPE);
     }
 
+    /**
+     * Retrieves the value of field 'uuid'
+     *
+     * @return 'uuid'
+     */
     public UUID getUuid() {
         return this.handle.getUUIDs().read(0);
     }
 
+    /**
+     * Sets the value of field 'uuid'
+     *
+     * @param value New value for field 'uuid'
+     */
     public void setUuid(UUID value) {
         this.handle.getUUIDs().write(0, value);
     }
-
 
 }

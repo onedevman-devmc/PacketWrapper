@@ -15,13 +15,22 @@ public class WrapperPlayClientAbilities extends AbstractPacket {
         super(packet, TYPE);
     }
 
+    /**
+     * Retrieves the value of field 'isFlying'
+     *
+     * @return 'isFlying'
+     */
     public boolean getIsFlying() {
         return this.handle.getBooleans().read(0);
     }
 
+    /**
+     * Sets the value of field 'isFlying'
+     *
+     * @param value New value for field 'isFlying'
+     */
     public void setIsFlying(boolean value) {
         this.handle.getBooleans().write(0, value);
     }
-
 
 }

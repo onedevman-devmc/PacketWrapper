@@ -1,7 +1,10 @@
 package com.comphenix.packetwrapper;
 
 import com.comphenix.protocol.PacketType;
+import com.comphenix.protocol.events.InternalStructure;
 import com.comphenix.protocol.events.PacketContainer;
+
+import java.util.List;
 
 public class WrapperPlayServerRecipeUpdate extends AbstractPacket {
 
@@ -15,15 +18,22 @@ public class WrapperPlayServerRecipeUpdate extends AbstractPacket {
         super(packet, TYPE);
     }
 
-    public Object getRecipes() {
-        // TODO: Multiple candidates found for raw type + interface java.util.List here:
-        // Generic field type: [net.minecraft.world.item.crafting.Recipe<?>]
-        throw new UnsupportedOperationException();
+    /**
+     * Retrieves the value of field 'recipes'
+     *
+     * @return 'recipes'
+     */
+    public List<InternalStructure> getRecipes() {
+        return this.handle.getLists(InternalStructure.getConverter()).read(0);
     }
 
-    public void setRecipes(Object value) {
-        throw new UnsupportedOperationException();
+    /**
+     * Sets the value of field 'recipes'
+     *
+     * @param value New value for field 'recipes'
+     */
+    public void setRecipes(List<InternalStructure> value) {
+        this.handle.getLists(InternalStructure.getConverter()).write(0, value);
     }
-
 
 }

@@ -16,13 +16,22 @@ public class WrapperPlayClientArmAnimation extends AbstractPacket {
         super(packet, TYPE);
     }
 
+    /**
+     * Retrieves the value of field 'hand'
+     *
+     * @return 'hand'
+     */
     public Hand getHand() {
         return this.handle.getHands().read(0);
     }
 
+    /**
+     * Sets the value of field 'hand'
+     *
+     * @param value New value for field 'hand'
+     */
     public void setHand(Hand value) {
         this.handle.getHands().write(0, value);
     }
-
 
 }

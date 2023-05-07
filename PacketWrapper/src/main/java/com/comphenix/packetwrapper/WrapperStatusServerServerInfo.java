@@ -16,13 +16,22 @@ public class WrapperStatusServerServerInfo extends AbstractPacket {
         super(packet, TYPE);
     }
 
+    /**
+     * Retrieves the value of field 'status'
+     *
+     * @return 'status'
+     */
     public WrappedServerPing getStatus() {
         return this.handle.getServerPings().read(0);
     }
 
+    /**
+     * Sets the value of field 'status'
+     *
+     * @param value New value for field 'status'
+     */
     public void setStatus(WrappedServerPing value) {
         this.handle.getServerPings().write(0, value);
     }
-
 
 }

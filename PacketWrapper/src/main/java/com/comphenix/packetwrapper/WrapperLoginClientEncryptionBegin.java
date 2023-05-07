@@ -15,21 +15,40 @@ public class WrapperLoginClientEncryptionBegin extends AbstractPacket {
         super(packet, TYPE);
     }
 
+    /**
+     * Retrieves the value of field 'keybytes'
+     *
+     * @return 'keybytes'
+     */
     public byte[] getKeyBytes() {
         return this.handle.getByteArrays().read(0);
     }
 
+    /**
+     * Sets the value of field 'keybytes'
+     *
+     * @param value New value for field 'keybytes'
+     */
     public void setKeyBytes(byte[] value) {
         this.handle.getByteArrays().write(0, value);
     }
 
+    /**
+     * Retrieves the value of field 'encryptedChallenge'
+     *
+     * @return 'encryptedChallenge'
+     */
     public byte[] getEncryptedChallenge() {
         return this.handle.getByteArrays().read(1);
     }
 
+    /**
+     * Sets the value of field 'encryptedChallenge'
+     *
+     * @param value New value for field 'encryptedChallenge'
+     */
     public void setEncryptedChallenge(byte[] value) {
         this.handle.getByteArrays().write(1, value);
     }
-
 
 }

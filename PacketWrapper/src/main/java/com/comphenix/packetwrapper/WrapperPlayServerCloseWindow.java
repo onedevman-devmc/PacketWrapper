@@ -15,13 +15,22 @@ public class WrapperPlayServerCloseWindow extends AbstractPacket {
         super(packet, TYPE);
     }
 
+    /**
+     * Retrieves the value of field 'containerId'
+     *
+     * @return 'containerId'
+     */
     public int getContainerId() {
         return this.handle.getIntegers().read(0);
     }
 
+    /**
+     * Sets the value of field 'containerId'
+     *
+     * @param value New value for field 'containerId'
+     */
     public void setContainerId(int value) {
         this.handle.getIntegers().write(0, value);
     }
-
 
 }

@@ -17,21 +17,40 @@ public class WrapperPlayServerStopSound extends AbstractPacket {
         super(packet, TYPE);
     }
 
+    /**
+     * Retrieves the value of field 'name'
+     *
+     * @return 'name'
+     */
     public MinecraftKey getName() {
         return this.handle.getMinecraftKeys().read(0);
     }
 
+    /**
+     * Sets the value of field 'name'
+     *
+     * @param value New value for field 'name'
+     */
     public void setName(MinecraftKey value) {
         this.handle.getMinecraftKeys().write(0, value);
     }
 
+    /**
+     * Retrieves the value of field 'source'
+     *
+     * @return 'source'
+     */
     public SoundCategory getSource() {
         return this.handle.getSoundCategories().read(0);
     }
 
+    /**
+     * Sets the value of field 'source'
+     *
+     * @param value New value for field 'source'
+     */
     public void setSource(SoundCategory value) {
         this.handle.getSoundCategories().write(0, value);
     }
-
 
 }

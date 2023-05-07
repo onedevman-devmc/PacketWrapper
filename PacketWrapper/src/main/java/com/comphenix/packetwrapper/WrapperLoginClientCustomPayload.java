@@ -16,21 +16,40 @@ public class WrapperLoginClientCustomPayload extends AbstractPacket {
         super(packet, TYPE);
     }
 
+    /**
+     * Retrieves the value of field 'transactionId'
+     *
+     * @return 'transactionId'
+     */
     public int getTransactionId() {
         return this.handle.getIntegers().read(0);
     }
 
+    /**
+     * Sets the value of field 'transactionId'
+     *
+     * @param value New value for field 'transactionId'
+     */
     public void setTransactionId(int value) {
         this.handle.getIntegers().write(0, value);
     }
 
+    /**
+     * Retrieves the value of field 'data'
+     *
+     * @return 'data'
+     */
     public WrappedPacketDataSerializer getData() {
         return this.handle.getPacketDataSerializers().read(0);
     }
 
+    /**
+     * Sets the value of field 'data'
+     *
+     * @param value New value for field 'data'
+     */
     public void setData(WrappedPacketDataSerializer value) {
         this.handle.getPacketDataSerializers().write(0, value);
     }
-
 
 }

@@ -16,21 +16,40 @@ public class WrapperPlayServerSetCooldown extends AbstractPacket {
         super(packet, TYPE);
     }
 
+    /**
+     * Retrieves the value of field 'item'
+     *
+     * @return 'item'
+     */
     public Material getItem() {
-        throw new UnsupportedOperationException(); // TODO: No modifier has been found for type class net.minecraft.world.item.Item
+        return this.handle.getMaterials().read(0);
     }
 
-    public void setItem(Object value) {
-        throw new UnsupportedOperationException();
+    /**
+     * Sets the value of field 'item'
+     *
+     * @param value New value for field 'item'
+     */
+    public void setItem(Material value) {
+        this.handle.getMaterials().write(0, value);
     }
 
+    /**
+     * Retrieves the value of field 'duration'
+     *
+     * @return 'duration'
+     */
     public int getDuration() {
         return this.handle.getIntegers().read(0);
     }
 
+    /**
+     * Sets the value of field 'duration'
+     *
+     * @param value New value for field 'duration'
+     */
     public void setDuration(int value) {
         this.handle.getIntegers().write(0, value);
     }
-
 
 }

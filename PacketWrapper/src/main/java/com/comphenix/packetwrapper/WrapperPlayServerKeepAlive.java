@@ -15,13 +15,22 @@ public class WrapperPlayServerKeepAlive extends AbstractPacket {
         super(packet, TYPE);
     }
 
+    /**
+     * Retrieves the value of field 'id'
+     *
+     * @return 'id'
+     */
     public long getId() {
         return this.handle.getLongs().read(0);
     }
 
+    /**
+     * Sets the value of field 'id'
+     *
+     * @param value New value for field 'id'
+     */
     public void setId(long value) {
         this.handle.getLongs().write(0, value);
     }
-
 
 }

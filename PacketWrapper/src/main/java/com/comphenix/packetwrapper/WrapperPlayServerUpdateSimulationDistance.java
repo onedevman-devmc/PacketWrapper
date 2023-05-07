@@ -15,13 +15,22 @@ public class WrapperPlayServerUpdateSimulationDistance extends AbstractPacket {
         super(packet, TYPE);
     }
 
+    /**
+     * Retrieves the value of field 'simulationDistance'
+     *
+     * @return 'simulationDistance'
+     */
     public int getSimulationDistance() {
         return this.handle.getIntegers().read(0);
     }
 
+    /**
+     * Sets the value of field 'simulationDistance'
+     *
+     * @param value New value for field 'simulationDistance'
+     */
     public void setSimulationDistance(int value) {
         this.handle.getIntegers().write(0, value);
     }
-
 
 }

@@ -19,13 +19,22 @@ public class WrapperPlayServerPlayerInfoRemove extends AbstractPacket {
         super(packet, TYPE);
     }
 
+    /**
+     * Retrieves the value of field 'profileIds'
+     *
+     * @return 'profileIds'
+     */
     public List<UUID> getProfileIds() {
         return this.handle.getLists(Converters.passthrough(UUID.class)).read(0);
     }
 
+    /**
+     * Sets the value of field 'profileIds'
+     *
+     * @param value New value for field 'profileIds'
+     */
     public void setProfileIds(List<UUID> value) {
         this.handle.getLists(Converters.passthrough(UUID.class)).write(0, value);
     }
-
 
 }

@@ -15,21 +15,40 @@ public class WrapperPlayServerSetBorderCenter extends AbstractPacket {
         super(packet, TYPE);
     }
 
+    /**
+     * Retrieves the value of field 'newCenterX'
+     *
+     * @return 'newCenterX'
+     */
     public double getNewCenterX() {
         return this.handle.getDoubles().read(0);
     }
 
+    /**
+     * Sets the value of field 'newCenterX'
+     *
+     * @param value New value for field 'newCenterX'
+     */
     public void setNewCenterX(double value) {
         this.handle.getDoubles().write(0, value);
     }
 
+    /**
+     * Retrieves the value of field 'newCenterZ'
+     *
+     * @return 'newCenterZ'
+     */
     public double getNewCenterZ() {
         return this.handle.getDoubles().read(1);
     }
 
+    /**
+     * Sets the value of field 'newCenterZ'
+     *
+     * @param value New value for field 'newCenterZ'
+     */
     public void setNewCenterZ(double value) {
         this.handle.getDoubles().write(1, value);
     }
-
 
 }

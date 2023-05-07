@@ -16,21 +16,40 @@ public class WrapperPlayServerServerDifficulty extends AbstractPacket {
         super(packet, TYPE);
     }
 
+    /**
+     * Retrieves the value of field 'difficulty'
+     *
+     * @return 'difficulty'
+     */
     public Difficulty getDifficulty() {
         return this.handle.getDifficulties().read(0);
     }
 
+    /**
+     * Sets the value of field 'difficulty'
+     *
+     * @param value New value for field 'difficulty'
+     */
     public void setDifficulty(Difficulty value) {
         this.handle.getDifficulties().write(0, value);
     }
 
+    /**
+     * Retrieves the value of field 'locked'
+     *
+     * @return 'locked'
+     */
     public boolean getLocked() {
         return this.handle.getBooleans().read(0);
     }
 
+    /**
+     * Sets the value of field 'locked'
+     *
+     * @param value New value for field 'locked'
+     */
     public void setLocked(boolean value) {
         this.handle.getBooleans().write(0, value);
     }
-
 
 }

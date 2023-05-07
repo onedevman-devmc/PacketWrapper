@@ -15,13 +15,22 @@ public class WrapperPlayServerSetBorderWarningDistance extends AbstractPacket {
         super(packet, TYPE);
     }
 
+    /**
+     * Retrieves the value of field 'warningBlocks'
+     *
+     * @return 'warningBlocks'
+     */
     public int getWarningBlocks() {
         return this.handle.getIntegers().read(0);
     }
 
+    /**
+     * Sets the value of field 'warningBlocks'
+     *
+     * @param value New value for field 'warningBlocks'
+     */
     public void setWarningBlocks(int value) {
         this.handle.getIntegers().write(0, value);
     }
-
 
 }

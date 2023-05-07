@@ -15,13 +15,5 @@ public class WrapperPlayServerBundle extends AbstractPacket {
         super(packet, TYPE);
     }
 
-    public Iterable<PacketContainer> getPackets() {
-        return this.handle.getPacketBundles().read(0);
-    }
-
-    public void setPackets(Iterable<PacketContainer> value) {
-        this.handle.getPacketBundles().write(0, value);
-    }
-
 
 }

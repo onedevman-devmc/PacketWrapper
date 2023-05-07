@@ -15,13 +15,22 @@ public class WrapperPlayClientChatAck extends AbstractPacket {
         super(packet, TYPE);
     }
 
+    /**
+     * Retrieves the value of field 'offset'
+     *
+     * @return 'offset'
+     */
     public int getOffset() {
         return this.handle.getIntegers().read(0);
     }
 
+    /**
+     * Sets the value of field 'offset'
+     *
+     * @param value New value for field 'offset'
+     */
     public void setOffset(int value) {
         this.handle.getIntegers().write(0, value);
     }
-
 
 }

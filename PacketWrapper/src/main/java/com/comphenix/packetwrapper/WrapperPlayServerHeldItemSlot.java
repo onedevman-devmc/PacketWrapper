@@ -15,13 +15,22 @@ public class WrapperPlayServerHeldItemSlot extends AbstractPacket {
         super(packet, TYPE);
     }
 
+    /**
+     * Retrieves the value of field 'slot'
+     *
+     * @return 'slot'
+     */
     public int getSlot() {
         return this.handle.getIntegers().read(0);
     }
 
+    /**
+     * Sets the value of field 'slot'
+     *
+     * @param value New value for field 'slot'
+     */
     public void setSlot(int value) {
         this.handle.getIntegers().write(0, value);
     }
-
 
 }

@@ -17,21 +17,40 @@ public class WrapperPlayServerCustomPayload extends AbstractPacket {
         super(packet, TYPE);
     }
 
+    /**
+     * Retrieves the value of field 'identifier'
+     *
+     * @return 'identifier'
+     */
     public MinecraftKey getIdentifier() {
         return this.handle.getMinecraftKeys().read(0);
     }
 
+    /**
+     * Sets the value of field 'identifier'
+     *
+     * @param value New value for field 'identifier'
+     */
     public void setIdentifier(MinecraftKey value) {
         this.handle.getMinecraftKeys().write(0, value);
     }
 
+    /**
+     * Retrieves the value of field 'data'
+     *
+     * @return 'data'
+     */
     public WrappedPacketDataSerializer getData() {
         return this.handle.getPacketDataSerializers().read(0);
     }
 
+    /**
+     * Sets the value of field 'data'
+     *
+     * @param value New value for field 'data'
+     */
     public void setData(WrappedPacketDataSerializer value) {
         this.handle.getPacketDataSerializers().write(0, value);
     }
-
 
 }

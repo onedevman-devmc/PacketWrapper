@@ -15,21 +15,40 @@ public class WrapperPlayServerMount extends AbstractPacket {
         super(packet, TYPE);
     }
 
+    /**
+     * Retrieves the value of field 'vehicle'
+     *
+     * @return 'vehicle'
+     */
     public int getVehicle() {
         return this.handle.getIntegers().read(0);
     }
 
+    /**
+     * Sets the value of field 'vehicle'
+     *
+     * @param value New value for field 'vehicle'
+     */
     public void setVehicle(int value) {
         this.handle.getIntegers().write(0, value);
     }
 
+    /**
+     * Retrieves the value of field 'passengers'
+     *
+     * @return 'passengers'
+     */
     public int[] getPassengers() {
         return this.handle.getIntegerArrays().read(0);
     }
 
+    /**
+     * Sets the value of field 'passengers'
+     *
+     * @param value New value for field 'passengers'
+     */
     public void setPassengers(int[] value) {
         this.handle.getIntegerArrays().write(0, value);
     }
-
 
 }

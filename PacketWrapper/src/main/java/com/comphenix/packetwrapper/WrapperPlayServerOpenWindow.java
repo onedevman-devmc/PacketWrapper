@@ -1,6 +1,7 @@
 package com.comphenix.packetwrapper;
 
 import com.comphenix.protocol.PacketType;
+import com.comphenix.protocol.events.InternalStructure;
 import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.wrappers.WrappedChatComponent;
 
@@ -16,29 +17,60 @@ public class WrapperPlayServerOpenWindow extends AbstractPacket {
         super(packet, TYPE);
     }
 
+    /**
+     * Retrieves the value of field 'containerId'
+     *
+     * @return 'containerId'
+     */
     public int getContainerId() {
         return this.handle.getIntegers().read(0);
     }
 
+    /**
+     * Sets the value of field 'containerId'
+     *
+     * @param value New value for field 'containerId'
+     */
     public void setContainerId(int value) {
         this.handle.getIntegers().write(0, value);
     }
 
-    public Object getType() {
-        throw new UnsupportedOperationException(); // TODO: No modifier has been found for type class net.minecraft.world.inventory.MenuType
+    /**
+     * Retrieves the value of field 'type'
+     * ProtocolLib currently does not provide a wrapper for this type. Access to this type is only provided by an InternalStructure
+     *
+     * @return 'type'
+     */
+    public InternalStructure getType() {
+        return this.handle.getStructures().read(1); // TODO: No specific modifier has been found for type class net.minecraft.world.inventory.MenuType Generic type: [?]
     }
 
-    public void setType(Object value) {
-        throw new UnsupportedOperationException();
+    /**
+     * Sets the value of field 'type'
+     * ProtocolLib currently does not provide a wrapper for this type. Access to this type is only provided by an InternalStructure
+     *
+     * @param value New value for field 'type'
+     */
+    public void setType(InternalStructure value) {
+        this.handle.getStructures().write(1, value); // TODO: No specific modifier has been found for type class net.minecraft.world.inventory.MenuType Generic type: [?]
     }
 
+    /**
+     * Retrieves the value of field 'title'
+     *
+     * @return 'title'
+     */
     public WrappedChatComponent getTitle() {
         return this.handle.getChatComponents().read(0);
     }
 
+    /**
+     * Sets the value of field 'title'
+     *
+     * @param value New value for field 'title'
+     */
     public void setTitle(WrappedChatComponent value) {
         this.handle.getChatComponents().write(0, value);
     }
-
 
 }

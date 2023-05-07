@@ -1,6 +1,7 @@
 package com.comphenix.packetwrapper;
 
 import com.comphenix.protocol.PacketType;
+import com.comphenix.protocol.events.InternalStructure;
 import com.comphenix.protocol.events.PacketContainer;
 
 public class WrapperPlayServerSystemChat extends AbstractPacket {
@@ -15,26 +16,58 @@ public class WrapperPlayServerSystemChat extends AbstractPacket {
         super(packet, TYPE);
     }
 
-    /*public Object getAdventure$content() {
-        return this.handle.getModifier().read(0); // TODO: No modifier has been found for type interface net.kyori.adventure.text.Component
+    /**
+     * Retrieves the value of field 'adventure$content'
+     * ProtocolLib currently does not provide a wrapper for this type. Access to this type is only provided by an InternalStructure
+     *
+     * @return 'adventure$content'
+     */
+    public InternalStructure getAdventure$content() {
+        return this.handle.getStructures().read(0); // TODO: No specific modifier has been found for type interface net.kyori.adventure.text.Component Generic type: interface net.kyori.adventure.text.Component
     }
 
-    public void setAdventure$content(Object value) {
-        this.handle.getModifier().write(0, value);
-    }*/
+    /**
+     * Sets the value of field 'adventure$content'
+     * ProtocolLib currently does not provide a wrapper for this type. Access to this type is only provided by an InternalStructure
+     *
+     * @param value New value for field 'adventure$content'
+     */
+    public void setAdventure$content(InternalStructure value) {
+        this.handle.getStructures().write(0, value); // TODO: No specific modifier has been found for type interface net.kyori.adventure.text.Component Generic type: interface net.kyori.adventure.text.Component
+    }
 
+    /**
+     * Retrieves the value of field 'content'
+     *
+     * @return 'content'
+     */
     public String getContent() {
         return this.handle.getStrings().read(0);
     }
 
+    /**
+     * Sets the value of field 'content'
+     *
+     * @param value New value for field 'content'
+     */
     public void setContent(String value) {
         this.handle.getStrings().write(0, value);
     }
 
+    /**
+     * Retrieves the value of field 'overlay'
+     *
+     * @return 'overlay'
+     */
     public boolean getOverlay() {
         return this.handle.getBooleans().read(0);
     }
 
+    /**
+     * Sets the value of field 'overlay'
+     *
+     * @param value New value for field 'overlay'
+     */
     public void setOverlay(boolean value) {
         this.handle.getBooleans().write(0, value);
     }

@@ -1,7 +1,10 @@
 package com.comphenix.packetwrapper;
 
 import com.comphenix.protocol.PacketType;
+import com.comphenix.protocol.events.InternalStructure;
 import com.comphenix.protocol.events.PacketContainer;
+
+import java.util.List;
 
 public class WrapperPlayServerUpdateAttributes extends AbstractPacket {
 
@@ -15,23 +18,40 @@ public class WrapperPlayServerUpdateAttributes extends AbstractPacket {
         super(packet, TYPE);
     }
 
+    /**
+     * Retrieves the value of field 'entityId'
+     *
+     * @return 'entityId'
+     */
     public int getEntityId() {
         return this.handle.getIntegers().read(0);
     }
 
+    /**
+     * Sets the value of field 'entityId'
+     *
+     * @param value New value for field 'entityId'
+     */
     public void setEntityId(int value) {
         this.handle.getIntegers().write(0, value);
     }
 
-    public Object getAttributes() {
-        // TODO: Multiple candidates found for raw type + interface java.util.List here:
-        // Generic field type: [class net.minecraft.network.protocol.game.ClientboundUpdateAttributesPacket$AttributeSnapshot]//    return this.handle.getSlotStackPairLists().read(-1);
-        throw new UnsupportedOperationException();
+    /**
+     * Retrieves the value of field 'attributes'
+     *
+     * @return 'attributes'
+     */
+    public List<InternalStructure> getAttributes() {
+        return this.handle.getLists(InternalStructure.getConverter()).read(0);
     }
 
-    public void setAttributes(Object value) {
-        throw new UnsupportedOperationException();
+    /**
+     * Sets the value of field 'attributes'
+     *
+     * @param value New value for field 'attributes'
+     */
+    public void setAttributes(List<InternalStructure> value) {
+        this.handle.getLists(InternalStructure.getConverter()).write(0, value);
     }
-
 
 }

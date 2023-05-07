@@ -15,13 +15,22 @@ public class WrapperPlayServerClearTitles extends AbstractPacket {
         super(packet, TYPE);
     }
 
+    /**
+     * Retrieves the value of field 'resetTimes'
+     *
+     * @return 'resetTimes'
+     */
     public boolean getResetTimes() {
         return this.handle.getBooleans().read(0);
     }
 
+    /**
+     * Sets the value of field 'resetTimes'
+     *
+     * @param value New value for field 'resetTimes'
+     */
     public void setResetTimes(boolean value) {
         this.handle.getBooleans().write(0, value);
     }
-
 
 }
