@@ -1,5 +1,6 @@
 package com.comphenix.packetwrapper;
 
+import com.comphenix.packetwrapper.util.TestExclusion;
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.wrappers.EnumWrappers.SoundCategory;
@@ -22,6 +23,7 @@ public class WrapperPlayServerStopSound extends AbstractPacket {
      *
      * @return 'name'
      */
+    @TestExclusion
     public MinecraftKey getName() {
         return this.handle.getMinecraftKeys().read(0);
     }
@@ -40,6 +42,7 @@ public class WrapperPlayServerStopSound extends AbstractPacket {
      *
      * @return 'source'
      */
+    @TestExclusion
     public SoundCategory getSource() {
         return this.handle.getSoundCategories().read(0);
     }

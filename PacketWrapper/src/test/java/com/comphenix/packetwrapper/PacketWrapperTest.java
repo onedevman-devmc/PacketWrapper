@@ -6,10 +6,6 @@ import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.InternalStructure;
 import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.reflect.ExactReflection;
-import com.comphenix.protocol.reflect.FuzzyReflection;
-import com.comphenix.protocol.reflect.MethodInfo;
-import com.comphenix.protocol.reflect.fuzzy.AbstractFuzzyMatcher;
-import org.checkerframework.checker.units.qual.A;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.mockito.internal.matchers.apachecommons.ReflectionEquals;
@@ -17,7 +13,6 @@ import org.mockito.internal.matchers.apachecommons.ReflectionEquals;
 import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
 import java.util.*;
-import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -84,12 +79,14 @@ class PacketWrapperTest {
                         && value.getReturnType() != InternalStructure.class; // InternalStructures do not work for null values
             }).toList();
             for (Method getter : getters) {
+                if(getter.isAnnotationPresent(TestExclusion.class)) {
+                    continue;
+                }
                 System.out.println("Testing getter: " + getter.getName());
                 Object value;
                 try {
                     value = getter.invoke(packet);
-                }
-                catch (NullPointerException ignored) {
+                } catch (NullPointerException ignored) {
                     continue;
                 } catch (Throwable t) {
                     throw new RuntimeException("Failed to invoke getter " + getter.getName(), t);

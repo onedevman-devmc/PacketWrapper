@@ -2,6 +2,7 @@ package com.comphenix.packetwrapper;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
+import com.comphenix.protocol.utility.MinecraftReflection;
 import com.comphenix.protocol.wrappers.BukkitConverters;
 import com.comphenix.protocol.wrappers.EnumWrappers.SoundCategory;
 import org.bukkit.Sound;
@@ -25,7 +26,7 @@ public class WrapperPlayServerNamedSoundEffect extends AbstractPacket {
      * @return 'sound'
      */
     public Sound getSound() {
-        return this.handle.getHolders(Sound.class, BukkitConverters.getSoundConverter()).read(0);
+        return this.handle.getHolders(MinecraftReflection.getSoundEffectClass(), BukkitConverters.getSoundConverter()).read(0);
     }
 
     /**
@@ -35,7 +36,7 @@ public class WrapperPlayServerNamedSoundEffect extends AbstractPacket {
      * @param value New value for field 'sound'
      */
     public void setSound(Sound value) {
-        this.handle.getHolders(Sound.class, BukkitConverters.getSoundConverter()).write(0, value);
+        this.handle.getHolders(MinecraftReflection.getSoundEffectClass(), BukkitConverters.getSoundConverter()).write(0, value);
     }
 
     /**

@@ -97,7 +97,7 @@ public class WrapperPlayServerMap extends AbstractPacket {
      * @return 'colorPatch'
      */
     public InternalStructure getColorPatch() {
-        return this.handle.getStructures().read(4); // TODO: No specific modifier has been found for type class net.minecraft.world.level.saveddata.maps.MapItemSavedData$MapPatch Generic type: class net.minecraft.world.level.saveddata.maps.MapItemSavedData$MapPatch
+        return this.handle.getStructures().read(1); // TODO: No specific modifier has been found for type class net.minecraft.world.level.saveddata.maps.MapItemSavedData$MapPatch Generic type: class net.minecraft.world.level.saveddata.maps.MapItemSavedData$MapPatch
     }
 
     /**
@@ -107,7 +107,7 @@ public class WrapperPlayServerMap extends AbstractPacket {
      * @param value New value for field 'colorPatch'
      */
     public void setColorPatch(InternalStructure value) {
-        this.handle.getStructures().write(4, value); // TODO: No specific modifier has been found for type class net.minecraft.world.level.saveddata.maps.MapItemSavedData$MapPatch Generic type: class net.minecraft.world.level.saveddata.maps.MapItemSavedData$MapPatch
+        this.handle.getStructures().write(1, value); // TODO: No specific modifier has been found for type class net.minecraft.world.level.saveddata.maps.MapItemSavedData$MapPatch Generic type: class net.minecraft.world.level.saveddata.maps.MapItemSavedData$MapPatch
     }
 
 }

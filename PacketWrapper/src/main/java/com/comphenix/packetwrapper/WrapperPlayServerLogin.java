@@ -121,7 +121,7 @@ public class WrapperPlayServerLogin extends AbstractPacket {
      * @return 'registryHolder'
      */
     public InternalStructure getRegistryHolder() {
-        return this.handle.getStructures().read(4); // TODO: No specific modifier has been found for type interface net.minecraft.core.RegistryAccess$Frozen Generic type: interface net.minecraft.core.RegistryAccess$Frozen
+        return this.handle.getStructures().read(2); // TODO: No specific modifier has been found for type interface net.minecraft.core.RegistryAccess$Frozen Generic type: interface net.minecraft.core.RegistryAccess$Frozen
     }
 
     /**
@@ -131,7 +131,7 @@ public class WrapperPlayServerLogin extends AbstractPacket {
      * @param value New value for field 'registryHolder'
      */
     public void setRegistryHolder(InternalStructure value) {
-        this.handle.getStructures().write(4, value); // TODO: No specific modifier has been found for type interface net.minecraft.core.RegistryAccess$Frozen Generic type: interface net.minecraft.core.RegistryAccess$Frozen
+        this.handle.getStructures().write(2, value); // TODO: No specific modifier has been found for type interface net.minecraft.core.RegistryAccess$Frozen Generic type: interface net.minecraft.core.RegistryAccess$Frozen
     }
 
     /**
@@ -140,7 +140,7 @@ public class WrapperPlayServerLogin extends AbstractPacket {
      * @return 'dimensionType'
      */
     public InternalStructure getDimensionType() {
-        return this.handle.getStructures().read(5);
+        return this.handle.getStructures().read(3);
     }
 
     /**
@@ -149,7 +149,7 @@ public class WrapperPlayServerLogin extends AbstractPacket {
      * @param value New value for field 'dimensionType'
      */
     public void setDimensionType(InternalStructure value) {
-        this.handle.getStructures().write(5, value);
+        this.handle.getStructures().write(3, value);
     }
 
     /**
@@ -158,7 +158,7 @@ public class WrapperPlayServerLogin extends AbstractPacket {
      * @return 'dimension'
      */
     public InternalStructure getDimension() {
-        return this.handle.getStructures().read(6);
+        return this.handle.getStructures().read(4);
     }
 
     /**
@@ -167,7 +167,7 @@ public class WrapperPlayServerLogin extends AbstractPacket {
      * @param value New value for field 'dimension'
      */
     public void setDimension(InternalStructure value) {
-        this.handle.getStructures().write(6, value);
+        this.handle.getStructures().write(4, value);
     }
 
     /**

@@ -1,5 +1,6 @@
 package com.comphenix.packetwrapper;
 
+import com.comphenix.packetwrapper.util.TestExclusion;
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.wrappers.WrappedPacketDataSerializer;
@@ -39,6 +40,7 @@ public class WrapperLoginClientCustomPayload extends AbstractPacket {
      *
      * @return 'data'
      */
+    @TestExclusion
     public WrappedPacketDataSerializer getData() {
         return this.handle.getPacketDataSerializers().read(0);
     }

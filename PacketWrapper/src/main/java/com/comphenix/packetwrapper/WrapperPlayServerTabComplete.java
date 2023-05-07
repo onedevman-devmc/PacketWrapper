@@ -41,7 +41,7 @@ public class WrapperPlayServerTabComplete extends AbstractPacket {
      * @return 'suggestions'
      */
     public InternalStructure getSuggestions() {
-        return this.handle.getStructures().read(1); // TODO: No specific modifier has been found for type class com.mojang.brigadier.suggestion.Suggestions Generic type: class com.mojang.brigadier.suggestion.Suggestions
+        return this.handle.getStructures().read(0); // TODO: No specific modifier has been found for type class com.mojang.brigadier.suggestion.Suggestions Generic type: class com.mojang.brigadier.suggestion.Suggestions
     }
 
     /**
@@ -51,7 +51,7 @@ public class WrapperPlayServerTabComplete extends AbstractPacket {
      * @param value New value for field 'suggestions'
      */
     public void setSuggestions(InternalStructure value) {
-        this.handle.getStructures().write(1, value); // TODO: No specific modifier has been found for type class com.mojang.brigadier.suggestion.Suggestions Generic type: class com.mojang.brigadier.suggestion.Suggestions
+        this.handle.getStructures().write(0, value); // TODO: No specific modifier has been found for type class com.mojang.brigadier.suggestion.Suggestions Generic type: class com.mojang.brigadier.suggestion.Suggestions
     }
 
 }

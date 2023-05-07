@@ -106,7 +106,7 @@ public class WrapperPlayClientWindowClick extends AbstractPacket {
      * @return 'clickType'
      */
     public InternalStructure getClickType() {
-        return this.handle.getStructures().read(4); // TODO: No specific modifier has been found for type class net.minecraft.world.inventory.ClickType Generic type: class net.minecraft.world.inventory.ClickType
+        return this.handle.getStructures().read(0); // TODO: No specific modifier has been found for type class net.minecraft.world.inventory.ClickType Generic type: class net.minecraft.world.inventory.ClickType
     }
 
     /**
@@ -116,7 +116,7 @@ public class WrapperPlayClientWindowClick extends AbstractPacket {
      * @param value New value for field 'clickType'
      */
     public void setClickType(InternalStructure value) {
-        this.handle.getStructures().write(4, value); // TODO: No specific modifier has been found for type class net.minecraft.world.inventory.ClickType Generic type: class net.minecraft.world.inventory.ClickType
+        this.handle.getStructures().write(0, value); // TODO: No specific modifier has been found for type class net.minecraft.world.inventory.ClickType Generic type: class net.minecraft.world.inventory.ClickType
     }
 
     /**
@@ -156,7 +156,7 @@ public class WrapperPlayClientWindowClick extends AbstractPacket {
     }
 
     public static <V> EquivalentConverter<Int2ObjectMap<V>> getInt2ObjectMapConverter(EquivalentConverter<V> valConverter) {
-        return new EquivalentConverter<Int2ObjectMap<V>>() {
+        return new EquivalentConverter<>() {
             @Override
             public Int2ObjectMap<V> getSpecific(Object generic) {
                 Map<Object, Object> genericMap = (Map<Object, Object>) generic;
