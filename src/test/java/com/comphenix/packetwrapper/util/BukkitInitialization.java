@@ -1,4 +1,4 @@
-package com.comphenix.packetwrapper;
+package com.comphenix.packetwrapper.util;
 
 import com.comphenix.protocol.reflect.accessors.Accessors;
 import com.comphenix.protocol.reflect.accessors.FieldAccessor;

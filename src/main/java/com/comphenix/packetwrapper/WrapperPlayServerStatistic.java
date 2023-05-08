@@ -2,6 +2,7 @@ package com.comphenix.packetwrapper;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
+import com.comphenix.protocol.wrappers.WrappedStatistic;
 
 import java.util.Map;
 
@@ -22,7 +23,7 @@ public class WrapperPlayServerStatistic extends AbstractPacket {
      *
      * @return 'stats'
      */
-    public Map getStats() {
+    public Map<WrappedStatistic, Integer> getStats() {
         return this.handle.getStatisticMaps().read(0);
     }
 
@@ -31,7 +32,7 @@ public class WrapperPlayServerStatistic extends AbstractPacket {
      *
      * @param value New value for field 'stats'
      */
-    public void setStats(Map value) {
+    public void setStats(Map<WrappedStatistic, Integer> value) {
         this.handle.getStatisticMaps().write(0, value);
     }
 

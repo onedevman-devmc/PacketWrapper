@@ -1,4 +1,4 @@
-package com.comphenix.packetwrapper;
+package com.comphenix.packetwrapper.util;
 
 import com.google.common.reflect.ClassPath;
 

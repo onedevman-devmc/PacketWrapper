@@ -1,15 +1,20 @@
 package com.comphenix.packetwrapper;
 
+import com.comphenix.packetwrapper.util.PacketWrapperUtils;
 import com.comphenix.packetwrapper.util.TestExclusion;
 import com.comphenix.packetwrapper.util.UtilityMethod;
+import com.comphenix.packetwrapper.util.Utils;
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.InternalStructure;
 import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.reflect.ExactReflection;
-import org.junit.jupiter.api.BeforeAll;
+import com.comphenix.protocol.reflect.StructureModifier;
+import com.comphenix.protocol.wrappers.WrappedPacketDataSerializer;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.internal.matchers.apachecommons.ReflectionEquals;
 
+import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
 import java.util.*;
@@ -21,11 +26,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  * @author Lukas Alt
  * @since 07.05.2023
  */
+@ExtendWith(BaseTestInitialization.class)
 class PacketWrapperTest {
-    @BeforeAll
-    public static void beforeAll() {
-        BukkitInitialization.initializeAll();
-    }
 
     @Test
     public void testConstructors() throws Exception {
@@ -63,26 +65,24 @@ class PacketWrapperTest {
     @Test
     public void testGetterSetter() throws Exception {
         for (Class<?> aClass : PacketWrapperUtils.getPacketWrappers()) {
-            System.out.println("Testing packet wrapper: " + aClass);
             AbstractPacket packet = (AbstractPacket) aClass.getConstructor().newInstance();
-            testGetterSetter(packet);
+            testGetterSetter(packet, false);
         }
     }
 
-    private void testGetterSetter(AbstractPacket packet) {
+    static void testGetterSetter(AbstractPacket packet, boolean filledPacket) {
         try {
             Class<? extends AbstractPacket> explicitClass = packet.getClass();
             List<Method> getters = Arrays.stream(explicitClass.getDeclaredMethods()).filter(value -> {
                 return value.getParameterTypes().length == 0
                         && value.getName().startsWith("get")
                         && !value.isAnnotationPresent(UtilityMethod.class)
-                        && value.getReturnType() != InternalStructure.class; // InternalStructures do not work for null values
+                        && (filledPacket || value.getReturnType() != InternalStructure.class); // InternalStructures do not work for null values
             }).toList();
             for (Method getter : getters) {
-                if(getter.isAnnotationPresent(TestExclusion.class)) {
+                if (getter.isAnnotationPresent(TestExclusion.class)) {
                     continue;
                 }
-                System.out.println("Testing getter: " + getter.getName());
                 Object value;
                 try {
                     value = getter.invoke(packet);
@@ -107,13 +107,12 @@ class PacketWrapperTest {
                 }
                 assertNotNull(setter, "No matching setter found for " + getter.getName());
                 try {
-                    System.out.println("Testing setter " + setter.getName());
                     setter.invoke(packet, value);
                     Object returned = getter.invoke(packet);
-                    if(returned instanceof Optional) {
+                    if (returned instanceof Optional) {
                         returned = ((Optional) returned).orElse(null);
                     }
-                    if(setter.isAnnotationPresent(TestExclusion.class)) {
+                    if (setter.isAnnotationPresent(TestExclusion.class)) {
                         continue;
                     }
                     assertTrue(new ReflectionEquals(value).matches(returned), "Failed setter/getter write-back for " + setter.getName() + ", " + getter.getName() + " " + Utils.tryToString(value) + " <-> " + Utils.tryToString(returned));
@@ -127,4 +126,5 @@ class PacketWrapperTest {
             throw new RuntimeException("Getter/Setter test failed for " + packet.getHandle().getHandle().getClass() + " -> " + packet.getHandle().getType(), t);
         }
     }
+
 }

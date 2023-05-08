@@ -1,7 +1,9 @@
 package com.comphenix.packetwrapper;
 
 import com.comphenix.protocol.PacketType;
+import com.comphenix.protocol.events.InternalStructure;
 import com.comphenix.protocol.events.PacketContainer;
+import com.comphenix.protocol.wrappers.MinecraftKey;
 
 import java.util.Map;
 
@@ -22,8 +24,8 @@ public class WrapperPlayServerTags extends AbstractPacket {
      *
      * @return 'tags'
      */
-    public Map getTags() {
-        return this.handle.getStatisticMaps().read(0);
+    public Map<MinecraftKey, InternalStructure> getTags() {
+        return this.handle.getMaps(MinecraftKey.getConverter(), InternalStructure.getConverter()).read(0);
     }
 
     /**
@@ -31,8 +33,8 @@ public class WrapperPlayServerTags extends AbstractPacket {
      *
      * @param value New value for field 'tags'
      */
-    public void setTags(Map value) {
-        this.handle.getStatisticMaps().write(0, value);
+    public void setTags(Map<MinecraftKey, InternalStructure> value) {
+        this.handle.getMaps(MinecraftKey.getConverter(), InternalStructure.getConverter()).write(0, value);
     }
 
 }
