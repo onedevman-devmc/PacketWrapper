@@ -97,7 +97,7 @@ public class WrapperPlayClientChat extends AbstractPacket {
      *
      * @return 'lastSeenMessages'
      */
-    public InternalStructure getLastSeenMessages() {
+    public InternalStructure getLastSeenMessagesInternal() {
         return this.handle.getStructures().read(4); // TODO: No specific modifier has been found for type class net.minecraft.network.chat.LastSeenMessages$Update Generic type: class net.minecraft.network.chat.LastSeenMessages$Update
     }
 
@@ -107,7 +107,7 @@ public class WrapperPlayClientChat extends AbstractPacket {
      *
      * @param value New value for field 'lastSeenMessages'
      */
-    public void setLastSeenMessages(InternalStructure value) {
+    public void setLastSeenMessagesInternal(InternalStructure value) {
         this.handle.getStructures().write(4, value); // TODO: No specific modifier has been found for type class net.minecraft.network.chat.LastSeenMessages$Update Generic type: class net.minecraft.network.chat.LastSeenMessages$Update
     }
 

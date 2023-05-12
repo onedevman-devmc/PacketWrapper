@@ -40,7 +40,7 @@ public class WrapperPlayClientUseEntity extends AbstractPacket {
      *
      * @return 'action'
      */
-    public InternalStructure getAction() {
+    public InternalStructure getActionInternal() {
         return this.handle.getStructures().read(0); // TODO: No specific modifier has been found for type interface net.minecraft.network.protocol.game.ServerboundInteractPacket$Action Generic type: interface net.minecraft.network.protocol.game.ServerboundInteractPacket$Action
     }
 

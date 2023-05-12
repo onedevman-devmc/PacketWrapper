@@ -113,7 +113,7 @@ public class WrapperPlayServerEntityEffect extends AbstractPacket {
      *
      * @return 'factorData'
      */
-    public InternalStructure getFactorData() {
+    public InternalStructure getFactorDataInternal() {
         return this.handle.getStructures().read(1); // TODO: No specific modifier has been found for type class net.minecraft.world.effect.MobEffectInstance$FactorData Generic type: class net.minecraft.world.effect.MobEffectInstance$FactorData
     }
 
@@ -123,7 +123,7 @@ public class WrapperPlayServerEntityEffect extends AbstractPacket {
      *
      * @param value New value for field 'factorData'
      */
-    public void setFactorData(InternalStructure value) {
+    public void setFactorDataInternal(InternalStructure value) {
         this.handle.getStructures().write(1, value); // TODO: No specific modifier has been found for type class net.minecraft.world.effect.MobEffectInstance$FactorData Generic type: class net.minecraft.world.effect.MobEffectInstance$FactorData
     }
 

@@ -59,7 +59,7 @@ public class WrapperPlayServerPlayerListHeaderFooter extends AbstractPacket {
      *
      * @return 'adventure$header'
      */
-    public InternalStructure getAdventure$header() {
+    public InternalStructure getAdventure$headerInternal() {
         return this.handle.getStructures().read(2); // TODO: No specific modifier has been found for type interface net.kyori.adventure.text.Component Generic type: interface net.kyori.adventure.text.Component
     }
 
@@ -69,7 +69,7 @@ public class WrapperPlayServerPlayerListHeaderFooter extends AbstractPacket {
      *
      * @param value New value for field 'adventure$header'
      */
-    public void setAdventure$header(InternalStructure value) {
+    public void setAdventure$headerInternal(InternalStructure value) {
         this.handle.getStructures().write(2, value); // TODO: No specific modifier has been found for type interface net.kyori.adventure.text.Component Generic type: interface net.kyori.adventure.text.Component
     }
 
@@ -79,7 +79,7 @@ public class WrapperPlayServerPlayerListHeaderFooter extends AbstractPacket {
      *
      * @return 'adventure$footer'
      */
-    public InternalStructure getAdventure$footer() {
+    public InternalStructure getAdventure$footerInternal() {
         return this.handle.getStructures().read(3); // TODO: No specific modifier has been found for type interface net.kyori.adventure.text.Component Generic type: interface net.kyori.adventure.text.Component
     }
 
@@ -89,7 +89,7 @@ public class WrapperPlayServerPlayerListHeaderFooter extends AbstractPacket {
      *
      * @param value New value for field 'adventure$footer'
      */
-    public void setAdventure$footer(InternalStructure value) {
+    public void setAdventure$footerInternal(InternalStructure value) {
         this.handle.getStructures().write(3, value); // TODO: No specific modifier has been found for type interface net.kyori.adventure.text.Component Generic type: interface net.kyori.adventure.text.Component
     }
 

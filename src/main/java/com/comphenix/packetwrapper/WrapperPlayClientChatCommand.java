@@ -79,7 +79,7 @@ public class WrapperPlayClientChatCommand extends AbstractPacket {
      *
      * @return 'argumentSignatures'
      */
-    public InternalStructure getArgumentSignatures() {
+    public InternalStructure getArgumentSignaturesInternal() {
         return this.handle.getStructures().read(3); // TODO: No specific modifier has been found for type class net.minecraft.commands.arguments.ArgumentSignatures Generic type: class net.minecraft.commands.arguments.ArgumentSignatures
     }
 
@@ -89,7 +89,7 @@ public class WrapperPlayClientChatCommand extends AbstractPacket {
      *
      * @param value New value for field 'argumentSignatures'
      */
-    public void setArgumentSignatures(InternalStructure value) {
+    public void setArgumentSignaturesInternal(InternalStructure value) {
         this.handle.getStructures().write(3, value); // TODO: No specific modifier has been found for type class net.minecraft.commands.arguments.ArgumentSignatures Generic type: class net.minecraft.commands.arguments.ArgumentSignatures
     }
 
@@ -99,7 +99,7 @@ public class WrapperPlayClientChatCommand extends AbstractPacket {
      *
      * @return 'lastSeenMessages'
      */
-    public InternalStructure getLastSeenMessages() {
+    public InternalStructure getLastSeenMessagesInternal() {
         return this.handle.getStructures().read(4); // TODO: No specific modifier has been found for type class net.minecraft.network.chat.LastSeenMessages$Update Generic type: class net.minecraft.network.chat.LastSeenMessages$Update
     }
 
@@ -109,7 +109,7 @@ public class WrapperPlayClientChatCommand extends AbstractPacket {
      *
      * @param value New value for field 'lastSeenMessages'
      */
-    public void setLastSeenMessages(InternalStructure value) {
+    public void setLastSeenMessagesInternal(InternalStructure value) {
         this.handle.getStructures().write(4, value); // TODO: No specific modifier has been found for type class net.minecraft.network.chat.LastSeenMessages$Update Generic type: class net.minecraft.network.chat.LastSeenMessages$Update
     }
 

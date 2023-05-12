@@ -40,7 +40,7 @@ public class WrapperPlayServerTabComplete extends AbstractPacket {
      *
      * @return 'suggestions'
      */
-    public InternalStructure getSuggestions() {
+    public InternalStructure getSuggestionsInternal() {
         return this.handle.getStructures().read(0); // TODO: No specific modifier has been found for type class com.mojang.brigadier.suggestion.Suggestions Generic type: class com.mojang.brigadier.suggestion.Suggestions
     }
 
@@ -50,7 +50,7 @@ public class WrapperPlayServerTabComplete extends AbstractPacket {
      *
      * @param value New value for field 'suggestions'
      */
-    public void setSuggestions(InternalStructure value) {
+    public void setSuggestionsInternal(InternalStructure value) {
         this.handle.getStructures().write(0, value); // TODO: No specific modifier has been found for type class com.mojang.brigadier.suggestion.Suggestions Generic type: class com.mojang.brigadier.suggestion.Suggestions
     }
 

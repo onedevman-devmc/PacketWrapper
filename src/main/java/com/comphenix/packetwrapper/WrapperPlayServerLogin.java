@@ -120,7 +120,7 @@ public class WrapperPlayServerLogin extends AbstractPacket {
      *
      * @return 'registryHolder'
      */
-    public InternalStructure getRegistryHolder() {
+    public InternalStructure getRegistryHolderInternal() {
         return this.handle.getStructures().read(2); // TODO: No specific modifier has been found for type interface net.minecraft.core.RegistryAccess$Frozen Generic type: interface net.minecraft.core.RegistryAccess$Frozen
     }
 
@@ -130,7 +130,7 @@ public class WrapperPlayServerLogin extends AbstractPacket {
      *
      * @param value New value for field 'registryHolder'
      */
-    public void setRegistryHolder(InternalStructure value) {
+    public void setRegistryHolderInternal(InternalStructure value) {
         this.handle.getStructures().write(2, value); // TODO: No specific modifier has been found for type interface net.minecraft.core.RegistryAccess$Frozen Generic type: interface net.minecraft.core.RegistryAccess$Frozen
     }
 
@@ -139,7 +139,7 @@ public class WrapperPlayServerLogin extends AbstractPacket {
      *
      * @return 'dimensionType'
      */
-    public InternalStructure getDimensionType() {
+    public InternalStructure getDimensionTypeInternal() {
         return this.handle.getStructures().read(3);
     }
 
@@ -148,7 +148,7 @@ public class WrapperPlayServerLogin extends AbstractPacket {
      *
      * @param value New value for field 'dimensionType'
      */
-    public void setDimensionType(InternalStructure value) {
+    public void setDimensionTypeInternal(InternalStructure value) {
         this.handle.getStructures().write(3, value);
     }
 
@@ -157,7 +157,7 @@ public class WrapperPlayServerLogin extends AbstractPacket {
      *
      * @return 'dimension'
      */
-    public InternalStructure getDimension() {
+    public InternalStructure getDimensionInternal() {
         return this.handle.getStructures().read(4);
     }
 
@@ -166,7 +166,7 @@ public class WrapperPlayServerLogin extends AbstractPacket {
      *
      * @param value New value for field 'dimension'
      */
-    public void setDimension(InternalStructure value) {
+    public void setDimensionInternal(InternalStructure value) {
         this.handle.getStructures().write(4, value);
     }
 

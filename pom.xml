@@ -51,7 +51,7 @@
                     <groupId>org.spigotmc</groupId>
                     <artifactId>spigot</artifactId>
                     <version>${minecraft.version}</version>
-                    <scope>test</scope>
+                    <scope>provided</scope>
                 </dependency>
             </dependencies>
         </profile>
@@ -63,7 +63,7 @@
                     <artifactId>spigot</artifactId>
                     <version>${minecraft.version}</version>
                     <classifier>remapped-mojang</classifier>
-                    <scope>test</scope>
+                    <scope>provided</scope>
                 </dependency>
             </dependencies>
         </profile>

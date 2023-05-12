@@ -94,7 +94,7 @@ public class WrapperPlayServerLookAt extends AbstractPacket {
      *
      * @return 'fromAnchor'
      */
-    public InternalStructure getFromAnchor() {
+    public InternalStructure getFromAnchorInternal() {
         return this.handle.getStructures().read(0); // TODO: No specific modifier has been found for type class net.minecraft.commands.arguments.EntityAnchorArgument$Anchor Generic type: class net.minecraft.commands.arguments.EntityAnchorArgument$Anchor
     }
 
@@ -104,7 +104,7 @@ public class WrapperPlayServerLookAt extends AbstractPacket {
      *
      * @param value New value for field 'fromAnchor'
      */
-    public void setFromAnchor(InternalStructure value) {
+    public void setFromAnchorInternal(InternalStructure value) {
         this.handle.getStructures().write(0, value); // TODO: No specific modifier has been found for type class net.minecraft.commands.arguments.EntityAnchorArgument$Anchor Generic type: class net.minecraft.commands.arguments.EntityAnchorArgument$Anchor
     }
 
@@ -114,7 +114,7 @@ public class WrapperPlayServerLookAt extends AbstractPacket {
      *
      * @return 'toAnchor'
      */
-    public InternalStructure getToAnchor() {
+    public InternalStructure getToAnchorInternal() {
         return this.handle.getStructures().read(1); // TODO: No specific modifier has been found for type class net.minecraft.commands.arguments.EntityAnchorArgument$Anchor Generic type: class net.minecraft.commands.arguments.EntityAnchorArgument$Anchor
     }
 
@@ -124,7 +124,7 @@ public class WrapperPlayServerLookAt extends AbstractPacket {
      *
      * @param value New value for field 'toAnchor'
      */
-    public void setToAnchor(InternalStructure value) {
+    public void setToAnchorInternal(InternalStructure value) {
         this.handle.getStructures().write(1, value); // TODO: No specific modifier has been found for type class net.minecraft.commands.arguments.EntityAnchorArgument$Anchor Generic type: class net.minecraft.commands.arguments.EntityAnchorArgument$Anchor
     }
 

@@ -22,7 +22,7 @@ public class WrapperPlayServerDeleteChatMessage extends AbstractPacket {
      *
      * @return 'messageSignature'
      */
-    public InternalStructure getMessageSignature() {
+    public InternalStructure getMessageSignatureInternal() {
         return this.handle.getStructures().read(0); // TODO: No specific modifier has been found for type class net.minecraft.network.chat.MessageSignature$Packed Generic type: class net.minecraft.network.chat.MessageSignature$Packed
     }
 
@@ -32,7 +32,7 @@ public class WrapperPlayServerDeleteChatMessage extends AbstractPacket {
      *
      * @param value New value for field 'messageSignature'
      */
-    public void setMessageSignature(InternalStructure value) {
+    public void setMessageSignatureInternal(InternalStructure value) {
         this.handle.getStructures().write(0, value); // TODO: No specific modifier has been found for type class net.minecraft.network.chat.MessageSignature$Packed Generic type: class net.minecraft.network.chat.MessageSignature$Packed
     }
 

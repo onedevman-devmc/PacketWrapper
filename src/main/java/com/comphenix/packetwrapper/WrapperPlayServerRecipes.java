@@ -84,7 +84,7 @@ public class WrapperPlayServerRecipes extends AbstractPacket {
      *
      * @return 'bookSettings'
      */
-    public InternalStructure getBookSettings() {
+    public InternalStructure getBookSettingsInternal() {
         return this.handle.getStructures().read(3); // TODO: No specific modifier has been found for type class net.minecraft.stats.RecipeBookSettings Generic type: class net.minecraft.stats.RecipeBookSettings
     }
 
@@ -94,7 +94,7 @@ public class WrapperPlayServerRecipes extends AbstractPacket {
      *
      * @param value New value for field 'bookSettings'
      */
-    public void setBookSettings(InternalStructure value) {
+    public void setBookSettingsInternal(InternalStructure value) {
         this.handle.getStructures().write(3, value); // TODO: No specific modifier has been found for type class net.minecraft.stats.RecipeBookSettings Generic type: class net.minecraft.stats.RecipeBookSettings
     }
 

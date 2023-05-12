@@ -103,7 +103,7 @@ public class WrapperPlayClientWindowClick extends AbstractPacket {
      *
      * @return 'clickType'
      */
-    public InternalStructure getClickType() {
+    public InternalStructure getClickTypeInternal() {
         return this.handle.getStructures().read(0); // TODO: No specific modifier has been found for type class net.minecraft.world.inventory.ClickType Generic type: class net.minecraft.world.inventory.ClickType
     }
 

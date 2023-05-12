@@ -22,7 +22,7 @@ public class WrapperPlayServerSystemChat extends AbstractPacket {
      *
      * @return 'adventure$content'
      */
-    public InternalStructure getAdventure$content() {
+    public InternalStructure getAdventure$contentInternal() {
         return this.handle.getStructures().read(0); // TODO: No specific modifier has been found for type interface net.kyori.adventure.text.Component Generic type: interface net.kyori.adventure.text.Component
     }
 
@@ -32,7 +32,7 @@ public class WrapperPlayServerSystemChat extends AbstractPacket {
      *
      * @param value New value for field 'adventure$content'
      */
-    public void setAdventure$content(InternalStructure value) {
+    public void setAdventure$contentInternal(InternalStructure value) {
         this.handle.getStructures().write(0, value); // TODO: No specific modifier has been found for type interface net.kyori.adventure.text.Component Generic type: interface net.kyori.adventure.text.Component
     }
 

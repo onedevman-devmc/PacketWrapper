@@ -41,7 +41,7 @@ public class WrapperPlayServerOpenWindow extends AbstractPacket {
      *
      * @return 'type'
      */
-    public InternalStructure getType() {
+    public InternalStructure getTypeInternal() {
         return this.handle.getStructures().read(0); // TODO: No specific modifier has been found for type class net.minecraft.world.inventory.MenuType Generic type: [?]
     }
 
@@ -51,7 +51,7 @@ public class WrapperPlayServerOpenWindow extends AbstractPacket {
      *
      * @param value New value for field 'type'
      */
-    public void setType(InternalStructure value) {
+    public void setTypeInternal(InternalStructure value) {
         this.handle.getStructures().write(0, value); // TODO: No specific modifier has been found for type class net.minecraft.world.inventory.MenuType Generic type: [?]
     }
 

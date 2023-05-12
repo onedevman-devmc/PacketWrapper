@@ -26,8 +26,8 @@ class WrapperPlayServerBossTest {
         assertNotNull(clazz);
         assertNotNull(constructor);
         Object instance = constructor.newInstance(1.0F);
-        dummy.setOperation(new InternalStructure(instance, new StructureModifier<>(clazz).withTarget(instance)));
-        assertNotNull(dummy.getOperation());
+        dummy.setOperationInternal(new InternalStructure(instance, new StructureModifier<>(clazz).withTarget(instance)));
+        assertNotNull(dummy.getOperationInternal());
     }
 
 }

@@ -41,7 +41,7 @@ public class WrapperPlayServerDisguisedChat extends AbstractPacket {
      *
      * @return 'chatType'
      */
-    public InternalStructure getChatType() {
+    public InternalStructure getChatTypeInternal() {
         return this.handle.getStructures().read(1); // TODO: No specific modifier has been found for type class net.minecraft.network.chat.ChatType$BoundNetwork Generic type: class net.minecraft.network.chat.ChatType$BoundNetwork
     }
 
@@ -51,7 +51,7 @@ public class WrapperPlayServerDisguisedChat extends AbstractPacket {
      *
      * @param value New value for field 'chatType'
      */
-    public void setChatType(InternalStructure value) {
+    public void setChatTypeInternal(InternalStructure value) {
         this.handle.getStructures().write(1, value); // TODO: No specific modifier has been found for type class net.minecraft.network.chat.ChatType$BoundNetwork Generic type: class net.minecraft.network.chat.ChatType$BoundNetwork
     }
 

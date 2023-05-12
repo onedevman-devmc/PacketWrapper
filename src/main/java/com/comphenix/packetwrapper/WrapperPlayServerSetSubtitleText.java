@@ -41,7 +41,7 @@ public class WrapperPlayServerSetSubtitleText extends AbstractPacket {
      *
      * @return 'adventure$text'
      */
-    public InternalStructure getAdventure$text() {
+    public InternalStructure getAdventure$textInternal() {
         return this.handle.getStructures().read(1); // TODO: No specific modifier has been found for type interface net.kyori.adventure.text.Component Generic type: interface net.kyori.adventure.text.Component
     }
 
@@ -51,7 +51,7 @@ public class WrapperPlayServerSetSubtitleText extends AbstractPacket {
      *
      * @param value New value for field 'adventure$text'
      */
-    public void setAdventure$text(InternalStructure value) {
+    public void setAdventure$textInternal(InternalStructure value) {
         this.handle.getStructures().write(1, value); // TODO: No specific modifier has been found for type interface net.kyori.adventure.text.Component Generic type: interface net.kyori.adventure.text.Component
     }
 
@@ -61,7 +61,7 @@ public class WrapperPlayServerSetSubtitleText extends AbstractPacket {
      *
      * @return 'components'
      */
-    public InternalStructure getComponents() {
+    public InternalStructure getComponentsInternal() {
         return this.handle.getStructures().read(2); // TODO: No specific modifier has been found for type class [Lnet.md_5.bungee.api.chat.BaseComponent; Generic type: class [Lnet.md_5.bungee.api.chat.BaseComponent;
     }
 
@@ -71,7 +71,7 @@ public class WrapperPlayServerSetSubtitleText extends AbstractPacket {
      *
      * @param value New value for field 'components'
      */
-    public void setComponents(InternalStructure value) {
+    public void setComponentsInternal(InternalStructure value) {
         this.handle.getStructures().write(2, value); // TODO: No specific modifier has been found for type class [Lnet.md_5.bungee.api.chat.BaseComponent; Generic type: class [Lnet.md_5.bungee.api.chat.BaseComponent;
     }
 

@@ -25,7 +25,7 @@ public class WrapperPlayServerCustomChatCompletions extends AbstractPacket {
      *
      * @return 'action'
      */
-    public InternalStructure getAction() {
+    public InternalStructure getActionInternal() {
         return this.handle.getStructures().read(0); // TODO: No specific modifier has been found for type class net.minecraft.network.protocol.game.ClientboundCustomChatCompletionsPacket$Action Generic type: class net.minecraft.network.protocol.game.ClientboundCustomChatCompletionsPacket$Action
     }
 
@@ -35,7 +35,7 @@ public class WrapperPlayServerCustomChatCompletions extends AbstractPacket {
      *
      * @param value New value for field 'action'
      */
-    public void setAction(InternalStructure value) {
+    public void setActionInternal(InternalStructure value) {
         this.handle.getStructures().write(0, value); // TODO: No specific modifier has been found for type class net.minecraft.network.protocol.game.ClientboundCustomChatCompletionsPacket$Action Generic type: class net.minecraft.network.protocol.game.ClientboundCustomChatCompletionsPacket$Action
     }
 

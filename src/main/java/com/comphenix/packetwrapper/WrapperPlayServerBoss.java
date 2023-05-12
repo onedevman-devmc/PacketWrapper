@@ -42,7 +42,7 @@ public class WrapperPlayServerBoss extends AbstractPacket {
      *
      * @return 'operation'
      */
-    public InternalStructure getOperation() {
+    public InternalStructure getOperationInternal() {
         return this.handle.getStructures().read(1); // TODO: No specific modifier has been found for type interface net.minecraft.network.protocol.game.ClientboundBossEventPacket$Operation Generic type: interface net.minecraft.network.protocol.game.ClientboundBossEventPacket$Operation
     }
 
@@ -52,7 +52,7 @@ public class WrapperPlayServerBoss extends AbstractPacket {
      *
      * @param value New value for field 'operation'
      */
-    public void setOperation(InternalStructure value) {
+    public void setOperationInternal(InternalStructure value) {
         this.handle.getStructures().write(1, value); // TODO: No specific modifier has been found for type interface net.minecraft.network.protocol.game.ClientboundBossEventPacket$Operation Generic type: interface net.minecraft.network.protocol.game.ClientboundBossEventPacket$Operation
     }
 

@@ -142,7 +142,7 @@ public class WrapperPlayClientStruct extends AbstractPacket {
      *
      * @return 'mirror'
      */
-    public InternalStructure getMirror() {
+    public InternalStructure getMirrorInternal() {
         return this.handle.getStructures().read(6); // TODO: No specific modifier has been found for type class net.minecraft.world.level.block.Mirror Generic type: class net.minecraft.world.level.block.Mirror
     }
 
@@ -152,7 +152,7 @@ public class WrapperPlayClientStruct extends AbstractPacket {
      *
      * @param value New value for field 'mirror'
      */
-    public void setMirror(InternalStructure value) {
+    public void setMirrorInternal(InternalStructure value) {
         this.handle.getStructures().write(6, value); // TODO: No specific modifier has been found for type class net.minecraft.world.level.block.Mirror Generic type: class net.minecraft.world.level.block.Mirror
     }
 
@@ -162,7 +162,7 @@ public class WrapperPlayClientStruct extends AbstractPacket {
      *
      * @return 'rotation'
      */
-    public InternalStructure getRotation() {
+    public InternalStructure getRotationInternal() {
         return this.handle.getStructures().read(7); // TODO: No specific modifier has been found for type class net.minecraft.world.level.block.Rotation Generic type: class net.minecraft.world.level.block.Rotation
     }
 
@@ -172,7 +172,7 @@ public class WrapperPlayClientStruct extends AbstractPacket {
      *
      * @param value New value for field 'rotation'
      */
-    public void setRotation(InternalStructure value) {
+    public void setRotationInternal(InternalStructure value) {
         this.handle.getStructures().write(7, value); // TODO: No specific modifier has been found for type class net.minecraft.world.level.block.Rotation Generic type: class net.minecraft.world.level.block.Rotation
     }
 

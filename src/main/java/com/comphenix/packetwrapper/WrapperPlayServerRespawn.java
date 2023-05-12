@@ -26,7 +26,7 @@ public class WrapperPlayServerRespawn extends AbstractPacket {
      *
      * @return 'dimensionType'
      */
-    public InternalStructure getDimensionType() {
+    public InternalStructure getDimensionTypeInternal() {
         return this.handle.getStructures().read(0);
     }
 
@@ -35,7 +35,7 @@ public class WrapperPlayServerRespawn extends AbstractPacket {
      *
      * @param value New value for field 'dimensionType'
      */
-    public void setDimensionType(InternalStructure value) {
+    public void setDimensionTypeInternal(InternalStructure value) {
         this.handle.getStructures().write(0, value);
     }
 
@@ -44,7 +44,7 @@ public class WrapperPlayServerRespawn extends AbstractPacket {
      *
      * @return 'dimension'
      */
-    public InternalStructure getDimension() {
+    public InternalStructure getDimensionInternal() {
         return this.handle.getStructures().read(1);
     }
 
@@ -53,7 +53,7 @@ public class WrapperPlayServerRespawn extends AbstractPacket {
      *
      * @param value New value for field 'dimension'
      */
-    public void setDimension(InternalStructure value) {
+    public void setDimensionInternal(InternalStructure value) {
         this.handle.getStructures().write(1, value);
     }
 

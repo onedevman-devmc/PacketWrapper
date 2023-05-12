@@ -42,7 +42,7 @@ public class WrapperPlayServerTileEntityData extends AbstractPacket {
      *
      * @return 'type'
      */
-    public InternalStructure getType() {
+    public InternalStructure getTypeInternal() {
         return this.handle.getStructures().read(1); // TODO: No specific modifier has been found for type class net.minecraft.world.level.block.entity.BlockEntityType Generic type: [?]
     }
 
@@ -52,7 +52,7 @@ public class WrapperPlayServerTileEntityData extends AbstractPacket {
      *
      * @param value New value for field 'type'
      */
-    public void setType(InternalStructure value) {
+    public void setTypeInternal(InternalStructure value) {
         this.handle.getStructures().write(1, value); // TODO: No specific modifier has been found for type class net.minecraft.world.level.block.entity.BlockEntityType Generic type: [?]
     }
 
