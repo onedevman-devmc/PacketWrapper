@@ -16,7 +16,11 @@ public class BaseTestInitialization implements BeforeAllCallback, ExtensionConte
     @Override
     public void beforeAll(ExtensionContext extensionContext) {
         if(started.compareAndSet(false, true)) {
-            BukkitInitialization.initializeAll();
+            try {
+                BukkitInitialization.initializeAll();
+            } catch (Throwable t) {
+                throw new RuntimeException("Failed to initialize bukkit support", t);
+            }
             extensionContext.getRoot().getStore(ExtensionContext.Namespace.GLOBAL).put("bukkit-initialization", this);
         }
     }
