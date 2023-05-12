@@ -1,5 +1,7 @@
 # PacketWrapper
 
+[![Builds](https://github.com/lukalt/PacketWrapper/actions/workflows/maven-publish.yml/badge.svg)](https://github.com/lukalt/PacketWrapper/actions/workflows/maven-publish.yml)
+
 This is an unofficial continuation of PacketWrapper by dmulloy2 and aadnk. The original versions can be found [here](https://github.com/dmulloy2/PacketWrapper) and [here](https://github.com/aadnk/PacketWrapper).
 
 When reading and writing packets in [ProtocolLib](http://www.spigotmc.org/resources/protocollib.1997/), it is necessary to know the order in which the fields are stored in memory. This requires you to decompile the Minecraft source code with [JD-GUI](http://jd.benow.ca/) or find it in the Spigot work directory (/work/decompile/), while decoding the meaning of a field by looking up an online [wiki](http://www.wiki.vg/Protocol) resource ([tutorial](http://forums.bukkit.org/threads/lib-1-4-6-protocollib-2-0-0-safely-and-easily-modify-sent-and-recieved-packets.101035/page-2#post-1366140)). It would be much easier if these packets could be accessed as any other normal Java bean. 
