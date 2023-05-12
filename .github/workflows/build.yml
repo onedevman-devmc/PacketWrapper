@@ -28,13 +28,13 @@ jobs:
     - name: Build with Maven
       run: mvn --batch-mode package
 
-    - name: Publish to GitHub Packages Apache Maven
-      run: mvn --batch-mode deploy -s $GITHUB_WORKSPACE/settings.xml
-      env:
-        GITHUB_TOKEN: ${{ github.token }}
+    # - name: Publish to GitHub Packages Apache Maven
+    #  run: mvn --batch-mode deploy -s $GITHUB_WORKSPACE/settings.xml
+    #  env:
+    #    GITHUB_TOKEN: ${{ github.token }}
 
     - name: Upload plugin file
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: PacketWrapper
         path: target/PacketWrapper.jar
