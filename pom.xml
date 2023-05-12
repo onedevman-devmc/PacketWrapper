@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.comphenix.packetwrapper</groupId>
     <artifactId>PacketWrapper</artifactId>
-    <version>1.19.4-R0.1-SNAPSHOT</version>
+    <version>0.0.1-1.19.4</version>
 
     <name>PacketWrapper</name>
 
