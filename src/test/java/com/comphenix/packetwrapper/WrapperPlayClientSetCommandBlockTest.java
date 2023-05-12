@@ -18,9 +18,7 @@ class WrapperPlayClientSetCommandBlockTest {
     public void test() {
         WrapperPlayClientSetCommandBlock dummy = new WrapperPlayClientSetCommandBlock();
         dummy.setMode(WrapperPlayClientSetCommandBlock.CommandBlockMode.AUTO);
-        System.out.println(new Gson().toJson(dummy.getHandle().getHandle()));
         dummy.setMode(WrapperPlayClientSetCommandBlock.CommandBlockMode.SEQUENCE);
-        System.out.println(new Gson().toJson(dummy.getHandle().getHandle()));
 
         dummy.setCommand("/test");
         dummy.setAutomatic(false);

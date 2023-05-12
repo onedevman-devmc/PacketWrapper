@@ -35,7 +35,7 @@ public class BukkitInitialization {
     private boolean packaged;
 
     private BukkitInitialization() {
-        System.out.println("Created new BukkitInitialization on " + Thread.currentThread().getName());
+        LogManager.getLogger().info("Created new BukkitInitialization on " + Thread.currentThread().getName());
     }
 
     /**
@@ -75,8 +75,6 @@ public class BukkitInitialization {
             ExactReflection.fromClass(sharedConstantsClass, false).getMethod(mojangMapped ? "tryDetectVersion" : "a").invoke(null);
             Class<?> dispenserRegistryClass = getClass("net.minecraft.server.DispenserRegistry", "net.minecraft.server.Bootstrap");
             ExactReflection.fromClass(dispenserRegistryClass, false).getMethod(mojangMapped ? "bootStrap" : "a").invoke(null);
-            // SharedConstants.a();
-            // DispenserRegistry.a();
 
             getClass("net.minecraft.core.IRegistry", "net.minecraft.core.Registry").getName();
 
