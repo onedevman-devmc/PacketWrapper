@@ -1,6 +1,7 @@
 # PacketWrapper
 
-[![Builds](https://github.com/lukalt/PacketWrapper/actions/workflows/maven-publish.yml/badge.svg)](https://github.com/lukalt/PacketWrapper/actions/workflows/maven-publish.yml)
+[![Build](https://github.com/lukalt/PacketWrapper/actions/workflows/build.yml/badge.svg)](https://github.com/lukalt/PacketWrapper/actions/workflows/build.yml)
+
 
 This is an unofficial continuation of PacketWrapper by dmulloy2 and aadnk. The original versions can be found [here](https://github.com/dmulloy2/PacketWrapper) and [here](https://github.com/aadnk/PacketWrapper).
 
