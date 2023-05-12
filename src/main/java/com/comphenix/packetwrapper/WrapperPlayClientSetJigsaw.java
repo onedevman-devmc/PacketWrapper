@@ -2,6 +2,7 @@ package com.comphenix.packetwrapper;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
+import com.comphenix.protocol.utility.MinecraftReflection;
 import com.comphenix.protocol.wrappers.BlockPosition;
 import com.comphenix.protocol.wrappers.EnumWrappers;
 import com.comphenix.protocol.wrappers.MinecraftKey;
@@ -9,6 +10,7 @@ import com.comphenix.protocol.wrappers.MinecraftKey;
 public class WrapperPlayClientSetJigsaw extends AbstractPacket {
 
     public static final PacketType TYPE = PacketType.Play.Client.SET_JIGSAW;
+    private static final Class<?> JOINT_TYPE_CLASS = MinecraftReflection.getNullableNMS("world.level.block.entity.JigsawBlockEntity$JointType", "world.level.block.entity.TileEntityJigsaw$JointType");
 
     public WrapperPlayClientSetJigsaw() {
         super(TYPE);
@@ -114,8 +116,8 @@ public class WrapperPlayClientSetJigsaw extends AbstractPacket {
      *
      * @return 'joint'
      */
-    public EnumWrappers.JointType getJoint() {
-        return this.handle.getJointTypes().read(0);
+    public JointType getJoint() {
+        return this.handle.getModifier().withType(JOINT_TYPE_CLASS, new EnumWrappers.IndexedEnumConverter<>(JointType.class, JOINT_TYPE_CLASS)).read(0);
     }
 
     /**
@@ -124,8 +126,13 @@ public class WrapperPlayClientSetJigsaw extends AbstractPacket {
      *
      * @param value New value for field 'joint'
      */
-    public void setJoint(EnumWrappers.JointType value) {
-        this.handle.getJointTypes().write(0, value);
+    public void setJoint(JointType value) {
+        this.handle.getModifier().withType(JOINT_TYPE_CLASS, new EnumWrappers.IndexedEnumConverter<>(JointType.class, JOINT_TYPE_CLASS)).write(0, value);
+    }
+
+    public enum JointType {
+        ROLLABLE,
+        ALIGNED
     }
 
 }

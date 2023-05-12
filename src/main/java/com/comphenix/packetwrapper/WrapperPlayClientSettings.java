@@ -2,12 +2,14 @@ package com.comphenix.packetwrapper;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
+import com.comphenix.protocol.utility.MinecraftReflection;
 import com.comphenix.protocol.wrappers.EnumWrappers;
 import com.comphenix.protocol.wrappers.EnumWrappers.ChatVisibility;
 
 public class WrapperPlayClientSettings extends AbstractPacket {
 
     public static final PacketType TYPE = PacketType.Play.Client.SETTINGS;
+    private static final Class<?> HUMANOID_ARM_CLASS = MinecraftReflection.getNullableNMS("world.entity.HumanoidArm", "world.entity.EnumMainHand");
 
     public WrapperPlayClientSettings() {
         super(TYPE);
@@ -113,8 +115,8 @@ public class WrapperPlayClientSettings extends AbstractPacket {
      *
      * @return 'mainHand'
      */
-    public EnumWrappers.HumanoidArm getMainHand() {
-        return this.handle.getHumanoidArms().read(0);
+    public HumanoidArm getMainHand() {
+        return this.handle.getModifier().withType(HUMANOID_ARM_CLASS, new EnumWrappers.IndexedEnumConverter<>(HumanoidArm.class, HUMANOID_ARM_CLASS)).read(0);
     }
 
     /**
@@ -123,8 +125,8 @@ public class WrapperPlayClientSettings extends AbstractPacket {
      *
      * @param value New value for field 'mainHand'
      */
-    public void setMainHand(EnumWrappers.HumanoidArm value) {
-        this.handle.getHumanoidArms().write(0, value);
+    public void setMainHand(HumanoidArm value) {
+        this.handle.getModifier().withType(HUMANOID_ARM_CLASS, new EnumWrappers.IndexedEnumConverter<>(HumanoidArm.class, HUMANOID_ARM_CLASS)).write(0, value);
     }
 
     /**
@@ -161,6 +163,11 @@ public class WrapperPlayClientSettings extends AbstractPacket {
      */
     public void setAllowsListing(boolean value) {
         this.handle.getBooleans().write(2, value);
+    }
+
+    public enum HumanoidArm {
+        LEFT,
+        RIGHT
     }
 
 }

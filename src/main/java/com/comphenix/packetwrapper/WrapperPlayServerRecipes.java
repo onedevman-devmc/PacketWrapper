@@ -3,6 +3,7 @@ package com.comphenix.packetwrapper;
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.InternalStructure;
 import com.comphenix.protocol.events.PacketContainer;
+import com.comphenix.protocol.utility.MinecraftReflection;
 import com.comphenix.protocol.wrappers.EnumWrappers;
 import com.comphenix.protocol.wrappers.MinecraftKey;
 
@@ -11,6 +12,7 @@ import java.util.List;
 public class WrapperPlayServerRecipes extends AbstractPacket {
 
     public static final PacketType TYPE = PacketType.Play.Server.RECIPES;
+    private static final Class<?> ACTION_TYPE = MinecraftReflection.getNullableNMS("network.protocol.game.PacketPlayOutRecipes$Action");
 
     public WrapperPlayServerRecipes() {
         super(TYPE);
@@ -26,8 +28,8 @@ public class WrapperPlayServerRecipes extends AbstractPacket {
      *
      * @return 'state'
      */
-    public EnumWrappers.RecipeUpdateState getState() {
-        return this.handle.getRecipeUpdateStates().read(0);
+    public Action getState() {
+        return this.handle.getModifier().withType(ACTION_TYPE, new EnumWrappers.IndexedEnumConverter<>(Action.class, ACTION_TYPE)).read(0);
     }
 
     /**
@@ -36,8 +38,8 @@ public class WrapperPlayServerRecipes extends AbstractPacket {
      *
      * @param value New value for field 'state'
      */
-    public void setState(EnumWrappers.RecipeUpdateState value) {
-        this.handle.getRecipeUpdateStates().write(0, value);
+    public void setState(Action value) {
+        this.handle.getModifier().withType(ACTION_TYPE, new EnumWrappers.IndexedEnumConverter<>(Action.class, ACTION_TYPE)).write(0, value);
     }
 
     /**
@@ -94,6 +96,12 @@ public class WrapperPlayServerRecipes extends AbstractPacket {
      */
     public void setBookSettings(InternalStructure value) {
         this.handle.getStructures().write(3, value); // TODO: No specific modifier has been found for type class net.minecraft.stats.RecipeBookSettings Generic type: class net.minecraft.stats.RecipeBookSettings
+    }
+
+    public enum Action {
+        INIT,
+        ADD,
+        REMOVE;
     }
 
 }

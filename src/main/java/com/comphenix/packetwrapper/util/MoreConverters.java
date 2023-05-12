@@ -1,8 +1,14 @@
 package com.comphenix.packetwrapper.util;
 
 import com.comphenix.protocol.reflect.EquivalentConverter;
+import com.comphenix.protocol.reflect.accessors.Accessors;
+import com.comphenix.protocol.reflect.accessors.MethodAccessor;
+import com.comphenix.protocol.utility.MinecraftReflection;
+import com.google.common.base.Supplier;
+import com.google.common.base.Suppliers;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import org.bukkit.Material;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -55,5 +61,31 @@ public class MoreConverters {
                 return null;
             }
         };
+    }
+
+    private static final Supplier<EquivalentConverter<Material>> MATERIAL_CONVERTER = Suppliers.memoize(() -> {
+        Class<?> CRAFT_MAGIC_NUMBERS_CLASS = MinecraftReflection.getCraftBukkitClass("util.CraftMagicNumbers");
+        MethodAccessor ITEM_TO_MATERIAL_ACCESSOR = Accessors.getMethodAccessor(CRAFT_MAGIC_NUMBERS_CLASS, "getMaterial", MinecraftReflection.getItemClass());
+        MethodAccessor MATERIAL_TO_ITEM_ACCESSOR = Accessors.getMethodAccessor(CRAFT_MAGIC_NUMBERS_CLASS, "getItem", Material.class);
+        return new EquivalentConverter<>() {
+            @Override
+            public Object getGeneric(Material specific) {
+                return MATERIAL_TO_ITEM_ACCESSOR.invoke(null, specific);
+            }
+
+            @Override
+            public Material getSpecific(Object generic) {
+                return (Material) ITEM_TO_MATERIAL_ACCESSOR.invoke(null, generic);
+            }
+
+            @Override
+            public Class<Material> getSpecificType() {
+                return Material.class;
+            }
+        };
+    });
+
+    public static EquivalentConverter<Material> getMaterialConverter() {
+        return MATERIAL_CONVERTER.get();
     }
 }

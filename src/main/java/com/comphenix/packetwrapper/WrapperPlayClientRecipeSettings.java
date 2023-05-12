@@ -2,12 +2,13 @@ package com.comphenix.packetwrapper;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
-import com.comphenix.protocol.wrappers.EnumWrappers.RecipeBookType;
+import com.comphenix.protocol.utility.MinecraftReflection;
+import com.comphenix.protocol.wrappers.EnumWrappers;
 
 public class WrapperPlayClientRecipeSettings extends AbstractPacket {
 
     public static final PacketType TYPE = PacketType.Play.Client.RECIPE_SETTINGS;
-
+    private static final Class<?> ACTION_TYPE = MinecraftReflection.getNullableNMS("world.inventory.RecipeBookType");
     public WrapperPlayClientRecipeSettings() {
         super(TYPE);
     }
@@ -22,7 +23,7 @@ public class WrapperPlayClientRecipeSettings extends AbstractPacket {
      * @return 'bookType'
      */
     public RecipeBookType getBookType() {
-        return this.handle.getRecipeBookTypes().read(0);
+        return this.handle.getModifier().withType(ACTION_TYPE, new EnumWrappers.IndexedEnumConverter<>(RecipeBookType.class, ACTION_TYPE)).read(0);
     }
 
     /**
@@ -31,7 +32,7 @@ public class WrapperPlayClientRecipeSettings extends AbstractPacket {
      * @param value New value for field 'bookType'
      */
     public void setBookType(RecipeBookType value) {
-        this.handle.getRecipeBookTypes().write(0, value);
+        this.handle.getModifier().withType(ACTION_TYPE, new EnumWrappers.IndexedEnumConverter<>(RecipeBookType.class, ACTION_TYPE)).write(0, value);
     }
 
     /**
@@ -68,6 +69,13 @@ public class WrapperPlayClientRecipeSettings extends AbstractPacket {
      */
     public void setIsFiltering(boolean value) {
         this.handle.getBooleans().write(1, value);
+    }
+
+    public enum RecipeBookType {
+        CRAFTING,
+        FURNACE,
+        BLAST_FURNACE,
+        SMOKER;
     }
 
 }

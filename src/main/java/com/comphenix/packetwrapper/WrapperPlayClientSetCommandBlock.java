@@ -2,12 +2,16 @@ package com.comphenix.packetwrapper;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
+import com.comphenix.protocol.reflect.EquivalentConverter;
+import com.comphenix.protocol.utility.MinecraftReflection;
 import com.comphenix.protocol.wrappers.BlockPosition;
 import com.comphenix.protocol.wrappers.EnumWrappers;
 
 public class WrapperPlayClientSetCommandBlock extends AbstractPacket {
 
     public static final PacketType TYPE = PacketType.Play.Client.SET_COMMAND_BLOCK;
+    private static final Class<?> COMMAND_BLOCK_MODE_CLASS = MinecraftReflection.getNullableNMS("world.level.block.entity.CommandBlockEntity$Mode", "world.level.block.entity.TileEntityCommand$Type");
+    private static final EquivalentConverter<CommandBlockMode> COMMAND_BLOCK_MODE_CONVERTER = new EnumWrappers.IndexedEnumConverter<>(CommandBlockMode.class, COMMAND_BLOCK_MODE_CLASS);
 
     public WrapperPlayClientSetCommandBlock() {
         super(TYPE);
@@ -113,8 +117,8 @@ public class WrapperPlayClientSetCommandBlock extends AbstractPacket {
      *
      * @return 'mode'
      */
-    public EnumWrappers.CommandBlockMode getMode() {
-        return this.handle.getCommandBlockModes().read(0);
+    public CommandBlockMode getMode() {
+        return this.handle.getModifier().withType(COMMAND_BLOCK_MODE_CLASS, COMMAND_BLOCK_MODE_CONVERTER).read(0);
     }
 
     /**
@@ -123,8 +127,13 @@ public class WrapperPlayClientSetCommandBlock extends AbstractPacket {
      *
      * @param value New value for field 'mode'
      */
-    public void setMode(EnumWrappers.CommandBlockMode value) {
-        this.handle.getCommandBlockModes().write(0, value);
+    public void setMode(CommandBlockMode value) {
+        this.handle.getModifier().withType(COMMAND_BLOCK_MODE_CLASS, COMMAND_BLOCK_MODE_CONVERTER).write(0, value);
     }
 
+    public enum CommandBlockMode {
+        SEQUENCE,
+        AUTO,
+        REDSTONE
+    }
 }

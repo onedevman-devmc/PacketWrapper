@@ -1,25 +1,28 @@
 package com.comphenix.packetwrapper;
 
+import com.comphenix.protocol.wrappers.MinecraftKey;
 import io.netty.buffer.Unpooled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * @author Lukas Alt
- * @since 08.05.2023
+ * @since 12.05.2023
  */
 @ExtendWith(BaseTestInitialization.class)
-class WrapperLoginClientCustomPayloadTest {
+class WrapperLoginServerCustomPayloadTest {
+    public static final MinecraftKey DUMMY_KEY = new MinecraftKey("minecraft", "test");
+
     @Test
     public void test() {
-        WrapperLoginClientCustomPayload dummy = new WrapperLoginClientCustomPayload();
+        WrapperLoginServerCustomPayload dummy = new WrapperLoginServerCustomPayload();
         dummy.setData(Unpooled.buffer());
         dummy.setTransactionId(1);
+        dummy.setIdentifier(DUMMY_KEY);
         assertNotNull(dummy.getData());
         assertEquals(1, dummy.getTransactionId());
+        assertEquals(DUMMY_KEY, dummy.getIdentifier());
     }
-
 }

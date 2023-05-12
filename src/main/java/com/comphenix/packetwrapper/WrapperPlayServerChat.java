@@ -4,7 +4,6 @@ import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.InternalStructure;
 import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.wrappers.WrappedChatComponent;
-import com.comphenix.protocol.wrappers.WrappedFilterMask;
 import com.comphenix.protocol.wrappers.WrappedMessageSignature;
 
 import java.util.UUID;
@@ -118,8 +117,8 @@ public class WrapperPlayServerChat extends AbstractPacket {
      *
      * @return 'filterMask'
      */
-    public WrappedFilterMask getFilterMask() {
-        return this.handle.getFilterMasks().read(0);
+    public InternalStructure getFilterMask() {
+        return this.handle.getStructures().read(4);
     }
 
     /**
@@ -127,8 +126,8 @@ public class WrapperPlayServerChat extends AbstractPacket {
      *
      * @param value New value for field 'filterMask'
      */
-    public void setFilterMask(WrappedFilterMask value) {
-        this.handle.getFilterMasks().write(0, value);
+    public void setFilterMask(InternalStructure value) {
+        this.handle.getStructures().write(4, value);
     }
 
     /**

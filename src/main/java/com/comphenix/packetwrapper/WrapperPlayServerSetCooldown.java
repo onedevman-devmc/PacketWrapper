@@ -1,7 +1,9 @@
 package com.comphenix.packetwrapper;
 
+import com.comphenix.packetwrapper.util.MoreConverters;
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
+import com.comphenix.protocol.utility.MinecraftReflection;
 import org.bukkit.Material;
 
 public class WrapperPlayServerSetCooldown extends AbstractPacket {
@@ -22,7 +24,7 @@ public class WrapperPlayServerSetCooldown extends AbstractPacket {
      * @return 'item'
      */
     public Material getItem() {
-        return this.handle.getMaterials().read(0);
+        return this.handle.getModifier().withType(MinecraftReflection.getItemClass(), MoreConverters.getMaterialConverter()).read(0);
     }
 
     /**
@@ -31,7 +33,7 @@ public class WrapperPlayServerSetCooldown extends AbstractPacket {
      * @param value New value for field 'item'
      */
     public void setItem(Material value) {
-        this.handle.getMaterials().write(0, value);
+        this.handle.getModifier().withType(MinecraftReflection.getItemClass(), MoreConverters.getMaterialConverter()).write(0, value);
     }
 
     /**

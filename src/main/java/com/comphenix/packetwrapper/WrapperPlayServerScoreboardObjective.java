@@ -2,12 +2,15 @@ package com.comphenix.packetwrapper;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
+import com.comphenix.protocol.utility.MinecraftReflection;
 import com.comphenix.protocol.wrappers.EnumWrappers;
 import com.comphenix.protocol.wrappers.WrappedChatComponent;
+import org.bukkit.scoreboard.RenderType;
 
 public class WrapperPlayServerScoreboardObjective extends AbstractPacket {
 
     public static final PacketType TYPE = PacketType.Play.Server.SCOREBOARD_OBJECTIVE;
+    private static final Class<?> ACTION_CLASS = MinecraftReflection.getNullableNMS("world.scores.criteria.ObjectiveCriteria$RenderType", "world.scores.criteria.IScoreboardCriteria$EnumScoreboardHealthDisplay");
 
     public WrapperPlayServerScoreboardObjective() {
         super(TYPE);
@@ -59,8 +62,8 @@ public class WrapperPlayServerScoreboardObjective extends AbstractPacket {
      *
      * @return 'renderType'
      */
-    public EnumWrappers.ObjectiveRenderType getRenderType() {
-        return this.handle.getObjectiveRenderTypes().read(0);
+    public RenderType getRenderType() {
+        return this.handle.getModifier().withType(ACTION_CLASS, new EnumWrappers.IndexedEnumConverter<>(RenderType.class, ACTION_CLASS)).read(0);
     }
 
     /**
@@ -69,8 +72,8 @@ public class WrapperPlayServerScoreboardObjective extends AbstractPacket {
      *
      * @param value New value for field 'renderType'
      */
-    public void setRenderType(EnumWrappers.ObjectiveRenderType value) {
-        this.handle.getObjectiveRenderTypes().write(2, value);
+    public void setRenderType(RenderType value) {
+        this.handle.getModifier().withType(ACTION_CLASS, new EnumWrappers.IndexedEnumConverter<>(RenderType.class, ACTION_CLASS)).write(0, value);
     }
 
     /**

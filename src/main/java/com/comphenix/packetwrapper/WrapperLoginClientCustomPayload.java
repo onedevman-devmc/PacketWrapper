@@ -2,8 +2,10 @@ package com.comphenix.packetwrapper;
 
 import com.comphenix.packetwrapper.util.TestExclusion;
 import com.comphenix.protocol.PacketType;
+import com.comphenix.protocol.events.InternalStructure;
 import com.comphenix.protocol.events.PacketContainer;
-import com.comphenix.protocol.wrappers.WrappedPacketDataSerializer;
+import com.comphenix.protocol.utility.MinecraftReflection;
+import io.netty.buffer.ByteBuf;
 
 public class WrapperLoginClientCustomPayload extends AbstractPacket {
 
@@ -41,8 +43,8 @@ public class WrapperLoginClientCustomPayload extends AbstractPacket {
      * @return 'data'
      */
     @TestExclusion
-    public WrappedPacketDataSerializer getData() {
-        return this.handle.getPacketDataSerializers().read(0);
+    public ByteBuf getData() {
+        return this.handle.getStructures().read(0).getModifier().<ByteBuf>withType(ByteBuf.class).read(0);
     }
 
     /**
@@ -50,8 +52,9 @@ public class WrapperLoginClientCustomPayload extends AbstractPacket {
      *
      * @param value New value for field 'data'
      */
-    public void setData(WrappedPacketDataSerializer value) {
-        this.handle.getPacketDataSerializers().write(0, value);
+    public void setData(ByteBuf value) {
+        InternalStructure structure = InternalStructure.getConverter().getSpecific(MinecraftReflection.getPacketDataSerializer(value));
+        this.handle.getStructures().write(0, structure);
     }
 
 }

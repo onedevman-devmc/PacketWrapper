@@ -1,15 +1,20 @@
 package com.comphenix.packetwrapper;
 
+import com.comphenix.packetwrapper.wrappers.Vector3I;
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.InternalStructure;
 import com.comphenix.protocol.events.PacketContainer;
+import com.comphenix.protocol.utility.MinecraftReflection;
 import com.comphenix.protocol.wrappers.BlockPosition;
 import com.comphenix.protocol.wrappers.EnumWrappers;
-import com.comphenix.protocol.wrappers.Vector3I;
+import org.bukkit.block.structure.UsageMode;
 
 public class WrapperPlayClientStruct extends AbstractPacket {
 
     public static final PacketType TYPE = PacketType.Play.Client.STRUCT;
+    private static final Class<?> STRUCTURE_MODE_CLASS = MinecraftReflection.getNullableNMS("world.level.block.state.properties.StructureMode", "world.level.block.state.properties.BlockPropertyStructureMode");
+    private static final Class<?> STRUCTURE_MODE_UPDATE_TYPE_CLASS = MinecraftReflection.getNullableNMS("world.level.block.entity.StructureBlockEntity$UpdateType", "world.level.block.entity.TileEntityStructure$UpdateType");
+
 
     public WrapperPlayClientStruct() {
         super(TYPE);
@@ -43,8 +48,8 @@ public class WrapperPlayClientStruct extends AbstractPacket {
      *
      * @return 'updateType'
      */
-    public EnumWrappers.StructureBlockUpdateType getUpdateType() {
-        return this.handle.getStructureBlockUpdateTypes().read(0);
+    public UpdateType getUpdateType() {
+        return this.handle.getModifier().withType(STRUCTURE_MODE_UPDATE_TYPE_CLASS, new EnumWrappers.IndexedEnumConverter<>(UpdateType.class, STRUCTURE_MODE_UPDATE_TYPE_CLASS)).read(0);
     }
 
     /**
@@ -53,8 +58,8 @@ public class WrapperPlayClientStruct extends AbstractPacket {
      *
      * @param value New value for field 'updateType'
      */
-    public void setUpdateType(EnumWrappers.StructureBlockUpdateType value) {
-        this.handle.getStructureBlockUpdateTypes().write(0, value);
+    public void setUpdateType(UpdateType value) {
+        this.handle.getModifier().withType(STRUCTURE_MODE_UPDATE_TYPE_CLASS, new EnumWrappers.IndexedEnumConverter<>(UpdateType.class, STRUCTURE_MODE_UPDATE_TYPE_CLASS)).write(0, value);
     }
 
     /**
@@ -63,8 +68,8 @@ public class WrapperPlayClientStruct extends AbstractPacket {
      *
      * @return 'mode'
      */
-    public EnumWrappers.StructureMode getMode() {
-        return this.handle.getStructureModes().read(0);
+    public UsageMode getMode() {
+        return this.handle.getModifier().withType(STRUCTURE_MODE_CLASS, new EnumWrappers.IndexedEnumConverter<>(UsageMode.class, STRUCTURE_MODE_CLASS)).read(0);
     }
 
     /**
@@ -73,8 +78,8 @@ public class WrapperPlayClientStruct extends AbstractPacket {
      *
      * @param value New value for field 'mode'
      */
-    public void setMode(EnumWrappers.StructureMode value) {
-        this.handle.getStructureModes().write(0, value);
+    public void setMode(UsageMode value) {
+        this.handle.getModifier().withType(STRUCTURE_MODE_CLASS, new EnumWrappers.IndexedEnumConverter<>(UsageMode.class, STRUCTURE_MODE_CLASS)).write(0, value);
     }
 
     /**
@@ -119,7 +124,7 @@ public class WrapperPlayClientStruct extends AbstractPacket {
      * @return 'size'
      */
     public Vector3I getSize() {
-        return this.handle.getVector3Is().read(0);
+        return this.handle.getModifier().withType(Vector3I.HANDLE_TYPE, Vector3I.getConverter()).read(0);
     }
 
     /**
@@ -128,7 +133,7 @@ public class WrapperPlayClientStruct extends AbstractPacket {
      * @param value New value for field 'size'
      */
     public void setSize(Vector3I value) {
-        this.handle.getVector3Is().write(0, value);
+        this.handle.getModifier().withType(Vector3I.HANDLE_TYPE, Vector3I.getConverter()).write(0, value);
     }
 
     /**
@@ -279,4 +284,10 @@ public class WrapperPlayClientStruct extends AbstractPacket {
         this.handle.getLongs().write(0, value);
     }
 
+    public enum UpdateType {
+        UPDATE_DATA,
+        SAVE_AREA,
+        LOAD_AREA,
+        SCAN_AREA;
+    }
 }

@@ -1,11 +1,11 @@
 package com.comphenix.packetwrapper;
 
+import com.comphenix.packetwrapper.wrappers.Vector3I;
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.InternalStructure;
 import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.wrappers.BukkitConverters;
 import com.comphenix.protocol.wrappers.EnumWrappers.NativeGameMode;
-import com.comphenix.protocol.wrappers.Vector3I;
 import org.bukkit.World;
 
 import javax.annotation.Nullable;
