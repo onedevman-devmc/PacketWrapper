@@ -53,7 +53,7 @@ public class WrapperPlayServerAdvancements extends AbstractPacket {
      *
      * @param value New value for field 'added'
      */
-    public void setAdded(Map value) {
+    public void setAdded(Map<MinecraftKey, InternalStructure> value) {
         this.handle.getMaps(MinecraftKey.getConverter(), InternalStructure.getConverter()).write(0, value);
     }
 
