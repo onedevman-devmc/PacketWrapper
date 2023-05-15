@@ -4,6 +4,7 @@ import com.comphenix.packetwrapper.util.PacketWrapperUtils;
 import com.comphenix.packetwrapper.util.TestExclusion;
 import com.comphenix.packetwrapper.util.UtilityMethod;
 import com.comphenix.packetwrapper.util.Utils;
+import com.comphenix.packetwrapper.wrappers.AbstractPacket;
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.InternalStructure;
 import com.comphenix.protocol.events.PacketContainer;

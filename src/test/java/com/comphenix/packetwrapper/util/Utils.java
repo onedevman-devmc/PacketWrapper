@@ -17,8 +17,7 @@ public class Utils {
         return ClassPath.from(ClassLoader.getSystemClassLoader())
                 .getAllClasses()
                 .stream()
-                .filter(clazz -> clazz.getPackageName()
-                        .equalsIgnoreCase(packageName))
+                .filter(clazz -> clazz.getPackageName().toLowerCase().startsWith(packageName.toLowerCase()))
                 .map(clazz -> clazz.load())
                 .filter(clazz -> clazz.getSuperclass() != null && clazz.getSuperclass() == parent)
                 .collect(Collectors.toSet());

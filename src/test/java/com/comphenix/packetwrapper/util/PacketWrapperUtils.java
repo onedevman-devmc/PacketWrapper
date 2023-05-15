@@ -1,6 +1,6 @@
 package com.comphenix.packetwrapper.util;
 
-import com.comphenix.packetwrapper.AbstractPacket;
+import com.comphenix.packetwrapper.wrappers.AbstractPacket;
 
 import java.util.Set;
 

@@ -1,5 +1,6 @@
 package com.comphenix.packetwrapper;
 
+import com.comphenix.packetwrapper.wrappers.play.serverbound.WrapperPlayClientStruct;
 import org.bukkit.block.structure.UsageMode;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

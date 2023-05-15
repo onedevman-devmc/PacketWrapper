@@ -1,5 +1,6 @@
 package com.comphenix.packetwrapper;
 
+import com.comphenix.packetwrapper.wrappers.login.clientbound.WrapperLoginServerCustomPayload;
 import com.comphenix.protocol.wrappers.MinecraftKey;
 import io.netty.buffer.Unpooled;
 import org.junit.jupiter.api.Test;

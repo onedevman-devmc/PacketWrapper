@@ -1,5 +1,6 @@
 package com.comphenix.packetwrapper;
 
+import com.comphenix.packetwrapper.wrappers.play.serverbound.WrapperPlayClientAdvancements;
 import com.comphenix.protocol.wrappers.MinecraftKey;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

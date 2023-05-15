@@ -1,5 +1,6 @@
 package com.comphenix.packetwrapper;
 
+import com.comphenix.packetwrapper.wrappers.play.serverbound.WrapperPlayClientWindowClick;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;

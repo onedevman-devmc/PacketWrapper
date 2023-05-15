@@ -1,6 +1,7 @@
 package com.comphenix.packetwrapper;
 
-import com.comphenix.packetwrapper.wrappers.Vector3I;
+import com.comphenix.packetwrapper.wrappers.data.Vector3I;
+import com.comphenix.packetwrapper.wrappers.play.clientbound.WrapperPlayServerLogin;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 

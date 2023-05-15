@@ -1,5 +1,6 @@
 package com.comphenix.packetwrapper;
 
+import com.comphenix.packetwrapper.wrappers.play.clientbound.WrapperPlayServerBoss;
 import com.comphenix.protocol.events.InternalStructure;
 import com.comphenix.protocol.reflect.StructureModifier;
 import org.junit.jupiter.api.Test;

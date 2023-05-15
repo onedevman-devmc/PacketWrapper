@@ -1,7 +1,7 @@
 package com.comphenix.packetwrapper;
 
+import com.comphenix.packetwrapper.wrappers.play.serverbound.WrapperPlayClientSetCommandBlock;
 import com.comphenix.protocol.wrappers.BlockPosition;
-import com.google.gson.Gson;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
