@@ -4,12 +4,17 @@ import com.comphenix.packetwrapper.wrappers.AbstractPacket;
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.InternalStructure;
 import com.comphenix.protocol.events.PacketContainer;
+import com.comphenix.protocol.reflect.EquivalentConverter;
+import com.comphenix.protocol.utility.MinecraftReflection;
+import com.comphenix.protocol.wrappers.EnumWrappers;
 
 import java.util.Set;
 
 public class WrapperPlayServerPosition extends AbstractPacket {
 
     public static final PacketType TYPE = PacketType.Play.Server.POSITION;
+    private static final Class<?> RELATIVE_MOVEMENT_CLASS = MinecraftReflection.getMinecraftClass("world.entity.RelativeMovement");
+    private static final EquivalentConverter<RelativeMovement> RELATIVE_MOVEMENT_CONVERTER = new EnumWrappers.IndexedEnumConverter<>(RelativeMovement.class, RELATIVE_MOVEMENT_CLASS);
 
     public WrapperPlayServerPosition() {
         super(TYPE);
@@ -114,8 +119,8 @@ public class WrapperPlayServerPosition extends AbstractPacket {
      *
      * @return 'relativeArguments'
      */
-    public Set<InternalStructure> getRelativeArguments() {
-        return this.handle.getSets(InternalStructure.getConverter()).read(0); // TODO: No converter available for class net.minecraft.world.entity.RelativeMovement
+    public Set<RelativeMovement> getRelativeArguments() {
+        return this.handle.getSets(RELATIVE_MOVEMENT_CONVERTER).read(0);
     }
 
     /**
@@ -123,8 +128,8 @@ public class WrapperPlayServerPosition extends AbstractPacket {
      *
      * @param value New value for field 'relativeArguments'
      */
-    public void setRelativeArguments(Set<InternalStructure> value) {
-        this.handle.getSets(InternalStructure.getConverter()).write(0, value);  // TODO: No converter available for class net.minecraft.world.entity.RelativeMovement
+    public void setRelativeArguments(Set<RelativeMovement> value) {
+        this.handle.getSets(RELATIVE_MOVEMENT_CONVERTER).write(0, value);
     }
 
     /**
@@ -143,6 +148,13 @@ public class WrapperPlayServerPosition extends AbstractPacket {
      */
     public void setId(int value) {
         this.handle.getIntegers().write(0, value);
+    }
+    public enum RelativeMovement {
+        X,
+        Y,
+        Z,
+        Y_ROT,
+        X_ROT
     }
 
 }

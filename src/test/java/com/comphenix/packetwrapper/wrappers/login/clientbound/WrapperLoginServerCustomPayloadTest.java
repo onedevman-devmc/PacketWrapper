@@ -1,5 +1,6 @@
-package com.comphenix.packetwrapper;
+package com.comphenix.packetwrapper.wrappers.login.clientbound;
 
+import com.comphenix.packetwrapper.BaseTestInitialization;
 import com.comphenix.packetwrapper.wrappers.login.clientbound.WrapperLoginServerCustomPayload;
 import com.comphenix.protocol.wrappers.MinecraftKey;
 import io.netty.buffer.Unpooled;

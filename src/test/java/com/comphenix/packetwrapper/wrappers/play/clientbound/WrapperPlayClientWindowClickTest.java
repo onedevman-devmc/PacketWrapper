@@ -1,5 +1,6 @@
-package com.comphenix.packetwrapper;
+package com.comphenix.packetwrapper.wrappers.play.clientbound;
 
+import com.comphenix.packetwrapper.BaseTestInitialization;
 import com.comphenix.packetwrapper.wrappers.play.serverbound.WrapperPlayClientWindowClick;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import org.bukkit.Material;

@@ -1,5 +1,6 @@
-package com.comphenix.packetwrapper;
+package com.comphenix.packetwrapper.wrappers.login.serverbound;
 
+import com.comphenix.packetwrapper.BaseTestInitialization;
 import com.comphenix.packetwrapper.wrappers.login.serverbound.WrapperLoginClientCustomPayload;
 import io.netty.buffer.Unpooled;
 import org.junit.jupiter.api.Test;

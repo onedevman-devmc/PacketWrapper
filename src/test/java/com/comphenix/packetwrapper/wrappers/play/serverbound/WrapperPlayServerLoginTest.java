@@ -1,5 +1,6 @@
-package com.comphenix.packetwrapper;
+package com.comphenix.packetwrapper.wrappers.play.serverbound;
 
+import com.comphenix.packetwrapper.BaseTestInitialization;
 import com.comphenix.packetwrapper.wrappers.data.Vector3I;
 import com.comphenix.packetwrapper.wrappers.play.clientbound.WrapperPlayServerLogin;
 import org.junit.jupiter.api.Test;

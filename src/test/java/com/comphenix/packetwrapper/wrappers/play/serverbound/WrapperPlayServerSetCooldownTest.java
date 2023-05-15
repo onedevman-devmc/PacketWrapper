@@ -1,5 +1,6 @@
-package com.comphenix.packetwrapper;
+package com.comphenix.packetwrapper.wrappers.play.serverbound;
 
+import com.comphenix.packetwrapper.BaseTestInitialization;
 import com.comphenix.packetwrapper.wrappers.play.clientbound.WrapperPlayServerSetCooldown;
 import org.bukkit.Material;
 import org.junit.jupiter.api.Test;

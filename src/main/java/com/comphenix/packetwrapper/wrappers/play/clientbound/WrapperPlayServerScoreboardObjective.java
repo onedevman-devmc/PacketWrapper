@@ -58,8 +58,7 @@ public class WrapperPlayServerScoreboardObjective extends AbstractPacket {
     }
 
     /**
-     * Retrieves the value of field 'renderType'
-     * ProtocolLib currently does not provide a wrapper for this type. Access to this type is only provided by an InternalStructure
+     * Retrieves the render type for this objective
      *
      * @return 'renderType'
      */
@@ -68,8 +67,7 @@ public class WrapperPlayServerScoreboardObjective extends AbstractPacket {
     }
 
     /**
-     * Sets the value of field 'renderType'
-     * ProtocolLib currently does not provide a wrapper for this type. Access to this type is only provided by an InternalStructure
+     * Sets the render type for this objective
      *
      * @param value New value for field 'renderType'
      */

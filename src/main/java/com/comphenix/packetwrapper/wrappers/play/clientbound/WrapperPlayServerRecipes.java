@@ -32,7 +32,6 @@ public class WrapperPlayServerRecipes extends AbstractPacket {
 
     /**
      * Retrieves the value of field 'state'
-     * ProtocolLib currently does not provide a wrapper for this type. Access to this type is only provided by an InternalStructure
      *
      * @return 'state'
      */
@@ -42,7 +41,6 @@ public class WrapperPlayServerRecipes extends AbstractPacket {
 
     /**
      * Sets the value of field 'state'
-     * ProtocolLib currently does not provide a wrapper for this type. Access to this type is only provided by an InternalStructure
      *
      * @param value New value for field 'state'
      */

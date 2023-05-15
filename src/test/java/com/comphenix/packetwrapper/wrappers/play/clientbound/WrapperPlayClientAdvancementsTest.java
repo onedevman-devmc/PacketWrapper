@@ -1,5 +1,6 @@
-package com.comphenix.packetwrapper;
+package com.comphenix.packetwrapper.wrappers.play.clientbound;
 
+import com.comphenix.packetwrapper.BaseTestInitialization;
 import com.comphenix.packetwrapper.wrappers.play.serverbound.WrapperPlayClientAdvancements;
 import com.comphenix.protocol.wrappers.MinecraftKey;
 import org.junit.jupiter.api.Test;
