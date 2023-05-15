@@ -13,20 +13,46 @@ Enter PacketWrapper. It contains wrapper classes for all known packets in 1.19.4
 
 #### Maven:
 
-Include PacketWrapper as a dependency
+First, add the Jitpack Repository
 
 ```
-<dependency>
-    <groupId>com.comphenix.packetwrapper</groupId>
-    <artifactId>PacketWrapper</artifactId>
-    <version>1.19.4-2.0.0-SNAPSHOT</version>
-</dependency>
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+```
+
+Then, include the actual dependency
+
+```
+<dependencies>
+    <dependency>
+        <groupId>com.github.lukalt</groupId>
+        <artifactId>PacketWrapper</artifactId>
+        <version>2.0.0.</version>
+        <scope>provided</scope>
+    </dependency>
+</dependencies>
 ```
 
 Either install PacketWrapper as a plugin or shade it into your plugin. Alternatively, you can copy just the required classes (AbstractPacket and the Wrappers you are using) directly to your project.
 
 
 #### Gradle (build.gradle):
+
+First register the jitpack repository in your build.gradle:
+
+
+```
+repositories {
+    ...
+    maven { url 'https://jitpack.io' }
+}
+```
+
+Then add the actual dependency:
 
 ```
 dependencies {
