@@ -113,7 +113,7 @@ class PacketWrapperTest {
                     if (setter.isAnnotationPresent(TestExclusion.class)) {
                         continue;
                     }
-                    assertTrue(new ReflectionEquals(value).matches(returned), "Failed setter/getter write-back for " + setter.getName() + ", " + getter.getName() + " " + Utils.tryToString(value) + " <-> " + Utils.tryToString(returned));
+                    assertTrue(new ReflectionEquals(value).matches(returned), "Failed setter/getter write-read-back for " + setter.getName() + ", " + getter.getName() + " " + Utils.tryToString(value) + " <-> " + Utils.tryToString(returned));
                 } catch (Throwable t) {
                     t.printStackTrace();
                     throw new RuntimeException("Failed to invoke setter " + setter.getName() + " with value " + value, t);
