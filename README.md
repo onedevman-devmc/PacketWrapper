@@ -19,7 +19,7 @@ Include PacketWrapper as a dependency
 <dependency>
     <groupId>com.comphenix.packetwrapper</groupId>
     <artifactId>PacketWrapper</artifactId>
-    <version>1.19.4-R0.1-SNAPSHOT</version>
+    <version>1.19.4-2.0.0-SNAPSHOT</version>
 </dependency>
 ```
 
@@ -38,7 +38,7 @@ dependencies {
 Either install PacketWrapper as a plugin on the server or shadow it into your plugin. Alternatively, you can copy just the required classes (AbstractPacket and the Wrappers you are using) directly to your project.
 
 ### Dependencies
-* [ProtocolLib 5.0.0 or later](https://hangar.papermc.io/dmulloy2/ProtocolLib)
+* [ProtocolLib 5.1.0-SNAPSHOT or later](https://hangar.papermc.io/dmulloy2/ProtocolLib)
 
 ### Resources
 * [Downloads](https://github.com/lukalt/PacketWrapper/releases)

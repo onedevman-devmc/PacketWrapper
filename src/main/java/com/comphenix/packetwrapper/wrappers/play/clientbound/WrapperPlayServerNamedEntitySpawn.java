@@ -1,11 +1,20 @@
 package com.comphenix.packetwrapper.wrappers.play.clientbound;
 
+import com.comphenix.packetwrapper.util.ProtocolConversion;
+import com.comphenix.packetwrapper.util.UtilityMethod;
 import com.comphenix.packetwrapper.wrappers.AbstractPacket;
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
+import org.bukkit.Location;
+import org.bukkit.World;
 
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import java.util.UUID;
 
+/**
+ * This packet is sent by the server when a player comes into visible range, not when a player joins.
+ */
 public class WrapperPlayServerNamedEntitySpawn extends AbstractPacket {
 
     public static final PacketType TYPE = PacketType.Play.Server.NAMED_ENTITY_SPAWN;
@@ -19,7 +28,7 @@ public class WrapperPlayServerNamedEntitySpawn extends AbstractPacket {
     }
 
     /**
-     * Retrieves the value of field 'entityId'
+     * Retrieves entity id of the player
      *
      * @return 'entityId'
      */
@@ -28,7 +37,7 @@ public class WrapperPlayServerNamedEntitySpawn extends AbstractPacket {
     }
 
     /**
-     * Sets the value of field 'entityId'
+     * Sets the entity id of the player
      *
      * @param value New value for field 'entityId'
      */
@@ -37,7 +46,7 @@ public class WrapperPlayServerNamedEntitySpawn extends AbstractPacket {
     }
 
     /**
-     * Retrieves the value of field 'playerId'
+     * Retrieves the unique id of the player
      *
      * @return 'playerId'
      */
@@ -46,7 +55,7 @@ public class WrapperPlayServerNamedEntitySpawn extends AbstractPacket {
     }
 
     /**
-     * Sets the value of field 'playerId'
+     * Sets the unique id of the player
      *
      * @param value New value for field 'playerId'
      */
@@ -109,20 +118,20 @@ public class WrapperPlayServerNamedEntitySpawn extends AbstractPacket {
     }
 
     /**
-     * Retrieves the value of field 'yRot'
+     * Retrieves the discrete rotation around the y-axis (yaw)
      *
      * @return 'yRot'
      */
-    public byte getYRot() {
+    public byte getYRotRaw() {
         return this.handle.getBytes().read(0);
     }
 
     /**
-     * Sets the value of field 'yRot'
+     * Sets the discrete rotation around the y-axis (yaw)
      *
      * @param value New value for field 'yRot'
      */
-    public void setYRot(byte value) {
+    public void setYRotRaw(byte value) {
         this.handle.getBytes().write(0, value);
     }
 
@@ -131,17 +140,31 @@ public class WrapperPlayServerNamedEntitySpawn extends AbstractPacket {
      *
      * @return 'xRot'
      */
-    public byte getXRot() {
+    public byte getXRotRaw() {
         return this.handle.getBytes().read(1);
     }
 
     /**
-     * Sets the value of field 'xRot'
+     * Sets the discrete rotation around the x-axis (pitch)
      *
      * @param value New value for field 'xRot'
      */
-    public void setXRot(byte value) {
+    public void setXRotRaw(byte value) {
         this.handle.getBytes().write(1, value);
+    }
+
+    @UtilityMethod
+    public Location getLocation(@Nullable World world) {
+        return new Location(world, getX(), getY(), getZ(), ProtocolConversion.angleToDegrees(getYRotRaw()), ProtocolConversion.angleToDegrees(getXRotRaw()));
+    }
+
+    @UtilityMethod
+    public void setLocation(@Nonnull Location location) {
+        setX(location.getX());
+        setY(location.getY());
+        setZ(location.getZ());
+        setYRotRaw(ProtocolConversion.degreesToAngle(location.getYaw()));
+        setXRotRaw(ProtocolConversion.degreesToAngle(location.getPitch()));
     }
 
 }

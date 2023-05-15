@@ -18,7 +18,7 @@ public class WrapperPlayClientClientCommand extends AbstractPacket {
     }
 
     /**
-     * Retrieves the value of field 'action'
+     * Retrieves the action to perform
      *
      * @return 'action'
      */
@@ -27,7 +27,7 @@ public class WrapperPlayClientClientCommand extends AbstractPacket {
     }
 
     /**
-     * Sets the value of field 'action'
+     * Sets the action to perform
      *
      * @param value New value for field 'action'
      */

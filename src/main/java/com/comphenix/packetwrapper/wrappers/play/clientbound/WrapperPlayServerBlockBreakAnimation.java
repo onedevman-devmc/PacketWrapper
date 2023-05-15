@@ -5,6 +5,9 @@ import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.wrappers.BlockPosition;
 
+/**
+ *  Updates the block break animation progress for a specific block. The client will animate this progress.
+ */
 public class WrapperPlayServerBlockBreakAnimation extends AbstractPacket {
 
     public static final PacketType TYPE = PacketType.Play.Server.BLOCK_BREAK_ANIMATION;
@@ -45,7 +48,7 @@ public class WrapperPlayServerBlockBreakAnimation extends AbstractPacket {
     }
 
     /**
-     * Sets the value of field 'pos'
+     * Sets the ID of the entity breaking the block.
      *
      * @param value New value for field 'pos'
      */
@@ -54,18 +57,18 @@ public class WrapperPlayServerBlockBreakAnimation extends AbstractPacket {
     }
 
     /**
-     * Retrieves the value of field 'progress'
+     * Retrieves the ID of the entity breaking the block.
      *
-     * @return 'progress'
+     * @return 'progress'  0–9 to set it, any other value to remove it.
      */
     public int getProgress() {
         return this.handle.getIntegers().read(1);
     }
 
     /**
-     * Sets the value of field 'progress'
+     * Sets the value of field 'progress' 0–9 are the displayable destroy stages and each other number means that there is no animation on this coordinate.
      *
-     * @param value New value for field 'progress'
+     * @param value New value for field 'progress'  0–9 to set it, any other value to remove it.
      */
     public void setProgress(int value) {
         this.handle.getIntegers().write(1, value);

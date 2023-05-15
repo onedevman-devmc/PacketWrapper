@@ -4,6 +4,10 @@ import com.comphenix.packetwrapper.wrappers.AbstractPacket;
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
 
+/**
+ * Spawns one or more experience orbs.
+ * NMS type: net.minecraft.network.protocol.game.ClientboundAddExperienceOrbPacket
+ */
 public class WrapperPlayServerSpawnEntityExperienceOrb extends AbstractPacket {
 
     public static final PacketType TYPE = PacketType.Play.Server.SPAWN_ENTITY_EXPERIENCE_ORB;
@@ -89,7 +93,7 @@ public class WrapperPlayServerSpawnEntityExperienceOrb extends AbstractPacket {
     }
 
     /**
-     * Retrieves the value of field 'value'
+     * Retrieves the amount of experience this orb will reward once collected.
      *
      * @return 'value'
      */
@@ -98,7 +102,7 @@ public class WrapperPlayServerSpawnEntityExperienceOrb extends AbstractPacket {
     }
 
     /**
-     * Sets the value of field 'value'
+     * Sets the amount of experience this orb will reward once collected.
      *
      * @param value New value for field 'value'
      */

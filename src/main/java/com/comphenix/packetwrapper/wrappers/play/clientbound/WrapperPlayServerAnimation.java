@@ -1,9 +1,14 @@
 package com.comphenix.packetwrapper.wrappers.play.clientbound;
 
+import com.comphenix.packetwrapper.util.TestExclusion;
+import com.comphenix.packetwrapper.util.UtilityMethod;
 import com.comphenix.packetwrapper.wrappers.AbstractPacket;
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
 
+/**
+ * Sent whenever an entity should change animation.
+ */
 public class WrapperPlayServerAnimation extends AbstractPacket {
 
     public static final PacketType TYPE = PacketType.Play.Server.ANIMATION;
@@ -17,7 +22,7 @@ public class WrapperPlayServerAnimation extends AbstractPacket {
     }
 
     /**
-     * Retrieves the value of field 'id'
+     * Sets the id of the entity
      *
      * @return 'id'
      */
@@ -26,7 +31,7 @@ public class WrapperPlayServerAnimation extends AbstractPacket {
     }
 
     /**
-     * Sets the value of field 'id'
+     * Sets the id of the entity
      *
      * @param value New value for field 'id'
      */
@@ -35,21 +40,53 @@ public class WrapperPlayServerAnimation extends AbstractPacket {
     }
 
     /**
-     * Retrieves the value of field 'action'
+     * Retrieves the numerical index of the corresponding action
      *
      * @return 'action'
      */
-    public int getAction() {
+    public int getActionId() {
         return this.handle.getIntegers().read(1);
     }
 
     /**
-     * Sets the value of field 'action'
+     * Retrieves the animation as an enum
+     *
+     * @return 'action'
+     */
+    @TestExclusion
+    public Animation getAction() {
+        return Animation.values()[getActionId()];
+    }
+
+
+
+    /**
+     * Sets the numerical index of the corresponding animation
      *
      * @param value New value for field 'action'
      */
-    public void setAction(int value) {
-        this.handle.getIntegers().write(1, value);
+    public void setActionId(int value) {
+        this.handle.getIntegers().write(1,  value);
+    }
+
+    /**
+     * Sets the animation
+     *
+     * @param value New value for field 'action'
+     */
+    @UtilityMethod
+    public void setAction(Animation value) {
+        this.setActionId(value.ordinal());
+    }
+
+    public enum Animation {
+        SWING_MAIN_ARM,
+        TAKE_DAMAGE,
+        LEAVE_BED,
+        SWING_OFFHAND,
+        CRITICAL_EFFECT,
+        MAGICAL_CRITICAL_EFFECT;
+
     }
 
 }

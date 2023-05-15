@@ -6,6 +6,9 @@ import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.wrappers.BlockPosition;
 import com.comphenix.protocol.wrappers.WrappedBlockData;
 
+/**
+ * Fired whenever a block is changed within the render distance.
+ */
 public class WrapperPlayServerBlockChange extends AbstractPacket {
 
     public static final PacketType TYPE = PacketType.Play.Server.BLOCK_CHANGE;
@@ -19,25 +22,25 @@ public class WrapperPlayServerBlockChange extends AbstractPacket {
     }
 
     /**
-     * Retrieves the value of field 'pos'
+     * Retrieves the position of the block.
      *
-     * @return 'pos'
+     * @return position of block
      */
     public BlockPosition getPos() {
         return this.handle.getBlockPositionModifier().read(0);
     }
 
     /**
-     * Sets the value of field 'pos'
+     * Sets the position of the block
      *
-     * @param value New value for field 'pos'
+     * @param value position of block
      */
     public void setPos(BlockPosition value) {
         this.handle.getBlockPositionModifier().write(0, value);
     }
 
     /**
-     * Retrieves the value of field 'blockState'
+     * Retrieves the new block state
      *
      * @return 'blockState'
      */
@@ -46,7 +49,7 @@ public class WrapperPlayServerBlockChange extends AbstractPacket {
     }
 
     /**
-     * Sets the value of field 'blockState'
+     * Sets the new block state
      *
      * @param value New value for field 'blockState'
      */

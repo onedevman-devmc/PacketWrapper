@@ -7,6 +7,9 @@ import com.comphenix.protocol.wrappers.WrappedStatistic;
 
 import java.util.Map;
 
+/**
+ * Sent as a response to @link{{@link com.comphenix.packetwrapper.wrappers.play.serverbound.WrapperPlayClientClientCommand}}. Will only send the changed values if previously requested.
+ */
 public class WrapperPlayServerStatistic extends AbstractPacket {
 
     public static final PacketType TYPE = PacketType.Play.Server.STATISTIC;
