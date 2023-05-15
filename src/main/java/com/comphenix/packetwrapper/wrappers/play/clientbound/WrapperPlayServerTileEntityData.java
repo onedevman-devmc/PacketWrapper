@@ -2,10 +2,10 @@ package com.comphenix.packetwrapper.wrappers.play.clientbound;
 
 import com.comphenix.packetwrapper.wrappers.AbstractPacket;
 import com.comphenix.protocol.PacketType;
-import com.comphenix.protocol.events.InternalStructure;
 import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.wrappers.BlockPosition;
 import com.comphenix.protocol.wrappers.WrappedChatComponent;
+import com.comphenix.protocol.wrappers.WrappedRegistrable;
 
 public class WrapperPlayServerTileEntityData extends AbstractPacket {
 
@@ -39,22 +39,20 @@ public class WrapperPlayServerTileEntityData extends AbstractPacket {
 
     /**
      * Retrieves the value of field 'type'
-     * ProtocolLib currently does not provide a wrapper for this type. Access to this type is only provided by an InternalStructure
      *
      * @return 'type'
      */
-    public InternalStructure getTypeInternal() {
-        return this.handle.getStructures().read(1); // TODO: No specific modifier has been found for type class net.minecraft.world.level.block.entity.BlockEntityType Generic type: [?]
+    public WrappedRegistrable getType() {
+        return this.handle.getBlockEntityTypeModifier().read(0);
     }
 
     /**
      * Sets the value of field 'type'
-     * ProtocolLib currently does not provide a wrapper for this type. Access to this type is only provided by an InternalStructure
      *
      * @param value New value for field 'type'
      */
-    public void setTypeInternal(InternalStructure value) {
-        this.handle.getStructures().write(1, value); // TODO: No specific modifier has been found for type class net.minecraft.world.level.block.entity.BlockEntityType Generic type: [?]
+    public void setType(WrappedRegistrable value) {
+        this.handle.getBlockEntityTypeModifier().write(0, value);
     }
 
     /**
