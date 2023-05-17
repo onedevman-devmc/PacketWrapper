@@ -1,13 +1,19 @@
 package com.comphenix.packetwrapper.wrappers.play.clientbound;
 
+import com.comphenix.packetwrapper.util.TestExclusion;
+import com.comphenix.packetwrapper.util.UtilityMethod;
 import com.comphenix.packetwrapper.wrappers.AbstractPacket;
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.InternalStructure;
 import com.comphenix.protocol.events.PacketContainer;
+import com.comphenix.protocol.reflect.StructureModifier;
+import com.comphenix.protocol.utility.MinecraftReflection;
+import com.comphenix.protocol.wrappers.EnumWrappers;
 
 public class WrapperPlayServerLookAt extends AbstractPacket {
 
     public static final PacketType TYPE = PacketType.Play.Server.LOOK_AT;
+    private static final Class<?> ANCHOR_TYPE = MinecraftReflection.getMinecraftClass("commands.arguments.EntityAnchorArgument$Anchor", "commands.arguments.ArgumentAnchor$Anchor");
 
     public WrapperPlayServerLookAt() {
         super(TYPE);
@@ -91,12 +97,55 @@ public class WrapperPlayServerLookAt extends AbstractPacket {
 
     /**
      * Retrieves the value of field 'fromAnchor'
+     * @link getFromAnchor
+     * @return 'fromAnchor'
+     */
+    @Deprecated
+    public InternalStructure getFromAnchorInternal() {
+        return this.handle.getStructures().read(0);
+    }
+
+    /**
+     * Sets the value of field 'fromAnchor'
      * ProtocolLib currently does not provide a wrapper for this type. Access to this type is only provided by an InternalStructure
+     * @link setFromAnchor
+     * @param value New value for field 'fromAnchor'
+     */
+    @Deprecated
+    public void setFromAnchorInternal(InternalStructure value) {
+        this.handle.getStructures().write(0, value);
+    }
+
+    /**
+     * Retrieves the value of field 'toAnchor'
+     * ProtocolLib currently does not provide a wrapper for this type. Access to this type is only provided by an InternalStructure
+     * @link getToAnchor
+     * @return 'toAnchor'
+     */
+    @Deprecated
+    public InternalStructure getToAnchorInternal() {
+        return this.handle.getStructures().read(1);
+    }
+
+    /**
+     * Sets the value of field 'toAnchor'
+     * ProtocolLib currently does not provide a wrapper for this type. Access to this type is only provided by an InternalStructure
+     * @link setToAnchor
+     * @param value New value for field 'toAnchor'
+     */
+    @Deprecated
+    public void setToAnchorInternal(InternalStructure value) {
+        this.handle.getStructures().write(1, value);
+    }
+
+    /**
+     * Retrieves the value of field 'fromAnchor'
      *
      * @return 'fromAnchor'
      */
-    public InternalStructure getFromAnchorInternal() {
-        return this.handle.getStructures().read(0); // TODO: No specific modifier has been found for type class net.minecraft.commands.arguments.EntityAnchorArgument$Anchor Generic type: class net.minecraft.commands.arguments.EntityAnchorArgument$Anchor
+    @TestExclusion
+    public Anchor getFromAnchor() {
+        return this.getAnchors().read(0);
     }
 
     /**
@@ -105,8 +154,8 @@ public class WrapperPlayServerLookAt extends AbstractPacket {
      *
      * @param value New value for field 'fromAnchor'
      */
-    public void setFromAnchorInternal(InternalStructure value) {
-        this.handle.getStructures().write(0, value); // TODO: No specific modifier has been found for type class net.minecraft.commands.arguments.EntityAnchorArgument$Anchor Generic type: class net.minecraft.commands.arguments.EntityAnchorArgument$Anchor
+    public void setFromAnchor(Anchor value) {
+        this.getAnchors().write(0, value);
     }
 
     /**
@@ -115,8 +164,9 @@ public class WrapperPlayServerLookAt extends AbstractPacket {
      *
      * @return 'toAnchor'
      */
-    public InternalStructure getToAnchorInternal() {
-        return this.handle.getStructures().read(1); // TODO: No specific modifier has been found for type class net.minecraft.commands.arguments.EntityAnchorArgument$Anchor Generic type: class net.minecraft.commands.arguments.EntityAnchorArgument$Anchor
+    @TestExclusion
+    public Anchor getToAnchor() {
+        return this.getAnchors().read(1);
     }
 
     /**
@@ -125,10 +175,14 @@ public class WrapperPlayServerLookAt extends AbstractPacket {
      *
      * @param value New value for field 'toAnchor'
      */
-    public void setToAnchorInternal(InternalStructure value) {
-        this.handle.getStructures().write(1, value); // TODO: No specific modifier has been found for type class net.minecraft.commands.arguments.EntityAnchorArgument$Anchor Generic type: class net.minecraft.commands.arguments.EntityAnchorArgument$Anchor
+    public void setToAnchor(Anchor value) {
+        this.getAnchors().write(1, value);
     }
 
+    @UtilityMethod
+    private StructureModifier<Anchor> getAnchors() {
+        return this.handle.getModifier().withType(ANCHOR_TYPE, new EnumWrappers.IndexedEnumConverter<>(Anchor.class, ANCHOR_TYPE));
+    }
     /**
      * Retrieves the value of field 'atEntity'
      *
@@ -145,6 +199,11 @@ public class WrapperPlayServerLookAt extends AbstractPacket {
      */
     public void setAtEntity(boolean value) {
         this.handle.getBooleans().write(0, value);
+    }
+
+    public enum Anchor {
+        FEET,
+        EYES
     }
 
 }
