@@ -1,5 +1,6 @@
 package com.comphenix.packetwrapper.util;
 
+import com.comphenix.protocol.reflect.EquivalentConverter;
 import com.google.common.reflect.ClassPath;
 
 import java.io.IOException;
@@ -21,6 +22,10 @@ public class Utils {
                 .map(clazz -> clazz.load())
                 .filter(clazz -> clazz.getSuperclass() != null && clazz.getSuperclass() == parent)
                 .collect(Collectors.toSet());
+    }
+
+    public static <K> K unwrapAndWarp(K v, EquivalentConverter<K> converter) {
+        return converter.getSpecific(converter.getGeneric(v));
     }
 
     public static String tryToString(Object object) {
