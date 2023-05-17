@@ -4,14 +4,17 @@ import com.comphenix.packetwrapper.wrappers.AbstractPacket;
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.InternalStructure;
 import com.comphenix.protocol.events.PacketContainer;
+import com.comphenix.protocol.utility.MinecraftReflection;
 import com.comphenix.protocol.wrappers.Converters;
+import com.comphenix.protocol.wrappers.EnumWrappers;
+import com.comphenix.protocol.wrappers.MinecraftKey;
 
 import java.util.List;
 
 public class WrapperPlayServerCustomChatCompletions extends AbstractPacket {
 
     public static final PacketType TYPE = PacketType.Play.Server.CUSTOM_CHAT_COMPLETIONS;
-
+    private static final Class<?> ACTION_TYPE = MinecraftReflection.getMinecraftClass("network.protocol.game.ClientboundCustomChatCompletionsPacket$Action");
     public WrapperPlayServerCustomChatCompletions() {
         super(TYPE);
     }
@@ -23,21 +26,41 @@ public class WrapperPlayServerCustomChatCompletions extends AbstractPacket {
     /**
      * Retrieves the value of field 'action'
      * ProtocolLib currently does not provide a wrapper for this type. Access to this type is only provided by an InternalStructure
-     *
+     * @link getAction
      * @return 'action'
      */
+    @Deprecated
     public InternalStructure getActionInternal() {
-        return this.handle.getStructures().read(0); // TODO: No specific modifier has been found for type class net.minecraft.network.protocol.game.ClientboundCustomChatCompletionsPacket$Action Generic type: class net.minecraft.network.protocol.game.ClientboundCustomChatCompletionsPacket$Action
+        return this.handle.getStructures().read(0);
     }
 
     /**
      * Sets the value of field 'action'
      * ProtocolLib currently does not provide a wrapper for this type. Access to this type is only provided by an InternalStructure
+     * @link setAction
+     * @param value New value for field 'action'
+     */
+    @Deprecated
+    public void setActionInternal(InternalStructure value) {
+        this.handle.getStructures().write(0, value);
+    }
+
+    /**
+     * Retrieves the value of field 'action'
+     *
+     * @return 'action'
+     */
+    public Action getAction() {
+        return this.handle.getModifier().withType(ACTION_TYPE, new EnumWrappers.IndexedEnumConverter<>(Action.class, ACTION_TYPE)).read(0);
+    }
+
+    /**
+     * Sets the value of field 'action'
      *
      * @param value New value for field 'action'
      */
-    public void setActionInternal(InternalStructure value) {
-        this.handle.getStructures().write(0, value); // TODO: No specific modifier has been found for type class net.minecraft.network.protocol.game.ClientboundCustomChatCompletionsPacket$Action Generic type: class net.minecraft.network.protocol.game.ClientboundCustomChatCompletionsPacket$Action
+    public void setAction(Action value) {
+        this.handle.getModifier().withType(ACTION_TYPE, new EnumWrappers.IndexedEnumConverter<>(Action.class, ACTION_TYPE)).write(0, value);
     }
 
     /**
@@ -58,4 +81,9 @@ public class WrapperPlayServerCustomChatCompletions extends AbstractPacket {
         this.handle.getLists(Converters.passthrough(String.class)).write(0, value);
     }
 
+    public enum Action {
+        ADD,
+        REMOVE,
+        SET;
+    }
 }
