@@ -1,10 +1,13 @@
 package com.comphenix.packetwrapper.wrappers.play.clientbound;
 
+import com.comphenix.packetwrapper.util.TestExclusion;
 import com.comphenix.packetwrapper.wrappers.AbstractPacket;
+import com.comphenix.packetwrapper.wrappers.data.ResourceKey;
 import com.comphenix.packetwrapper.wrappers.data.Vector3I;
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.InternalStructure;
 import com.comphenix.protocol.events.PacketContainer;
+import com.comphenix.protocol.utility.MinecraftReflection;
 import com.comphenix.protocol.wrappers.BukkitConverters;
 import com.comphenix.protocol.wrappers.EnumWrappers.NativeGameMode;
 import org.bukkit.World;
@@ -137,20 +140,64 @@ public class WrapperPlayServerLogin extends AbstractPacket {
 
     /**
      * Retrieves the value of field 'dimensionType'
-     *
+     * @link getDimensiuonType
      * @return 'dimensionType'
      */
+    @Deprecated
     public InternalStructure getDimensionTypeInternal() {
         return this.handle.getStructures().read(3);
     }
 
     /**
      * Sets the value of field 'dimensionType'
+     * @link setDimensionType
+     * @param value New value for field 'dimensionType'
+     */
+    @Deprecated
+    public void setDimensionTypeInternal(InternalStructure value) {
+        this.handle.getStructures().write(3, value);
+    }
+
+
+
+    /**
+     * Retrieves Sets the type of the dimension. The resource key is composed of a minecraft key indicating the registry
+     * and the dimension type within this registry.
+     *
+     * @return 'dimensionType'
+     */
+    public ResourceKey getDimensionType() {
+        return this.handle.getModifier().withType(MinecraftReflection.getResourceKey(), ResourceKey.CONVERTER).read(1);
+    }
+
+    /**
+     * Sets the type of the dimension. The resource key is composed of a minecraft key indicating the registry
+     * and the dimension type within this registry.
      *
      * @param value New value for field 'dimensionType'
      */
-    public void setDimensionTypeInternal(InternalStructure value) {
-        this.handle.getStructures().write(3, value);
+    public void setDimensionType(ResourceKey value) {
+        this.handle.getModifier().withType(MinecraftReflection.getResourceKey(), ResourceKey.CONVERTER).write(1, value);
+    }
+
+    /**
+     * Retrieves the value of field 'dimension'
+     * @link getDimension
+     * @return 'dimension'
+     */
+    @Deprecated
+    public InternalStructure getDimensionInternal() {
+        return this.handle.getStructures().read(4);
+    }
+
+    /**
+     * Sets the value of field 'dimension'
+     * @link setDimension
+     * @param value New value for field 'dimension'
+     */
+    @Deprecated
+    public void setDimensionInternal(InternalStructure value) {
+        this.handle.getStructures().write(4, value);
     }
 
     /**
@@ -158,8 +205,9 @@ public class WrapperPlayServerLogin extends AbstractPacket {
      *
      * @return 'dimension'
      */
-    public InternalStructure getDimensionInternal() {
-        return this.handle.getStructures().read(4);
+    @TestExclusion
+    public World getDimension() {
+        return this.handle.getWorldKeys().read(0);
     }
 
     /**
@@ -167,8 +215,8 @@ public class WrapperPlayServerLogin extends AbstractPacket {
      *
      * @param value New value for field 'dimension'
      */
-    public void setDimensionInternal(InternalStructure value) {
-        this.handle.getStructures().write(4, value);
+    public void setDimension(World value) {
+        this.handle.getWorldKeys().write(0, value);
     }
 
     /**
