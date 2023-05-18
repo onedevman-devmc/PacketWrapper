@@ -110,7 +110,7 @@ public class WrapperPlayServerScoreboardTeam extends AbstractPacket {
         private final static ConstructorAccessor HANDLE_CONSTRUCTOR = Accessors.getConstructorAccessor(HANDLE_TYPE, PLAYER_TEAM_TYPE);
         private final static ConstructorAccessor PLAYER_TEAM_CONSTRUCTOR = Accessors.getConstructorAccessor(FuzzyReflection.fromClass(PLAYER_TEAM_TYPE, false).getConstructors().iterator().next());
 
-        public static final EnumWrappers.IndexedEnumConverter COLOR_CONVERTER = new EnumWrappers.IndexedEnumConverter(ChatColor.class, COLOR_TYPE);
+        public static final EnumWrappers.IndexedEnumConverter<ChatColor> COLOR_CONVERTER = new EnumWrappers.IndexedEnumConverter(ChatColor.class, COLOR_TYPE);
         final static EquivalentConverter<WrappedParameters> TO_SPECIFIC_CONVERTER = AutoWrapper.wrap(WrappedParameters.class, HANDLE_TYPE)
                 .field(0, BukkitConverters.getWrappedChatComponentConverter())
                 .field(1, BukkitConverters.getWrappedChatComponentConverter())
