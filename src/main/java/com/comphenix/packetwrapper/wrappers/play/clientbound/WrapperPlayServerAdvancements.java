@@ -44,8 +44,8 @@ public class WrapperPlayServerAdvancements extends AbstractPacket {
      *
      * @return 'added'
      */
-    public Map<MinecraftKey, InternalStructure> getAdded() {
-        return this.handle.getMaps(MinecraftKey.getConverter(), InternalStructure.getConverter()).read(0);
+    public Map<MinecraftKey, InternalStructure> getAddedInternal() {
+        return this.handle.getMaps(MinecraftKey.getConverter(), InternalStructure.getConverter()).read(0);  // TODO
     }
 
     /**
@@ -53,8 +53,8 @@ public class WrapperPlayServerAdvancements extends AbstractPacket {
      *
      * @param value New value for field 'added'
      */
-    public void setAdded(Map<MinecraftKey, InternalStructure> value) {
-        this.handle.getMaps(MinecraftKey.getConverter(), InternalStructure.getConverter()).write(0, value);
+    public void setAddedInternal(Map<MinecraftKey, InternalStructure> value) {
+        this.handle.getMaps(MinecraftKey.getConverter(), InternalStructure.getConverter()).write(0, value); // TODO
     }
 
     /**
@@ -80,8 +80,8 @@ public class WrapperPlayServerAdvancements extends AbstractPacket {
      *
      * @return 'progress'
      */
-    public Map<MinecraftKey, InternalStructure> getProgress() {
-        return this.handle.getMaps(MinecraftKey.getConverter(), InternalStructure.getConverter()).read(1);
+    public Map<MinecraftKey, InternalStructure> getProgressInternal() {
+        return this.handle.getMaps(MinecraftKey.getConverter(), InternalStructure.getConverter()).read(1); // TODO
     }
 
     /**
@@ -89,8 +89,8 @@ public class WrapperPlayServerAdvancements extends AbstractPacket {
      *
      * @param value New value for field 'progress'
      */
-    public void setProgress(Map<MinecraftKey, InternalStructure> value) {
-        this.handle.getMaps(MinecraftKey.getConverter(), InternalStructure.getConverter()).write(1, value);
+    public void setProgressInternal(Map<MinecraftKey, InternalStructure> value) {
+        this.handle.getMaps(MinecraftKey.getConverter(), InternalStructure.getConverter()).write(1, value); // TODO
     }
 
 }

@@ -45,7 +45,6 @@ public class WrapperPlayClientStruct extends AbstractPacket {
 
     /**
      * Retrieves the value of field 'updateType'
-     * ProtocolLib currently does not provide a wrapper for this type. Access to this type is only provided by an InternalStructure
      *
      * @return 'updateType'
      */
@@ -55,7 +54,6 @@ public class WrapperPlayClientStruct extends AbstractPacket {
 
     /**
      * Sets the value of field 'updateType'
-     * ProtocolLib currently does not provide a wrapper for this type. Access to this type is only provided by an InternalStructure
      *
      * @param value New value for field 'updateType'
      */
@@ -65,7 +63,6 @@ public class WrapperPlayClientStruct extends AbstractPacket {
 
     /**
      * Retrieves the value of field 'mode'
-     * ProtocolLib currently does not provide a wrapper for this type. Access to this type is only provided by an InternalStructure
      *
      * @return 'mode'
      */
@@ -75,7 +72,6 @@ public class WrapperPlayClientStruct extends AbstractPacket {
 
     /**
      * Sets the value of field 'mode'
-     * ProtocolLib currently does not provide a wrapper for this type. Access to this type is only provided by an InternalStructure
      *
      * @param value New value for field 'mode'
      */

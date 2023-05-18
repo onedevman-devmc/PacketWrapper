@@ -42,7 +42,7 @@ public class WrapperPlayServerCommands extends AbstractPacket {
      *
      * @return 'entries'
      */
-    public List<InternalStructure> getEntries() {
+    public List<InternalStructure> getEntriesInternal() {
         return this.handle.getLists(InternalStructure.getConverter()).read(0); // TODO: Multiple modifier have been found for type interface java.util.List Generic type: [class net.minecraft.network.protocol.game.ClientboundCommandsPacket$Entry]
     }
 
@@ -51,8 +51,8 @@ public class WrapperPlayServerCommands extends AbstractPacket {
      *
      * @param value New value for field 'entries'
      */
-    public void setEntries(List<InternalStructure> value) {
-        this.handle.getLists(InternalStructure.getConverter()).write(0, value);
+    public void setEntriesInternal(List<InternalStructure> value) {
+        this.handle.getLists(InternalStructure.getConverter()).write(0, value); // TODO
     }
 
 }

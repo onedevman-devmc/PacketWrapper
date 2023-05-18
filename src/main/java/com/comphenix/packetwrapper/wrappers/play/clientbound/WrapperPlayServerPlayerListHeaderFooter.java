@@ -4,6 +4,7 @@ import com.comphenix.packetwrapper.wrappers.AbstractPacket;
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.InternalStructure;
 import com.comphenix.protocol.events.PacketContainer;
+import com.comphenix.protocol.wrappers.AdventureComponentConverter;
 import com.comphenix.protocol.wrappers.WrappedChatComponent;
 
 public class WrapperPlayServerPlayerListHeaderFooter extends AbstractPacket {

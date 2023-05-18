@@ -23,7 +23,6 @@ public class WrapperPlayClientAdvancements extends AbstractPacket {
 
     /**
      * Retrieves the value of field 'action'
-     * ProtocolLib currently does not provide a wrapper for this type. Access to this type is only provided by an InternalStructure
      *
      * @return 'action'
      */
@@ -33,7 +32,6 @@ public class WrapperPlayClientAdvancements extends AbstractPacket {
 
     /**
      * Sets the value of field 'action'
-     * ProtocolLib currently does not provide a wrapper for this type. Access to this type is only provided by an InternalStructure
      *
      * @param value New value for field 'action'
      */

@@ -100,8 +100,7 @@ public class WrapperPlayServerMap extends AbstractPacket {
 
     /**
      * Retrieves the value of field 'colorPatch'
-     * ProtocolLib currently does not provide a wrapper for this type. Access to this type is only provided by an InternalStructure
-     *
+     * @link getColorPatch
      * @return 'colorPatch'
      */
     @Deprecated
@@ -111,8 +110,8 @@ public class WrapperPlayServerMap extends AbstractPacket {
 
     /**
      * Sets the value of field 'colorPatch'
-     * ProtocolLib currently does not provide a wrapper for this type. Access to this type is only provided by an InternalStructure
      *
+     * @link setColorPatch
      * @param value New value for field 'colorPatch'
      */
     @Deprecated

@@ -24,8 +24,8 @@ public class WrapperPlayServerRecipeUpdate extends AbstractPacket {
      *
      * @return 'recipes'
      */
-    public List<InternalStructure> getRecipes() {
-        return this.handle.getLists(InternalStructure.getConverter()).read(0);
+    public List<InternalStructure> getRecipesInternal() {
+        return this.handle.getLists(InternalStructure.getConverter()).read(0); // TODO
     }
 
     /**
@@ -33,8 +33,8 @@ public class WrapperPlayServerRecipeUpdate extends AbstractPacket {
      *
      * @param value New value for field 'recipes'
      */
-    public void setRecipes(List<InternalStructure> value) {
-        this.handle.getLists(InternalStructure.getConverter()).write(0, value);
+    public void setRecipesInternal(List<InternalStructure> value) {
+        this.handle.getLists(InternalStructure.getConverter()).write(0, value); // TODO
     }
 
 }

@@ -108,7 +108,7 @@ public class WrapperPlayServerChat extends AbstractPacket {
      * @return 'unsignedContent'
      */
     public WrappedChatComponent getUnsignedContent() {
-        return this.handle.getChatComponents().read(0);
+        return this.handle.getChatComponents().read(0); // TODO
     }
 
     /**

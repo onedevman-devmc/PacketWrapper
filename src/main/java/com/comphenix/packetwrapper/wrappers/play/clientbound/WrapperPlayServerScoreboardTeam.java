@@ -2,7 +2,6 @@ package com.comphenix.packetwrapper.wrappers.play.clientbound;
 
 import com.comphenix.packetwrapper.wrappers.AbstractPacket;
 import com.comphenix.protocol.PacketType;
-import com.comphenix.protocol.events.InternalStructure;
 import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.reflect.EquivalentConverter;
 import com.comphenix.protocol.reflect.FuzzyReflection;

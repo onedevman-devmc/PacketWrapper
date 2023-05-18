@@ -1,6 +1,7 @@
 package com.comphenix.packetwrapper.wrappers.play.clientbound;
 
 import com.comphenix.packetwrapper.wrappers.AbstractPacket;
+import com.comphenix.packetwrapper.wrappers.data.WrappedBoundChatType;
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.InternalStructure;
 import com.comphenix.protocol.events.PacketContainer;
@@ -39,11 +40,33 @@ public class WrapperPlayServerDisguisedChat extends AbstractPacket {
     /**
      * Retrieves the value of field 'chatType'
      * ProtocolLib currently does not provide a wrapper for this type. Access to this type is only provided by an InternalStructure
+     * @link getChatType
+     * @return 'chatType'
+     */
+    @Deprecated
+    public InternalStructure getChatTypeInternal() {
+        return this.handle.getStructures().read(1);
+    }
+
+    /**
+     * Sets the value of field 'chatType'
+     * ProtocolLib currently does not provide a wrapper for this type. Access to this type is only provided by an InternalStructure
+     * @link setChatType
+     * @param value New value for field 'chatType'
+     */
+    @Deprecated
+    public void setChatTypeInternal(InternalStructure value) {
+        this.handle.getStructures().write(1, value);
+    }
+
+    /**
+     * Retrieves the value of field 'chatType'
+     * ProtocolLib currently does not provide a wrapper for this type. Access to this type is only provided by an InternalStructure
      *
      * @return 'chatType'
      */
-    public InternalStructure getChatTypeInternal() {
-        return this.handle.getStructures().read(1); // TODO: No specific modifier has been found for type class net.minecraft.network.chat.ChatType$BoundNetwork Generic type: class net.minecraft.network.chat.ChatType$BoundNetwork
+    public WrappedBoundChatType getChatType() {
+        return this.handle.getModifier().withType(WrappedBoundChatType.HANDLE_TYPE, WrappedBoundChatType.CONVERTER).read(0);
     }
 
     /**
@@ -52,8 +75,8 @@ public class WrapperPlayServerDisguisedChat extends AbstractPacket {
      *
      * @param value New value for field 'chatType'
      */
-    public void setChatTypeInternal(InternalStructure value) {
-        this.handle.getStructures().write(1, value); // TODO: No specific modifier has been found for type class net.minecraft.network.chat.ChatType$BoundNetwork Generic type: class net.minecraft.network.chat.ChatType$BoundNetwork
+    public void setChatType(WrappedBoundChatType value) {
+        this.handle.getModifier().withType(WrappedBoundChatType.HANDLE_TYPE, WrappedBoundChatType.CONVERTER).write(0, value);
     }
 
 }

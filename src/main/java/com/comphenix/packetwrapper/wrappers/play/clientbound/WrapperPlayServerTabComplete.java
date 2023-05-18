@@ -11,7 +11,6 @@ import com.comphenix.protocol.utility.MinecraftReflection;
 import com.comphenix.protocol.wrappers.AutoWrapper;
 import com.comphenix.protocol.wrappers.BukkitConverters;
 import com.comphenix.protocol.wrappers.WrappedChatComponent;
-import com.mojang.brigadier.suggestion.Suggestions;
 
 import java.util.List;
 import java.util.Objects;
@@ -48,24 +47,24 @@ public class WrapperPlayServerTabComplete extends AbstractPacket {
 
     /**
      * Retrieves the value of field 'suggestions'
-     * ProtocolLib currently does not provide a wrapper for this type. Access to this type is only provided by an InternalStructure
-     *
+     * @deprecated
+     * @link getSuggestions
      * @return 'suggestions'
      */
     @Deprecated
     public InternalStructure getSuggestionsInternal() {
-        return this.handle.getStructures().read(0); // TODO: No specific modifier has been found for type class com.mojang.brigadier.suggestion.Suggestions Generic type: class com.mojang.brigadier.suggestion.Suggestions
+        return this.handle.getStructures().read(0);
     }
 
     /**
      * Sets the value of field 'suggestions'
-     * ProtocolLib currently does not provide a wrapper for this type. Access to this type is only provided by an InternalStructure
-     *
+     * @deprecated
+     * @link setSuggestions
      * @param value New value for field 'suggestions'
      */
     @Deprecated
     public void setSuggestionsInternal(InternalStructure value) {
-        this.handle.getStructures().write(0, value); // TODO: No specific modifier has been found for type class com.mojang.brigadier.suggestion.Suggestions Generic type: class com.mojang.brigadier.suggestion.Suggestions
+        this.handle.getStructures().write(0, value);
     }
 
     /**
@@ -79,7 +78,6 @@ public class WrapperPlayServerTabComplete extends AbstractPacket {
 
     /**
      * Sets the value of field 'suggestions'
-     * ProtocolLib currently does not provide a wrapper for this type. Access to this type is only provided by an InternalStructure
      *
      * @param value New value for field 'suggestions'
      */
