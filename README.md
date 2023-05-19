@@ -13,12 +13,12 @@ Enter PacketWrapper. It contains wrapper classes for all known packets in 1.19.4
 
 #### Maven:
 
-First, add the Jitpack Repository
+First, add this repository
 
 ```
 <repositories>
     <repository>
-        <id>jitpack.io</id>
+        <id>lukasalt-repo</id>
         <url>https://jitpack.io</url>
     </repository>
 </repositories>
@@ -29,9 +29,9 @@ Then, include the actual dependency
 ```
 <dependencies>
     <dependency>
-        <groupId>com.github.lukalt</groupId>
+        <groupId>com.comphenix.packetwrapper</groupId>
         <artifactId>PacketWrapper</artifactId>
-        <version>2.0.0.</version>
+        <version>1.19.4-2.1.0</version>
         <scope>provided</scope>
     </dependency>
 </dependencies>
@@ -57,7 +57,7 @@ Then add the actual dependency:
 ```
 dependencies {
     ...
-    compile 'com.comphenix.packetwrapper:PacketWrapper:1.19.4-R0.1-SNAPSHOT'
+    compile 'com.comphenix.packetwrapper:PacketWrapper:1.19.4-2.1.0'
 }
 ```
 
