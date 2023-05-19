@@ -22,7 +22,7 @@ First, add this repository
 <repositories>
     <repository>
         <id>lukasalt-repo</id>
-        <url>https://jitpack.io</url>
+        <url>https://repo.lukasa.lt/repository/maven-public/</url>
     </repository>
 </repositories>
 ```
@@ -51,7 +51,7 @@ First register the jitpack repository in your build.gradle:
 ```
 repositories {
     ...
-    maven { url 'https://jitpack.io' }
+    maven { url 'https://repo.lukasa.lt/repository/maven-public/' }
 }
 ```
 
