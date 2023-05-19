@@ -1,7 +1,10 @@
 # PacketWrapper
 
 [![Build](https://github.com/lukalt/PacketWrapper/actions/workflows/build.yml/badge.svg)](https://github.com/lukalt/PacketWrapper/actions/workflows/build.yml)
-
+[![Javadoc](https://img.shields.io/badge/JavaDoc-Online-green)](https://lukalt.github.io/PacketWrapper/javadocs/apidocs)
+![GitHub](https://img.shields.io/github/license/lukalt/PacketWrapper)
+[![ProtocolLib](https://img.shields.io/badge/ProtocolLib-%3E%3D%205.1.0--SNAPSHOT-blue)](https://ci.dmulloy2.net/job/ProtocolLib/645/)
+[![ProtocolLib](https://img.shields.io/badge/Minecraft-1.19.4-green)](https://ci.dmulloy2.net/job/ProtocolLib/645/)
 
 This is an unofficial continuation of PacketWrapper by dmulloy2 and aadnk. The original versions can be found [here](https://github.com/dmulloy2/PacketWrapper) and [here](https://github.com/aadnk/PacketWrapper).
 
