@@ -4,6 +4,7 @@ import com.comphenix.packetwrapper.BaseTestInitialization;
 import org.bukkit.block.structure.Mirror;
 import org.bukkit.block.structure.StructureRotation;
 import org.bukkit.block.structure.UsageMode;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -14,6 +15,7 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 @ExtendWith(BaseTestInitialization.class)
 class WrapperPlayClientStructTest {
+    @Test
     public void test() {
         WrapperPlayClientStruct dummy = new WrapperPlayClientStruct();
         dummy.setRotation(StructureRotation.CLOCKWISE_180);
