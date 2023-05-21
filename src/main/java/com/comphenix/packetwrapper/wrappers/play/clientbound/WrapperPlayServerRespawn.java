@@ -9,7 +9,6 @@ import com.comphenix.protocol.events.InternalStructure;
 import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.utility.MinecraftReflection;
 import com.comphenix.protocol.wrappers.EnumWrappers.NativeGameMode;
-import net.minecraft.server.dedicated.DedicatedServer;
 import org.bukkit.World;
 
 import javax.annotation.Nullable;
