@@ -18,6 +18,9 @@ public class WrapperPlayServerRespawn extends AbstractPacket {
 
     public static final PacketType TYPE = PacketType.Play.Server.RESPAWN;
 
+    /**
+     * Constructs a new wrapper and initialize it with a packet handle with default values
+     */
     public WrapperPlayServerRespawn() {
         super(TYPE);
     }

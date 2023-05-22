@@ -13,6 +13,9 @@ public class WrapperPlayServerAdvancements extends AbstractPacket {
 
     public static final PacketType TYPE = PacketType.Play.Server.ADVANCEMENTS;
 
+    /**
+     * Constructs a new wrapper and initialize it with a packet handle with default values
+     */
     public WrapperPlayServerAdvancements() {
         super(TYPE);
     }

@@ -19,6 +19,9 @@ public class WrapperPlayServerTabComplete extends AbstractPacket {
 
     public static final PacketType TYPE = PacketType.Play.Server.TAB_COMPLETE;
 
+    /**
+     * Constructs a new wrapper and initialize it with a packet handle with default values
+     */
     public WrapperPlayServerTabComplete() {
         super(TYPE);
     }

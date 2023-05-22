@@ -10,6 +10,9 @@ public class WrapperPlayServerMultiBlockChange extends AbstractPacket {
 
     public static final PacketType TYPE = PacketType.Play.Server.MULTI_BLOCK_CHANGE;
 
+    /**
+     * Constructs a new wrapper and initialize it with a packet handle with default values
+     */
     public WrapperPlayServerMultiBlockChange() {
         super(TYPE);
     }

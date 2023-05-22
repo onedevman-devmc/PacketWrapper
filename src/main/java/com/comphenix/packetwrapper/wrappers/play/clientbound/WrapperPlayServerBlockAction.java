@@ -15,6 +15,9 @@ public class WrapperPlayServerBlockAction extends AbstractPacket {
 
     public static final PacketType TYPE = PacketType.Play.Server.BLOCK_ACTION;
 
+    /**
+     * Constructs a new wrapper and initialize it with a packet handle with default values
+     */
     public WrapperPlayServerBlockAction() {
         super(TYPE);
     }

@@ -20,6 +20,9 @@ public class WrapperPlayServerEntityEffect extends AbstractPacket {
     public static final int FLAG_SHOW_PARTICLE = 0x02;
     public static final int FLAG_SHOW_ICON = 0x04;
 
+    /**
+     * Constructs a new wrapper and initialize it with a packet handle with default values
+     */
     public WrapperPlayServerEntityEffect() {
         super(TYPE);
     }
