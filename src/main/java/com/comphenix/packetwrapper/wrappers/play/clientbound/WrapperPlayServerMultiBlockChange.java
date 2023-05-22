@@ -6,6 +6,9 @@ import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.wrappers.BlockPosition;
 import com.comphenix.protocol.wrappers.WrappedBlockData;
 
+/**
+ * Send by server to client when 2 or more blocks are changed within the same chunk on the same tick.
+ */
 public class WrapperPlayServerMultiBlockChange extends AbstractPacket {
 
     public static final PacketType TYPE = PacketType.Play.Server.MULTI_BLOCK_CHANGE;

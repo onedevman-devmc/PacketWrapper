@@ -20,6 +20,10 @@ public class WrapperPlayServerBlockChange extends AbstractPacket {
         super(TYPE);
     }
 
+    /**
+     * Constructors a new wrapper for the specified packet
+     * @param packet the packet to wrap
+     */
     public WrapperPlayServerBlockChange(PacketContainer packet) {
         super(packet, TYPE);
     }

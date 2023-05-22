@@ -18,6 +18,10 @@ public class WrapperPlayServerBlockChangedAck extends AbstractPacket {
         super(TYPE);
     }
 
+    /**
+     * Constructors a new wrapper for the specified packet
+     * @param packet the packet to wrap
+     */
     public WrapperPlayServerBlockChangedAck(PacketContainer packet) {
         super(packet, TYPE);
     }

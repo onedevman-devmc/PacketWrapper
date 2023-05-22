@@ -20,6 +20,10 @@ public class WrapperPlayServerAdvancements extends AbstractPacket {
         super(TYPE);
     }
 
+    /**
+     * Constructors a new wrapper for the specified packet
+     * @param packet the packet to wrap
+     */
     public WrapperPlayServerAdvancements(PacketContainer packet) {
         super(packet, TYPE);
     }

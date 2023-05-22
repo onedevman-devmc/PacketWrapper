@@ -22,6 +22,10 @@ public class WrapperPlayServerBlockAction extends AbstractPacket {
         super(TYPE);
     }
 
+    /**
+     * Constructors a new wrapper for the specified packet
+     * @param packet the packet to wrap
+     */
     public WrapperPlayServerBlockAction(PacketContainer packet) {
         super(packet, TYPE);
     }

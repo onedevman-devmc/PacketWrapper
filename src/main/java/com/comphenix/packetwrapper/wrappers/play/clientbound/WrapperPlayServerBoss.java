@@ -81,6 +81,10 @@ public class WrapperPlayServerBoss extends AbstractPacket {
         super(TYPE);
     }
 
+    /**
+     * Constructors a new wrapper for the specified packet
+     * @param packet the packet to wrap
+     */
     public WrapperPlayServerBoss(PacketContainer packet) {
         super(packet, TYPE);
     }
