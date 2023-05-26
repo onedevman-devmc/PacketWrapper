@@ -4,7 +4,7 @@
 [![Javadoc](https://img.shields.io/badge/JavaDoc-Online-green)](https://lukalt.github.io/PacketWrapper/javadocs/apidocs)
 ![GitHub](https://img.shields.io/github/license/lukalt/PacketWrapper)
 [![ProtocolLib](https://img.shields.io/badge/ProtocolLib-%3E%3D%205.1.0--SNAPSHOT-blue)](https://ci.dmulloy2.net/job/ProtocolLib/645/)
-[![ProtocolLib](https://img.shields.io/badge/Minecraft-1.19.4-green)](https://papermc.io/downloads/paper)
+[![ProtocolLib](https://img.shields.io/badge/Minecraft-1.20-green)](https://papermc.io/downloads/paper)
 
 This is an unofficial continuation of PacketWrapper by dmulloy2 and aadnk. The original versions can be found [here](https://github.com/dmulloy2/PacketWrapper) and [here](https://github.com/aadnk/PacketWrapper).
 
@@ -34,7 +34,7 @@ Then, include the actual dependency
     <dependency>
         <groupId>com.comphenix.packetwrapper</groupId>
         <artifactId>PacketWrapper</artifactId>
-        <version>1.19.4-2.1.0</version>
+        <version>1.20-2.2.0</version>
         <scope>provided</scope>
     </dependency>
 </dependencies>
@@ -60,7 +60,7 @@ Then add the actual dependency:
 ```
 dependencies {
     ...
-    compile 'com.comphenix.packetwrapper:PacketWrapper:1.19.4-2.1.0'
+    compile 'com.comphenix.packetwrapper:PacketWrapper:1.20-2.2.0-SNAPSHOT'
 }
 ```
 

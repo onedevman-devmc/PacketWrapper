@@ -80,18 +80,20 @@ public class WrapperPlayServerMultiBlockChange extends AbstractPacket {
 
     /**
      * Retrieves the value of field 'suppressLightUpdates'
-     *
+     * Removed in 1.20
      * @return 'suppressLightUpdates'
      */
+    @Deprecated
     public boolean getSuppressLightUpdates() {
         return this.handle.getBooleans().read(0);
     }
 
     /**
      * Sets the value of field 'suppressLightUpdates'
-     *
+     * Removed in 1.20
      * @param value New value for field 'suppressLightUpdates'
      */
+    @Deprecated
     public void setSuppressLightUpdates(boolean value) {
         this.handle.getBooleans().write(0, value);
     }
