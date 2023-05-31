@@ -34,7 +34,7 @@ Then, include the actual dependency
     <dependency>
         <groupId>com.comphenix.packetwrapper</groupId>
         <artifactId>PacketWrapper</artifactId>
-        <version>1.19.4-2.1.0</version>
+        <version>1.19.4-2.1.1</version>
         <scope>provided</scope>
     </dependency>
 </dependencies>
@@ -60,7 +60,7 @@ Then add the actual dependency:
 ```
 dependencies {
     ...
-    compile 'com.comphenix.packetwrapper:PacketWrapper:1.19.4-2.1.0'
+    compile 'com.comphenix.packetwrapper:PacketWrapper:1.19.4-2.1.1'
 }
 ```
 
