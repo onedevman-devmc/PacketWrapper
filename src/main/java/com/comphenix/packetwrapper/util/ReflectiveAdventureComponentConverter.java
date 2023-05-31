@@ -1,5 +1,6 @@
 package com.comphenix.packetwrapper.util;
 
+import com.comphenix.protocol.reflect.FuzzyReflection;
 import com.comphenix.protocol.reflect.accessors.Accessors;
 import com.comphenix.protocol.reflect.accessors.MethodAccessor;
 import com.comphenix.protocol.utility.MinecraftReflection;
@@ -8,10 +9,11 @@ import com.comphenix.protocol.wrappers.WrappedChatComponent;
 public class ReflectiveAdventureComponentConverter {
     private static final Class<?> COMPONENT_CLASS = MinecraftReflection.getLibraryClass("net.kyori.adventure.text.Component");
     private static final Class<?> GSON_COMPONENT_SERIALIZER_CLASS = MinecraftReflection.getLibraryClass("net.kyori.adventure.text.serializer.gson.GsonComponentSerializer");
+    private static final Class<?> COMPONENT_SERIALIZER_CLASS = MinecraftReflection.getLibraryClass("net.kyori.adventure.text.serializer.ComponentSerializer");
 
     private static final MethodAccessor GET_GSON_SERIALIZER_METHOD = Accessors.getMethodAccessor(GSON_COMPONENT_SERIALIZER_CLASS, "gson");
-    private static final MethodAccessor DESERIALIZE_METHOD = Accessors.getMethodAccessor(GSON_COMPONENT_SERIALIZER_CLASS, "deserialize", String.class);
-    private static final MethodAccessor SERIALIZE_METHOD = Accessors.getMethodAccessor(GSON_COMPONENT_SERIALIZER_CLASS, "serialize", COMPONENT_CLASS);
+    private static final MethodAccessor DESERIALIZE_METHOD = Accessors.getMethodAccessor(FuzzyReflection.fromClass(COMPONENT_SERIALIZER_CLASS, false).getMethodByName("deserializeOrNull"));
+    private static final MethodAccessor SERIALIZE_METHOD = Accessors.getMethodAccessor(FuzzyReflection.fromClass(COMPONENT_SERIALIZER_CLASS, false).getMethodByName("serialize"));
 
     private static Object GSON_SERIALIZER;
 

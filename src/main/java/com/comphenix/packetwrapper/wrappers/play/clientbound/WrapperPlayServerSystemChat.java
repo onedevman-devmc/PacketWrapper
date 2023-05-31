@@ -44,7 +44,7 @@ public class WrapperPlayServerSystemChat extends AbstractPacket {
     public void setContent(String value) {
         if(isUsingPaper()) {
             // We are using paper. Remove adventure component
-            this.handle.getStructures().write(0, null);
+            this.handle.getModifier().write(0, null);
         }
         this.handle.getStrings().write(0, value);
     }
@@ -68,7 +68,7 @@ public class WrapperPlayServerSystemChat extends AbstractPacket {
     }
 
     private boolean isUsingPaper() {
-        return !(this.handle.getStructures().read(0).getHandle() instanceof String);
+        return !(this.handle.getModifier().read(0) instanceof String);
     }
 
     /**

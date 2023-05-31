@@ -36,11 +36,11 @@ public class WrapperPlayServerSetTitleText extends AbstractPacket {
         if(read != null) {
             return read;
         }
-        Object adventure = this.handle.getStructures().read(1).getHandle();
+        Object adventure = this.handle.getModifier().read(1);
         if(adventure != null) {
             return ReflectiveAdventureComponentConverter.fromComponent(adventure);
         }
-        BaseComponent[] baseComponents = (BaseComponent[]) this.handle.getStructures().read(2).getHandle();
+        BaseComponent[] baseComponents = (BaseComponent[]) this.handle.getModifier().read(2);
         return ComponentConverter.fromBaseComponent(baseComponents);
     }
 
@@ -51,7 +51,7 @@ public class WrapperPlayServerSetTitleText extends AbstractPacket {
      */
     public void setText(WrappedChatComponent value) {
         this.handle.getChatComponents().write(0, value);
-        StructureModifier<InternalStructure> structures = this.handle.getStructures();
+        StructureModifier<Object> structures = this.handle.getModifier();
         if(structures.size() > 1) {
             for(int i = 1; i < structures.size(); i++) {
                 structures.write(i, null);
