@@ -16,7 +16,7 @@ Enter PacketWrapper. It contains wrapper classes for all known packets in 1.19.4
 
 #### Maven:
 
-First, add this repository
+First add my repository to your pom.xml so Maven can find the library.
 
 ```
 <repositories>
@@ -27,7 +27,7 @@ First, add this repository
 </repositories>
 ```
 
-Then, include the actual dependency
+First add my repository so Gradle can find the dependency:
 
 ```
 <dependencies>
@@ -60,7 +60,7 @@ Then add the actual dependency:
 ```
 dependencies {
     ...
-    compile 'com.comphenix.packetwrapper:PacketWrapper:1.20-2.2.0-SNAPSHOT'
+    compile 'com.comphenix.packetwrapper:PacketWrapper:1.20-2.2.0'
 }
 ```
 

@@ -6,6 +6,9 @@ import com.comphenix.protocol.events.PacketContainer;
 
 public class WrapperPlayServerSetTitlesAnimation extends AbstractPacket {
 
+    /**
+     * The packet type that is wrapped by this wrapper.
+     */
     public static final PacketType TYPE = PacketType.Play.Server.SET_TITLES_ANIMATION;
 
     /**
@@ -15,12 +18,17 @@ public class WrapperPlayServerSetTitlesAnimation extends AbstractPacket {
         super(TYPE);
     }
 
+    /**
+     * Constructors a new wrapper for the specified packet
+     *
+     * @param packet the packet to wrap
+     */
     public WrapperPlayServerSetTitlesAnimation(PacketContainer packet) {
         super(packet, TYPE);
     }
 
     /**
-     * Retrieves the value of field 'fadeIn'
+     * Retrieves the number of ticks the title is faded in
      *
      * @return 'fadeIn'
      */
@@ -29,7 +37,7 @@ public class WrapperPlayServerSetTitlesAnimation extends AbstractPacket {
     }
 
     /**
-     * Sets the value of field 'fadeIn'
+     * Sets the number of ticks the title is faded in
      *
      * @param value New value for field 'fadeIn'
      */
@@ -38,7 +46,7 @@ public class WrapperPlayServerSetTitlesAnimation extends AbstractPacket {
     }
 
     /**
-     * Retrieves the value of field 'stay'
+     * Retrieves the number of ticks the title stays on screen
      *
      * @return 'stay'
      */
@@ -47,7 +55,7 @@ public class WrapperPlayServerSetTitlesAnimation extends AbstractPacket {
     }
 
     /**
-     * Sets the value of field 'stay'
+     * Sets the number of ticks the title stays on screen
      *
      * @param value New value for field 'stay'
      */
@@ -56,7 +64,7 @@ public class WrapperPlayServerSetTitlesAnimation extends AbstractPacket {
     }
 
     /**
-     * Retrieves the value of field 'fadeOut'
+     * Retrieves the number of ticks to fade out the title
      *
      * @return 'fadeOut'
      */
@@ -65,7 +73,7 @@ public class WrapperPlayServerSetTitlesAnimation extends AbstractPacket {
     }
 
     /**
-     * Sets the value of field 'fadeOut'
+     * Sets the number of ticks to fade out the title
      *
      * @param value New value for field 'fadeOut'
      */
