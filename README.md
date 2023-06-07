@@ -3,8 +3,10 @@
 [![Build](https://github.com/lukalt/PacketWrapper/actions/workflows/build.yml/badge.svg)](https://github.com/lukalt/PacketWrapper/actions/workflows/build.yml)
 [![Javadoc](https://img.shields.io/badge/JavaDoc-Online-green)](https://lukalt.github.io/PacketWrapper/javadocs/apidocs)
 ![GitHub](https://img.shields.io/github/license/lukalt/PacketWrapper)
-[![ProtocolLib](https://img.shields.io/badge/ProtocolLib-%3E%3D%205.1.0--SNAPSHOT-blue)](https://ci.dmulloy2.net/job/ProtocolLib/645/)
-[![ProtocolLib](https://img.shields.io/badge/Minecraft-1.20-green)](https://papermc.io/downloads/paper)
+[![ProtocolLib](https://img.shields.io/badge/ProtocolLib-%3E%3D%205.2.0--SNAPSHOT-blue)](https://github.com/lukalt/ProtocolLib/suites/13444204825/artifacts/737170295)
+[![ProtocolLib](https://img.shields.io/badge/Minecraft%201.20-green)](https://papermc.io/downloads/paper)
+
+*This version requires an unofficial version of ProtocolLib that works with 1.20: https://github.com/lukalt/ProtocolLib/suites/13444204825/artifacts/737170295*
 
 This is an unofficial continuation of PacketWrapper by dmulloy2 and aadnk. The original versions can be found [here](https://github.com/dmulloy2/PacketWrapper) and [here](https://github.com/aadnk/PacketWrapper).
 
@@ -66,8 +68,11 @@ dependencies {
 
 Either install PacketWrapper as a plugin on the server or shadow it into your plugin. Alternatively, you can copy just the required classes (AbstractPacket and the Wrappers you are using) directly to your project.
 
+### Older Versions
+* Latest Release for 1.19.4: https://github.com/lukalt/PacketWrapper/releases/tag/2.1.2-1.19.4
+
 ### Dependencies
-* [ProtocolLib 5.1.0-SNAPSHOT or later](https://hangar.papermc.io/dmulloy2/ProtocolLib)
+* [ProtocolLib 5.2.0-SNAPSHOT or later](https://github.com/lukalt/ProtocolLib/suites/13444204825/artifacts/737170295)
 
 ### Resources
 * [Downloads](https://github.com/lukalt/PacketWrapper/releases)
