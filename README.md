@@ -10,7 +10,7 @@ This is an unofficial continuation of PacketWrapper by dmulloy2 and aadnk. The o
 
 When reading and writing packets in [ProtocolLib](http://www.spigotmc.org/resources/protocollib.1997/), it is necessary to know the order in which the fields are stored in memory. This requires you to decompile the Minecraft source code with [JD-GUI](http://jd.benow.ca/) or find it in the Spigot work directory (/work/decompile/), while decoding the meaning of a field by looking up an online [wiki](http://www.wiki.vg/Protocol) resource ([tutorial](http://forums.bukkit.org/threads/lib-1-4-6-protocollib-2-0-0-safely-and-easily-modify-sent-and-recieved-packets.101035/page-2#post-1366140)). It would be much easier if these packets could be accessed as any other normal Java bean. 
 
-Enter PacketWrapper. It contains wrapper classes for all known packets in 1.19.4, providing you with access to the fields by name, along with automatic conversion to existing Bukkit enumerations and classes. It also includes a number of custom enumerations when appropriate.
+Enter PacketWrapper. It contains wrapper classes for all known packets in 1.20, providing you with access to the fields by name, along with automatic conversion to existing Bukkit enumerations and classes. It also includes a number of custom enumerations when appropriate.
 
 ### How to use
 
