@@ -3,10 +3,10 @@
 [![Build](https://github.com/lukalt/PacketWrapper/actions/workflows/build.yml/badge.svg)](https://github.com/lukalt/PacketWrapper/actions/workflows/build.yml)
 [![Javadoc](https://img.shields.io/badge/JavaDoc-Online-green)](https://lukalt.github.io/PacketWrapper/javadocs/apidocs)
 ![GitHub](https://img.shields.io/github/license/lukalt/PacketWrapper)
-[![ProtocolLib](https://img.shields.io/badge/ProtocolLib-%3E%3D%205.2.0--SNAPSHOT-blue)](https://github.com/lukalt/ProtocolLib/suites/13444204825/artifacts/737170295)
+[![ProtocolLib](https://img.shields.io/badge/ProtocolLib-%3E%3D%205.1.0--SNAPSHOT-blue)](https://ci.dmulloy2.net/job/ProtocolLib/lastSuccessfulBuild/)
 [![ProtocolLib](https://img.shields.io/badge/Minecraft%201.20-green)](https://papermc.io/downloads/paper)
 
-*This version requires an unofficial version of ProtocolLib that works with 1.20: https://github.com/lukalt/ProtocolLib/suites/13444204825/artifacts/737170295*
+*This version requires the latest development build of ProtocolLib: https://ci.dmulloy2.net/job/ProtocolLib/lastSuccessfulBuild/ (at least build #651)*
 
 This is an unofficial continuation of PacketWrapper by dmulloy2 and aadnk. The original versions can be found [here](https://github.com/dmulloy2/PacketWrapper) and [here](https://github.com/aadnk/PacketWrapper).
 
@@ -36,7 +36,7 @@ First add my repository so Gradle can find the dependency:
     <dependency>
         <groupId>com.comphenix.packetwrapper</groupId>
         <artifactId>PacketWrapper</artifactId>
-        <version>1.20-2.2.0</version>
+        <version>1.20-2.2.1</version>
         <scope>provided</scope>
     </dependency>
 </dependencies>
@@ -62,7 +62,7 @@ Then add the actual dependency:
 ```
 dependencies {
     ...
-    compile 'com.comphenix.packetwrapper:PacketWrapper:1.20-2.2.0'
+    compile 'com.comphenix.packetwrapper:PacketWrapper:1.20-2.2.1'
 }
 ```
 
@@ -72,7 +72,7 @@ Either install PacketWrapper as a plugin on the server or shadow it into your pl
 * Latest Release for 1.19.4: https://github.com/lukalt/PacketWrapper/releases/tag/2.1.2-1.19.4
 
 ### Dependencies
-* [ProtocolLib 5.2.0-SNAPSHOT or later](https://github.com/lukalt/ProtocolLib/suites/13444204825/artifacts/737170295)
+* [ProtocolLib 5.1.0-SNAPSHOT or later](https://ci.dmulloy2.net/job/ProtocolLib/lastSuccessfulBuild/)
 
 ### Resources
 * [Downloads](https://github.com/lukalt/PacketWrapper/releases)
