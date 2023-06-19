@@ -6,6 +6,9 @@ import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.wrappers.BlockPosition;
 import com.comphenix.protocol.wrappers.WrappedChatComponent;
 import com.comphenix.protocol.wrappers.WrappedRegistrable;
+import com.comphenix.protocol.wrappers.nbt.NbtBase;
+import com.comphenix.protocol.wrappers.nbt.NbtCompound;
+import net.minecraft.nbt.NBTBase;
 
 public class WrapperPlayServerTileEntityData extends AbstractPacket {
 
@@ -71,8 +74,8 @@ public class WrapperPlayServerTileEntityData extends AbstractPacket {
      *
      * @return 'tag'
      */
-    public WrappedChatComponent[] getTag() {
-        return this.handle.getChatComponentArrays().read(0);
+    public NbtCompound getTag() {
+        return (NbtCompound) this.handle.getNbtModifier().read(0);
     }
 
     /**
@@ -80,8 +83,8 @@ public class WrapperPlayServerTileEntityData extends AbstractPacket {
      *
      * @param value New value for field 'tag'
      */
-    public void setTag(WrappedChatComponent[] value) {
-        this.handle.getChatComponentArrays().write(0, value);
+    public void setTag(NbtCompound value) {
+        this.handle.getNbtModifier().write(0, value);
     }
 
 }
