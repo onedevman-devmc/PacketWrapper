@@ -29,7 +29,7 @@ First add my repository to your pom.xml so Maven can find the library.
 </repositories>
 ```
 
-First add my repository so Gradle can find the dependency:
+Then register the dependency in your pom.xml. If you prefer to install PacketWrapper as a plugin on the server, set `<scope>static</scope>`.
 
 ```
 <dependencies>
