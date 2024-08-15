@@ -1,0 +1,9 @@
+name: PacketWrapper
+main: com.comphenix.packetwrapper.PacketWrapper
+
+description: Contains wrappers for each packet in Minecraft.
+authors: [dmulloy2, Comphenix, lukas81298]
+version: ${project.version}
+api-version: 1.20
+
+depend: [ProtocolLib]
