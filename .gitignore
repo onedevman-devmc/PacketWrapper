@@ -34,3 +34,8 @@ manifest.mf
 
 # other files
 *.log*
+
+# PATCH-BEGIN
+logs/
+javadocs/
+# PATCH-END
