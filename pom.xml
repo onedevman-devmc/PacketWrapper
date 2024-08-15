@@ -18,10 +18,12 @@
     </properties>
 
     <repositories>
-        <repository>
+        <!-- PATCH-BEGIN -->
+        <!-- <repository>
             <id>lukasalt-repo</id>
             <url>https://repo.lukasa.lt/repository/maven-public/</url>
-        </repository>
+        </repository> -->
+        <!-- PATCH-END -->
         <repository>
             <id>spigot-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/groups/public/</url>
@@ -32,7 +34,8 @@
         </repository>
     </repositories>
 
-    <distributionManagement>
+    <!-- PATCH-BEGIN -->
+    <!-- <distributionManagement>
         <repository>
             <id>lukasalt-repo</id>
             <url>https://repo.lukasa.lt/repository/maven-releases/</url>
@@ -41,7 +44,8 @@
             <id>lukasalt-repo</id>
             <url>https://repo.lukasa.lt/repository/maven-snapshots/</url>
         </snapshotRepository>
-    </distributionManagement>
+    </distributionManagement> -->
+    <!-- PATCH-END -->
 
     <profiles>
         <profile>
@@ -154,7 +158,8 @@
                 </configuration>
             </plugin>
 
-            <plugin>
+            <!-- PATCH-BEGIN -->
+            <!-- <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>3.5.0</version>
@@ -177,7 +182,8 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin> -->
+            <!-- PATCH-END -->
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -231,7 +237,8 @@
         </plugins>
     </build>
 
-    <reporting>
+    <!-- PATCH-BEGIN -->
+    <!-- <reporting>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -245,5 +252,6 @@
                 </configuration>
             </plugin>
         </plugins>
-    </reporting>
+    </reporting> -->
+    <!-- PATCH-END -->
 </project>
