@@ -1,6 +1,6 @@
 # packetwrapper-jitpack
 
-This repository aims to mirror the PacketWrapper repository from @lukalt on [jitpack.io](https://jitpack.io).
+This repository aims to mirror the [PacketWrapper repository from @lukalt](https://github.com/lukalt/PacketWrapper) on [jitpack.io](https://jitpack.io).
 
 The reason that drove me to create this repository is that the maven repository of @lukalt isn't accessible to me for an unknown reason.
 
