@@ -142,14 +142,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
-                    <!-- PATCH-BEGIN -->
-                    <!-- <source>16</source> -->
-                    <source>17</source>
-                    <!-- PATCH-END -->
-                    <!-- PATCH-BEGIN -->
-                    <!-- <target>16</target> -->
-                    <target>17</target>
-                    <!-- PATCH-END -->
+                    <source>16</source>
+                    <target>16</target>
                 </configuration>
             </plugin>
 
