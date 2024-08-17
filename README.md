@@ -11,6 +11,7 @@ Current supported versions : `2.1.0 (mc 1.19.4)`, `2.1.1 (mc 1.19.4)`, `2.1.2 (m
 #### I. as external dependency
 
 This option will ask you to have the plugin `PacketWrapper` installed on your server as it will be loaded by the server in its classpath.
+To download the plugin, [see releases](./releases).
 
 First of all, add it as dependency for your plugin in the `plugin.yml` like this:
 ```yaml
